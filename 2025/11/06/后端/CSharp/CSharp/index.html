@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"151459797.github.io","root":"/myblog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"151459797.github.io","root":"/myblog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="C# 基于.net的面向对象开发语言  .NETCore与.NETFramework 1.NET Framework 微软开发的运行时环境，主要用于 Windows 平台。它依赖于 Windows 操作系统，与 Windows 系统深度集成。微软已停止更新   2.NET Core  是跨平台的运行时环境，支持 Windows、Linux 和 macOS 等多种操作系统。它通过抽象层来屏蔽不同操作">
@@ -284,66 +284,66 @@
 <li>根据项目需求增加自定义管道</li>
 <li>以下是微软默认提供可自主配置的管道</li>
 <li>异常处理中间件<ul>
-<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf">app.UseDeveloperExceptionPage()<span class="hljs-comment">; </span><br></code></pre></td></tr></table></figure>在开发环境中显示详细的错误信息。</li>
-<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs abnf">app.UseEndpoints(<br>    endpoints <span class="hljs-operator">=</span>&gt;&#123;<br>        endpoints.MapControllers()<span class="hljs-comment">;</span><br>        endpoints.MapRazorPages()<span class="hljs-comment">;</span><br>    &#125;)<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure> 捕获异常并返回友好的错误页面或错误信息。</li>
+<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseDeveloperExceptionPage()<span class="comment">; </span></span><br></pre></td></tr></table></figure>在开发环境中显示详细的错误信息。</li>
+<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">app.UseEndpoints(</span><br><span class="line">    endpoints <span class="operator">=</span>&gt;&#123;</span><br><span class="line">        endpoints.MapControllers()<span class="comment">;</span></span><br><span class="line">        endpoints.MapRazorPages()<span class="comment">;</span></span><br><span class="line">    &#125;)<span class="comment">;</span></span><br></pre></td></tr></table></figure> 捕获异常并返回友好的错误页面或错误信息。</li>
 </ul>
 </li>
 <li>身份验证和授权<ul>
-<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf">app.UseAuthentication()<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure> 提供身份验证支持，如JWT、Cookie等。</li>
-<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf">app.UseAuthorization()<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure> 提供授权支持，用于检查用户权限。</li>
+<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseAuthentication()<span class="comment">;</span></span><br></pre></td></tr></table></figure> 提供身份验证支持，如JWT、Cookie等。</li>
+<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseAuthorization()<span class="comment">;</span></span><br></pre></td></tr></table></figure> 提供授权支持，用于检查用户权限。</li>
 </ul>
 </li>
 <li>跨域资源共享（CORS）<ul>
-<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf">app.UseCors()<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure> 配置跨域资源共享，允许或限制外部域对API的访问。</li>
+<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseCors()<span class="comment">;</span></span><br></pre></td></tr></table></figure> 配置跨域资源共享，允许或限制外部域对API的访问。</li>
 </ul>
 </li>
 <li>静态文件服务<ul>
-<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf">app.UseStaticFiles()<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure> 提供静态文件（如HTML、CSS、JavaScript）的访问支持。</li>
+<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseStaticFiles()<span class="comment">;</span></span><br></pre></td></tr></table></figure> 提供静态文件（如HTML、CSS、JavaScript）的访问支持。</li>
 </ul>
 </li>
 <li>路由和端点<ul>
-<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf">app.UseRouting()<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure> 定义请求的路由规则。</li>
+<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseRouting()<span class="comment">;</span></span><br></pre></td></tr></table></figure> 定义请求的路由规则。</li>
 </ul>
 </li>
 <li>HTTPS重定向<ul>
-<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf">app.UseHttpsRedirection()<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure> 将所有HTTP请求重定向到HTTPS。</li>
+<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseHttpsRedirection()<span class="comment">;</span></span><br></pre></td></tr></table></figure> 将所有HTTP请求重定向到HTTPS。</li>
 </ul>
 </li>
 <li>压缩响应<ul>
-<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf">app.UseResponseCompression()<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure> 对响应内容进行压缩，减少传输数据量。</li>
+<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseResponseCompression()<span class="comment">;</span></span><br></pre></td></tr></table></figure> 对响应内容进行压缩，减少传输数据量。</li>
 </ul>
 </li>
 <li>请求本地化<ul>
-<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf">app.UseRequestLocalization()<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure> 提供本地化支持，根据用户语言偏好返回本地化内容。</li>
+<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseRequestLocalization()<span class="comment">;</span></span><br></pre></td></tr></table></figure> 提供本地化支持，根据用户语言偏好返回本地化内容。</li>
 </ul>
 </li>
 <li>会话管理<ul>
-<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf">app.UseSession()<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure> 管理用户会话，存储用户会话数据。</li>
+<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseSession()<span class="comment">;</span></span><br></pre></td></tr></table></figure> 管理用户会话，存储用户会话数据。</li>
 </ul>
 </li>
 <li>WebSockets支持<ul>
-<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf">app.UseWebSockets()<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure> 启用WebSockets协议，支持实时通信。</li>
+<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseWebSockets()<span class="comment">;</span></span><br></pre></td></tr></table></figure> 启用WebSockets协议，支持实时通信。</li>
 </ul>
 </li>
 <li>健康检查<ul>
-<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf">app.UseHealthChecks(<span class="hljs-string">&quot;/health&quot;</span>)<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure> 检查应用程序及其依赖项的运行状态。</li>
+<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseHealthChecks(<span class="string">&quot;/health&quot;</span>)<span class="comment">;</span></span><br></pre></td></tr></table></figure> 检查应用程序及其依赖项的运行状态。</li>
 </ul>
 </li>
 <li>URL重写<ul>
-<li><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">app</span><span class="hljs-selector-class">.UseRewriter</span>(<br>    new <span class="hljs-built_in">RewriteOptions</span>().<span class="hljs-built_in">AddRedirect</span>(<span class="hljs-string">&quot;old-path&quot;</span>, <span class="hljs-string">&quot;new-path&quot;</span>)<br>);<br></code></pre></td></tr></table></figure> 重写URL或重定向请求，用于SEO优化或路由调整。</li>
+<li><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">app</span><span class="selector-class">.UseRewriter</span>(</span><br><span class="line">    new <span class="built_in">RewriteOptions</span>().<span class="built_in">AddRedirect</span>(<span class="string">&quot;old-path&quot;</span>, <span class="string">&quot;new-path&quot;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure> 重写URL或重定向请求，用于SEO优化或路由调整。</li>
 </ul>
 </li>
 <li>日志记录<ul>
-<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf">app.UseLogging()<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure> 记录请求和响应的详细信息，用于调试和监控。</li>
+<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseLogging()<span class="comment">;</span></span><br></pre></td></tr></table></figure> 记录请求和响应的详细信息，用于调试和监控。</li>
 </ul>
 </li>
 <li>单页应用程序（SPA）支持<ul>
-<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs abnf">app.UseSpa(spa <span class="hljs-operator">=</span>&gt;&#123;<br>    spa.Options.SourcePath <span class="hljs-operator">=</span> <span class="hljs-string">&quot;ClientApp&quot;</span><span class="hljs-comment">;</span><br>&#125;)<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure></li>
+<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.UseSpa(spa <span class="operator">=</span>&gt;&#123;</span><br><span class="line">    spa.Options.SourcePath <span class="operator">=</span> <span class="string">&quot;ClientApp&quot;</span><span class="comment">;</span></span><br><span class="line">&#125;)<span class="comment">;</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li>其他中间件<ul>
-<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf">app.UseCookiePolicy()<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure> 管理Cookie策略，确保Cookie的安全性。</li>
-<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf">app.UseResponseCaching()<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure> 提供响应缓存支持，提高性能。</li>
+<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseCookiePolicy()<span class="comment">;</span></span><br></pre></td></tr></table></figure> 管理Cookie策略，确保Cookie的安全性。</li>
+<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseResponseCaching()<span class="comment">;</span></span><br></pre></td></tr></table></figure> 提供响应缓存支持，提高性能。</li>
 </ul>
 </li>
 </ul>
