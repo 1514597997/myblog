@@ -1,6 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>开发项目周期</title>
+    <url>/myblog/2025/11/06/%E5%85%B6%E4%BB%96/%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE%E5%91%A8%E6%9C%9F/</url>
+    <content><![CDATA[<ul>
+<li>1.项目立项<ul>
+<li>1.1- 项目的起点，由发起人或部门提出项目的想法，需要进行初步的可行性分析。</li>
+<li>1.2- 组建项目团队或外包相关人员制作，根据项目的规模和复杂程度，确定项目团队成员。可能包括项目经理、需求分析师、系统架构师、程序员、测试工程师、文档工程师等角色。</li>
+</ul>
+</li>
+<li>2.需求分析<ul>
+<li>2.1- 需求收集：通过与客户沟通、访谈、问卷调查等方式收集需求。收集需求时要考虑功能性需求和非功能性需求。</li>
+<li>2.2- 需求整理和分析：对收集到的需求进行分类、整理和分析，去除不合理或重复的需求。最终形成需求规格说明书，它是后续设计和开发阶段的重要依据。</li>
+</ul>
+</li>
+<li>3.设计阶段<ul>
+<li>3.1 系统架构设计：架构师根据需求规格说明书设计系统的整体架构。包括技术选型，比如选择哪种编程语言、数据库管理系统、中间件等。比如电商系统主服务用什么语言开发？是否采用分布式服务？还是单体架构？是否使用集群？采用redis缓存等。</li>
+<li>3.2 详细设计：对系统的各个模块进行详细设计，包括模块的接口设计、内部逻辑设计等。会形成详细设计说明书，为程序员编写代码提供详细的指导。例如，在设计一个视频播放软件的视频解码模块时，要详细设计解码算法的实现方式、与视频播放界面模块的接口参数等。</li>
+</ul>
+</li>
+<li>4.编码阶段<ul>
+<li>4.1 代码编写：程序员根据详细设计说明书编写代码。他们会遵循一定的编程规范，如代码风格规范（缩进、命名规则等）和代码结构规范。可能会采用敏捷开发等方法进行迭代开发，每次迭代完成一部分功能的代码编写。</li>
+<li>4.2 代码审查：通过代码审查来保证代码质量。可以采用同行评审的方式，让其他程序员对代码进行审查，检查代码是否存在逻辑错误、性能问题、安全漏洞等。</li>
+</ul>
+</li>
+<li>5.测试阶段<ul>
+<li>5.1 单元测试：程序员对编写好的代码进行单元测试。例如：单据计算金额是否正确？</li>
+<li>5.2 集成测试：当多个模块的代码集成在一起后进行集成测试。例如：对于OA系统，流程是否流转正常？流程指定人审批是否可正常审批？相关模板接口调用是否正常？</li>
+<li>5.3 系统测试：对整个系统进行测试，包括功能测试（验证系统是否实现了需求规格说明书中的所有功能）、性能测试（测试系统的响应时间、吞吐量等性能指标）、安全测试（检查系统的安全性漏洞）等。</li>
+<li>5.4 验收测试：由客户或者最终用户进行验收测试，以确定系统是否符合他们的需求。例如：制作的是财务系统，是否满足财务系统日常使用需求？</li>
+</ul>
+</li>
+<li>6.部署阶段<ul>
+<li>6.1 部署计划制定：根据系统的规模和复杂程度制定部署计划。例如，对于一个大型企业级软件系统，需要考虑服务器的安装、网络配置、数据库初始化等步骤。</li>
+<li>6.2 实际部署：将软件部署到生产环境中。例如，将一个网站应用部署到云服务器上，包括安装软件、配置服务器参数等操作。</li>
+<li>6.3 部署后的监控和维护：在软件部署后，要进行监控，确保系统正常运行。例如，监控服务器的CPU使用率、内存使用情况等，及时发现并解决可能出现的问题。</li>
+</ul>
+</li>
+<li>7.维护阶段<ul>
+<li>7.1 日常维护：对软件进行日常的维护工作，如修复软件在运行过程中出现的故障。例如：当用户反馈一个软件功能出现异常时，维护人员要及时查找原因并修复。</li>
+<li>7.2 版本更新：根据用户反馈和业务需求进行版本更新。例如：财务系统更新新功能、更新修复Bug、更新安全漏洞等。</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Jquery前端框架</title>
+    <url>/myblog/2025/11/06/%E5%89%8D%E7%AB%AF/Jquery/</url>
+    <content><![CDATA[<h1 id="jQuery-一种轻量级的-JavaScript-库"><a href="#jQuery-一种轻量级的-JavaScript-库" class="headerlink" title="jQuery 一种轻量级的 JavaScript 库"></a>jQuery 一种轻量级的 JavaScript 库</h1><ul>
+<li>jQuery 是一种轻量级的 JavaScript 库，旨在简化 HTML 文档的遍历、事件处理、动画和 AJAX 操作。本文将从基本概念、工作原理、架构设计等多个方面深入解析 jQuery 的核心特性。</li>
+<li>一、jQuery 的基本概念<ul>
+<li>1.1 核心思想<ul>
+<li>jQuery 的核心思想是“写得少，做得多”，通过简洁的语法和强大的功能，帮助开发者快速实现复杂的网页交互。</li>
+</ul>
+</li>
+<li>1.2 选择器<ul>
+<li>jQuery 提供了丰富的选择器，用于快速定位 HTML 元素。支持 CSS 选择器、XPath 选择器以及自定义选择器。</li>
+</ul>
+</li>
+<li>1.3 链式调用<ul>
+<li>jQuery 支持链式调用，允许在一个语句中连续执行多个操作，提高代码的可读性和效率。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>二、jQuery 的工作原理<ul>
+<li>2.1 选择器引擎<ul>
+<li>jQuery 的选择器引擎（Sizzle）负责解析选择器表达式，并返回匹配的 DOM 元素集合。它通过优化选择器的解析和匹配过程，提高查找效率。</li>
+</ul>
+</li>
+<li>2.2 DOM 操作<ul>
+<li>jQuery 提供了一系列方法来操作 DOM 元素，包括添加、删除、修改元素及其属性。这些操作通过包装 DOM API，提供更简洁的接口。</li>
+</ul>
+</li>
+<li>2.3 事件处理<ul>
+<li>jQuery 提供了统一的事件处理机制，支持多种事件类型（如点击、鼠标悬停等），并自动处理浏览器兼容性问题。</li>
+</ul>
+</li>
+<li>2.4 AJAX<ul>
+<li>jQuery 简化了 AJAX 操作，通过 $.ajax 等方法，方便开发者进行异步数据请求和处理。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>三、jQuery 的架构设计<ul>
+<li>3.1 模块化设计<ul>
+<li>jQuery 的架构采用模块化设计，核心模块包括选择器、DOM 操作、事件处理等，其他功能（如 AJAX、效果）作为扩展模块。</li>
+</ul>
+</li>
+<li>3.2 插件系统<ul>
+<li>jQuery 提供了强大的插件系统，开发者可以扩展 jQuery 的功能，通过插件实现复杂的功能。</li>
+</ul>
+</li>
+<li>3.3 兼容性<ul>
+<li>jQuery 设计时充分考虑了浏览器兼容性，支持从旧版 IE 到现代浏览器的多种环境。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>四、jQuery 的性能优化<ul>
+<li>4.1 选择器优化<ul>
+<li>使用高效的 CSS 选择器，如 ID 选择器。</li>
+<li>避免使用复杂的复合选择器。</li>
+</ul>
+</li>
+<li>4.2 事件委托<ul>
+<li>使用事件委托减少事件绑定数量。</li>
+<li>通过 on 方法绑定事件，提高性能。</li>
+</ul>
+</li>
+<li>4.3 链式调用<ul>
+<li>使用链式调用减少 DOM 查询次数。</li>
+<li>优化代码结构，提高执行效率。</li>
+</ul>
+</li>
+<li>4.4 缓存选择器<ul>
+<li>缓存常用的选择器结果，避免重复查询。</li>
+<li>使用变量存储 DOM 元素引用。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+  </entry>
+  <entry>
     <title>个人博客</title>
     <url>/myblog/2025/07/10/%E5%85%B6%E4%BB%96/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</url>
     <content><![CDATA[<h1 id="以下是我个人的学习计划"><a href="#以下是我个人的学习计划" class="headerlink" title="以下是我个人的学习计划"></a>以下是我个人的学习计划</h1><div class="ds-markdown ds-markdown--block" style="--ds-md-zoom: 1.143;"><p class="ds-markdown-paragraph">
@@ -458,134 +589,32 @@
       </categories>
   </entry>
   <entry>
-    <title>开发项目周期</title>
-    <url>/myblog/2025/11/06/%E5%85%B6%E4%BB%96/%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE%E5%91%A8%E6%9C%9F/</url>
+    <title>cookie_token_session</title>
+    <url>/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/cookie_token_session/</url>
     <content><![CDATA[<ul>
-<li>1.项目立项<ul>
-<li>1.1- 项目的起点，由发起人或部门提出项目的想法，需要进行初步的可行性分析。</li>
-<li>1.2- 组建项目团队或外包相关人员制作，根据项目的规模和复杂程度，确定项目团队成员。可能包括项目经理、需求分析师、系统架构师、程序员、测试工程师、文档工程师等角色。</li>
+<li>主要介绍各个区别<a href="https://zhuanlan.zhihu.com/p/631349844">参考文档</a></li>
+<li>cookie<ul>
+<li>浏览器存储的一种技术,可以根据不同网站,根据hash存储相关值</li>
+<li>每次请求时会在请求头默认带cookie信息</li>
+<li>早期用作当作登录验证后的一种免登录方式，后cookie可被编辑安全性问题，转移到使用session，或者搭配session实现用户身份验证</li>
+<li>现在当作保存一些用户设置网页的一些参数配置</li>
 </ul>
 </li>
-<li>2.需求分析<ul>
-<li>2.1- 需求收集：通过与客户沟通、访谈、问卷调查等方式收集需求。收集需求时要考虑功能性需求和非功能性需求。</li>
-<li>2.2- 需求整理和分析：对收集到的需求进行分类、整理和分析，去除不合理或重复的需求。最终形成需求规格说明书，它是后续设计和开发阶段的重要依据。</li>
+<li>session<ul>
+<li>是服务器请求响应后，服务器生成和存储的session服务。</li>
+<li>可以根据不同客户端生成不同session服务，根据各个客户端的session可以实现登录后，在session未过期内再次请求免登录。</li>
+<li>安全身份验证推荐使用session+cookie的方式</li>
 </ul>
 </li>
-<li>3.设计阶段<ul>
-<li>3.1 系统架构设计：架构师根据需求规格说明书设计系统的整体架构。包括技术选型，比如选择哪种编程语言、数据库管理系统、中间件等。比如电商系统主服务用什么语言开发？是否采用分布式服务？还是单体架构？是否使用集群？采用redis缓存等。</li>
-<li>3.2 详细设计：对系统的各个模块进行详细设计，包括模块的接口设计、内部逻辑设计等。会形成详细设计说明书，为程序员编写代码提供详细的指导。例如，在设计一个视频播放软件的视频解码模块时，要详细设计解码算法的实现方式、与视频播放界面模块的接口参数等。</li>
-</ul>
-</li>
-<li>4.编码阶段<ul>
-<li>4.1 代码编写：程序员根据详细设计说明书编写代码。他们会遵循一定的编程规范，如代码风格规范（缩进、命名规则等）和代码结构规范。可能会采用敏捷开发等方法进行迭代开发，每次迭代完成一部分功能的代码编写。</li>
-<li>4.2 代码审查：通过代码审查来保证代码质量。可以采用同行评审的方式，让其他程序员对代码进行审查，检查代码是否存在逻辑错误、性能问题、安全漏洞等。</li>
-</ul>
-</li>
-<li>5.测试阶段<ul>
-<li>5.1 单元测试：程序员对编写好的代码进行单元测试。例如：单据计算金额是否正确？</li>
-<li>5.2 集成测试：当多个模块的代码集成在一起后进行集成测试。例如：对于OA系统，流程是否流转正常？流程指定人审批是否可正常审批？相关模板接口调用是否正常？</li>
-<li>5.3 系统测试：对整个系统进行测试，包括功能测试（验证系统是否实现了需求规格说明书中的所有功能）、性能测试（测试系统的响应时间、吞吐量等性能指标）、安全测试（检查系统的安全性漏洞）等。</li>
-<li>5.4 验收测试：由客户或者最终用户进行验收测试，以确定系统是否符合他们的需求。例如：制作的是财务系统，是否满足财务系统日常使用需求？</li>
-</ul>
-</li>
-<li>6.部署阶段<ul>
-<li>6.1 部署计划制定：根据系统的规模和复杂程度制定部署计划。例如，对于一个大型企业级软件系统，需要考虑服务器的安装、网络配置、数据库初始化等步骤。</li>
-<li>6.2 实际部署：将软件部署到生产环境中。例如，将一个网站应用部署到云服务器上，包括安装软件、配置服务器参数等操作。</li>
-<li>6.3 部署后的监控和维护：在软件部署后，要进行监控，确保系统正常运行。例如，监控服务器的CPU使用率、内存使用情况等，及时发现并解决可能出现的问题。</li>
-</ul>
-</li>
-<li>7.维护阶段<ul>
-<li>7.1 日常维护：对软件进行日常的维护工作，如修复软件在运行过程中出现的故障。例如：当用户反馈一个软件功能出现异常时，维护人员要及时查找原因并修复。</li>
-<li>7.2 版本更新：根据用户反馈和业务需求进行版本更新。例如：财务系统更新新功能、更新修复Bug、更新安全漏洞等。</li>
+<li>token<ul>
+<li>一种新型的身份验证方式，首先登录验证后，服务器根据用户信息生成token，比如：md5(手机号+签名+时间戳+密钥)</li>
+<li>用户在下次请求时携带token实现身份验证</li>
 </ul>
 </li>
 </ul>
 ]]></content>
       <categories>
-        <category>其他</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Jquery前端框架</title>
-    <url>/myblog/2025/11/06/%E5%89%8D%E7%AB%AF/Jquery/</url>
-    <content><![CDATA[<h1 id="jQuery-一种轻量级的-JavaScript-库"><a href="#jQuery-一种轻量级的-JavaScript-库" class="headerlink" title="jQuery 一种轻量级的 JavaScript 库"></a>jQuery 一种轻量级的 JavaScript 库</h1><ul>
-<li>jQuery 是一种轻量级的 JavaScript 库，旨在简化 HTML 文档的遍历、事件处理、动画和 AJAX 操作。本文将从基本概念、工作原理、架构设计等多个方面深入解析 jQuery 的核心特性。</li>
-<li>一、jQuery 的基本概念<ul>
-<li>1.1 核心思想<ul>
-<li>jQuery 的核心思想是“写得少，做得多”，通过简洁的语法和强大的功能，帮助开发者快速实现复杂的网页交互。</li>
-</ul>
-</li>
-<li>1.2 选择器<ul>
-<li>jQuery 提供了丰富的选择器，用于快速定位 HTML 元素。支持 CSS 选择器、XPath 选择器以及自定义选择器。</li>
-</ul>
-</li>
-<li>1.3 链式调用<ul>
-<li>jQuery 支持链式调用，允许在一个语句中连续执行多个操作，提高代码的可读性和效率。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>二、jQuery 的工作原理<ul>
-<li>2.1 选择器引擎<ul>
-<li>jQuery 的选择器引擎（Sizzle）负责解析选择器表达式，并返回匹配的 DOM 元素集合。它通过优化选择器的解析和匹配过程，提高查找效率。</li>
-</ul>
-</li>
-<li>2.2 DOM 操作<ul>
-<li>jQuery 提供了一系列方法来操作 DOM 元素，包括添加、删除、修改元素及其属性。这些操作通过包装 DOM API，提供更简洁的接口。</li>
-</ul>
-</li>
-<li>2.3 事件处理<ul>
-<li>jQuery 提供了统一的事件处理机制，支持多种事件类型（如点击、鼠标悬停等），并自动处理浏览器兼容性问题。</li>
-</ul>
-</li>
-<li>2.4 AJAX<ul>
-<li>jQuery 简化了 AJAX 操作，通过 $.ajax 等方法，方便开发者进行异步数据请求和处理。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>三、jQuery 的架构设计<ul>
-<li>3.1 模块化设计<ul>
-<li>jQuery 的架构采用模块化设计，核心模块包括选择器、DOM 操作、事件处理等，其他功能（如 AJAX、效果）作为扩展模块。</li>
-</ul>
-</li>
-<li>3.2 插件系统<ul>
-<li>jQuery 提供了强大的插件系统，开发者可以扩展 jQuery 的功能，通过插件实现复杂的功能。</li>
-</ul>
-</li>
-<li>3.3 兼容性<ul>
-<li>jQuery 设计时充分考虑了浏览器兼容性，支持从旧版 IE 到现代浏览器的多种环境。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>四、jQuery 的性能优化<ul>
-<li>4.1 选择器优化<ul>
-<li>使用高效的 CSS 选择器，如 ID 选择器。</li>
-<li>避免使用复杂的复合选择器。</li>
-</ul>
-</li>
-<li>4.2 事件委托<ul>
-<li>使用事件委托减少事件绑定数量。</li>
-<li>通过 on 方法绑定事件，提高性能。</li>
-</ul>
-</li>
-<li>4.3 链式调用<ul>
-<li>使用链式调用减少 DOM 查询次数。</li>
-<li>优化代码结构，提高执行效率。</li>
-</ul>
-</li>
-<li>4.4 缓存选择器<ul>
-<li>缓存常用的选择器结果，避免重复查询。</li>
-<li>使用变量存储 DOM 元素引用。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>前端</category>
+        <category>后端</category>
       </categories>
   </entry>
   <entry>
@@ -660,32 +689,82 @@
       </categories>
   </entry>
   <entry>
-    <title>cookie_token_session</title>
-    <url>/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/cookie_token_session/</url>
-    <content><![CDATA[<ul>
-<li>主要介绍各个区别<a href="https://zhuanlan.zhihu.com/p/631349844">参考文档</a></li>
-<li>cookie<ul>
-<li>浏览器存储的一种技术,可以根据不同网站,根据hash存储相关值</li>
-<li>每次请求时会在请求头默认带cookie信息</li>
-<li>早期用作当作登录验证后的一种免登录方式，后cookie可被编辑安全性问题，转移到使用session，或者搭配session实现用户身份验证</li>
-<li>现在当作保存一些用户设置网页的一些参数配置</li>
+    <title>Vue前端框架</title>
+    <url>/myblog/2025/11/06/%E5%89%8D%E7%AB%AF/Vue/</url>
+    <content><![CDATA[<h1 id="Vue-渐进式JavaScript框架"><a href="#Vue-渐进式JavaScript框架" class="headerlink" title="Vue 渐进式JavaScript框架"></a>Vue 渐进式JavaScript框架</h1><ul>
+<li>Vue.js 是一种用于构建用户界面的渐进式 JavaScript 框架，以其轻量、灵活和易于学习而闻名。本文将从基本概念、工作原理、架构设计等多个方面深入解析 Vue 的核心特性。</li>
+<li>一、Vue 的基本概念<ul>
+<li>1.1 核心思想<ul>
+<li>Vue 采用 MVVM（Model-View-ViewModel）架构，将数据（Model）、视图（View）和逻辑（ViewModel）分离，使得开发更加模块化和可维护。</li>
 </ul>
 </li>
-<li>session<ul>
-<li>是服务器请求响应后，服务器生成和存储的session服务。</li>
-<li>可以根据不同客户端生成不同session服务，根据各个客户端的session可以实现登录后，在session未过期内再次请求免登录。</li>
-<li>安全身份验证推荐使用session+cookie的方式</li>
+<li>1.2 响应式系统<ul>
+<li>Vue 的核心特性之一是其响应式系统，能够自动追踪数据的变化并更新 DOM。开发者只需关注数据的变化，而不需要手动操作 DOM。</li>
 </ul>
 </li>
-<li>token<ul>
-<li>一种新型的身份验证方式，首先登录验证后，服务器根据用户信息生成token，比如：md5(手机号+签名+时间戳+密钥)</li>
-<li>用户在下次请求时携带token实现身份验证</li>
+<li>1.3 模板语法<ul>
+<li>Vue 提供了简洁的模板语法，通过指令（如 v-if、v-for）和表达式（如 ）来操作 DOM。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>二、Vue 的工作原理<ul>
+<li>2.1 响应式原理<ul>
+<li>数据劫持：Vue 通过 Object.defineProperty 或 Proxy 来劫持对象的属性，监听数据的变化。</li>
+<li>依赖收集：当数据被访问时，Vue 会自动收集依赖关系。</li>
+<li>调度更新：当数据发生变化时，Vue 会触发更新队列，批量更新视图。</li>
+</ul>
+</li>
+<li>2.2 虚拟 DOM<ul>
+<li>Vue 使用虚拟 DOM 来提高渲染性能：</li>
+<li>创建虚拟节点：将 DOM 转换为 JavaScript 对象。</li>
+<li>比较差异：通过比较新旧虚拟节点的差异，确定需要更新的部分。</li>
+<li>最小化更新：只更新发生变化的 DOM 节点。</li>
+</ul>
+</li>
+<li>2.3 生命周期<ul>
+<li>Vue 组件具有完整的生命周期，从创建到销毁，每个阶段都有对应的钩子函数（如 created、mounted），方便开发者在不同阶段执行特定逻辑。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>三、Vue 的架构设计<ul>
+<li>3.1 组件化开发<ul>
+<li>Vue 强调组件化开发，将复杂的界面拆分为多个独立的组件，每个组件负责特定的功能。组件之间可以通过 props 和 events 进行通信。</li>
+</ul>
+</li>
+<li>3.2 单文件组件<ul>
+<li>Vue 提供 .vue 文件格式，将 HTML、CSS 和 JavaScript 代码集中在一个文件中，提高开发效率。</li>
+</ul>
+</li>
+<li>3.3 插件系统<ul>
+<li>Vue 提供了强大的插件系统，开发者可以扩展 Vue 的功能，如状态管理（Vuex）、路由管理（Vue Router）等。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>四、Vue 的性能优化<ul>
+<li>4.1 组件优化<ul>
+<li>加载：通过动态导入组件，减少初始加载时间。</li>
+<li>缓存：使用 keep-alive 缓存组件，避免重复渲染。</li>
+</ul>
+</li>
+<li>4.2 数据优化<ul>
+<li>计算属性：使用计算属性代替复杂逻辑，提高性能。</li>
+<li>防抖和节流：优化高频事件的处理，减少不必要的计算。</li>
+</ul>
+</li>
+<li>4.3 渲染优化<ul>
+<li>虚拟滚动：对于大量数据的渲染，使用虚拟滚动技术。</li>
+<li>异步更新：通过 nextTick 等机制优化 DOM 更新。</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 ]]></content>
       <categories>
-        <category>后端</category>
+        <category>前端</category>
       </categories>
   </entry>
   <entry>
@@ -761,6 +840,18 @@
 </li>
 </ul>
 </li>
+</ul>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>UnionAll语句</title>
+    <url>/myblog/2025/11/06/%E6%95%B0%E6%8D%AE%E5%BA%93/UnionAll/</url>
+    <content><![CDATA[<h1 id="UnionAll使用语句"><a href="#UnionAll使用语句" class="headerlink" title="UnionAll使用语句"></a><a href="https://www.runoob.com/sql/sql-union.html">UnionAll使用语句</a></h1><ul>
+<li>UNION 操作符用于合并两个或多个 SELECT 语句的结果集。<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator">/</span><span class="operator">/</span>参考代码</span><br><span class="line"><span class="keyword">SELECT</span> column1, column2, ...</span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> column1, column2, ..</span><br></pre></td></tr></table></figure>
+其中Oracle数据库中拼接的列名不能使用Null参数，必须给指定的类型对应！</li>
 </ul>
 ]]></content>
       <categories>
@@ -855,18 +946,6 @@
       </categories>
   </entry>
   <entry>
-    <title>UnionAll语句</title>
-    <url>/myblog/2025/11/06/%E6%95%B0%E6%8D%AE%E5%BA%93/UnionAll/</url>
-    <content><![CDATA[<h1 id="UnionAll使用语句"><a href="#UnionAll使用语句" class="headerlink" title="UnionAll使用语句"></a><a href="https://www.runoob.com/sql/sql-union.html">UnionAll使用语句</a></h1><ul>
-<li>UNION 操作符用于合并两个或多个 SELECT 语句的结果集。<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator">/</span><span class="operator">/</span>参考代码</span><br><span class="line"><span class="keyword">SELECT</span> column1, column2, ...</span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> column1, column2, ..</span><br></pre></td></tr></table></figure>
-其中Oracle数据库中拼接的列名不能使用Null参数，必须给指定的类型对应！</li>
-</ul>
-]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-  </entry>
-  <entry>
     <title>数据库基本介绍</title>
     <url>/myblog/2025/11/06/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC/</url>
     <content><![CDATA[<h1 id="数据库的基本介绍"><a href="#数据库的基本介绍" class="headerlink" title="数据库的基本介绍"></a>数据库的基本介绍</h1><ul>
@@ -946,258 +1025,6 @@
 ]]></content>
       <categories>
         <category>数据库</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Vue前端框架</title>
-    <url>/myblog/2025/11/06/%E5%89%8D%E7%AB%AF/Vue/</url>
-    <content><![CDATA[<h1 id="Vue-渐进式JavaScript框架"><a href="#Vue-渐进式JavaScript框架" class="headerlink" title="Vue 渐进式JavaScript框架"></a>Vue 渐进式JavaScript框架</h1><ul>
-<li>Vue.js 是一种用于构建用户界面的渐进式 JavaScript 框架，以其轻量、灵活和易于学习而闻名。本文将从基本概念、工作原理、架构设计等多个方面深入解析 Vue 的核心特性。</li>
-<li>一、Vue 的基本概念<ul>
-<li>1.1 核心思想<ul>
-<li>Vue 采用 MVVM（Model-View-ViewModel）架构，将数据（Model）、视图（View）和逻辑（ViewModel）分离，使得开发更加模块化和可维护。</li>
-</ul>
-</li>
-<li>1.2 响应式系统<ul>
-<li>Vue 的核心特性之一是其响应式系统，能够自动追踪数据的变化并更新 DOM。开发者只需关注数据的变化，而不需要手动操作 DOM。</li>
-</ul>
-</li>
-<li>1.3 模板语法<ul>
-<li>Vue 提供了简洁的模板语法，通过指令（如 v-if、v-for）和表达式（如 ）来操作 DOM。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>二、Vue 的工作原理<ul>
-<li>2.1 响应式原理<ul>
-<li>数据劫持：Vue 通过 Object.defineProperty 或 Proxy 来劫持对象的属性，监听数据的变化。</li>
-<li>依赖收集：当数据被访问时，Vue 会自动收集依赖关系。</li>
-<li>调度更新：当数据发生变化时，Vue 会触发更新队列，批量更新视图。</li>
-</ul>
-</li>
-<li>2.2 虚拟 DOM<ul>
-<li>Vue 使用虚拟 DOM 来提高渲染性能：</li>
-<li>创建虚拟节点：将 DOM 转换为 JavaScript 对象。</li>
-<li>比较差异：通过比较新旧虚拟节点的差异，确定需要更新的部分。</li>
-<li>最小化更新：只更新发生变化的 DOM 节点。</li>
-</ul>
-</li>
-<li>2.3 生命周期<ul>
-<li>Vue 组件具有完整的生命周期，从创建到销毁，每个阶段都有对应的钩子函数（如 created、mounted），方便开发者在不同阶段执行特定逻辑。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>三、Vue 的架构设计<ul>
-<li>3.1 组件化开发<ul>
-<li>Vue 强调组件化开发，将复杂的界面拆分为多个独立的组件，每个组件负责特定的功能。组件之间可以通过 props 和 events 进行通信。</li>
-</ul>
-</li>
-<li>3.2 单文件组件<ul>
-<li>Vue 提供 .vue 文件格式，将 HTML、CSS 和 JavaScript 代码集中在一个文件中，提高开发效率。</li>
-</ul>
-</li>
-<li>3.3 插件系统<ul>
-<li>Vue 提供了强大的插件系统，开发者可以扩展 Vue 的功能，如状态管理（Vuex）、路由管理（Vue Router）等。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>四、Vue 的性能优化<ul>
-<li>4.1 组件优化<ul>
-<li>加载：通过动态导入组件，减少初始加载时间。</li>
-<li>缓存：使用 keep-alive 缓存组件，避免重复渲染。</li>
-</ul>
-</li>
-<li>4.2 数据优化<ul>
-<li>计算属性：使用计算属性代替复杂逻辑，提高性能。</li>
-<li>防抖和节流：优化高频事件的处理，减少不必要的计算。</li>
-</ul>
-</li>
-<li>4.3 渲染优化<ul>
-<li>虚拟滚动：对于大量数据的渲染，使用虚拟滚动技术。</li>
-<li>异步更新：通过 nextTick 等机制优化 DOM 更新。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Nginx</title>
-    <url>/myblog/2025/11/06/%E5%B7%A5%E5%85%B7/hexo/Nginx/</url>
-    <content><![CDATA[<h1 id="Nginx-engine-x-HTTP和反向代理web服务器"><a href="#Nginx-engine-x-HTTP和反向代理web服务器" class="headerlink" title="Nginx (engine x) HTTP和反向代理web服务器"></a>Nginx (engine x) HTTP和反向代理web服务器</h1><ul>
-<li>一、Nginx 概念<ul>
-<li>1.1 起源与特点<ul>
-<li>Nginx（发音为 “engine X”）是一个高性能的 HTTP 和反向代理服务器，由俄罗斯程序员伊戈尔·西索夫（Igor Sysoev）于 2002 年开发。其设计目标是处理高并发请求，具有以下特点：</li>
-<li>高性能：能够处理大量并发连接，资源占用低。</li>
-<li>高可用性：支持热部署和无缝升级。</li>
-<li>模块化设计：支持多种模块扩展功能。</li>
-<li>跨平台：支持 Linux、Unix、Windows 等多种操作系统。</li>
-</ul>
-</li>
-<li>1.2 用途<ul>
-<li>开源Web服务器：用于托管静态和动态网站。</li>
-<li>反向代理：主要将请求转发到后端服务器，这个后端服务器可能是集群多台，但请求过来反向代理去了后端其中一台服务器。</li>
-<li>负载均衡：分发流量到多个服务器。</li>
-<li>内容缓存：缓存静态内容，提高响应速度。</li>
-<li>API 网关：作为 API 的入口，处理请求路由和安全验证。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>二、Nginx 的工作原理<ul>
-<li>2.1 事件驱动架构<ul>
-<li>Nginx 采用事件驱动的异步架构，其核心是基于非阻塞 I&#x2F;O 和多路复用技术。主要工作流程如下：</li>
-<li>事件循环：Nginx 的工作进程通过事件循环不断监听和处理网络事件。</li>
-<li>连接复用：支持 HTTP Keep-Alive，减少连接建立和关闭的开销。</li>
-<li>非阻塞 I&#x2F;O：通过非阻塞方式读写数据，避免线程阻塞。</li>
-</ul>
-</li>
-<li>2.2 请求处理流程<ul>
-<li>接收请求：Nginx 工作进程接收客户端请求。</li>
-<li>解析配置：根据配置文件决定如何处理请求。</li>
-<li>模块处理：调用相应的模块处理请求（如静态文件处理、反向代理等）。</li>
-<li>响应请求：将处理结果返回给客户端。</li>
-</ul>
-</li>
-<li>2.3 模块化设计<ul>
-<li>Nginx 的模块化设计使其功能高度可扩展。主要模块包括：</li>
-<li>核心模块：负责基础功能，如事件处理、网络连接等。</li>
-<li>HTTP 模块：处理 HTTP 请求，支持静态文件、CGI、FastCGI 等。</li>
-<li>第三方模块：通过扩展实现更多功能，如认证、缓存等。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>三、Nginx 的架构设计<ul>
-<li>3.1 多级架构<ul>
-<li>Nginx 的架构分为以下几个层次：</li>
-<li>核心层：负责事件循环、连接管理等基础功能。</li>
-<li>模块层：提供 HTTP、反向代理等功能。</li>
-<li>网络层：处理网络通信和数据传输。</li>
-</ul>
-</li>
-<li>3.2 进程模型<ul>
-<li>Nginx 采用多进程模型，包括一个主进程和多个工作进程：</li>
-<li>主进程：负责加载配置文件、管理工作进程等。</li>
-<li>工作进程：处理客户端请求，数量通常与 CPU 核心数相同。</li>
-</ul>
-</li>
-<li>3.3 线程池<ul>
-<li>Nginx 支持线程池，用于处理耗时操作（如磁盘 I&#x2F;O），避免阻塞事件循环。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>四、Nginx 的性能优化<ul>
-<li>4.1 静态文件缓存<ul>
-<li>缓存机制：通过 sendfile 和 tcp_nopush 等指令优化静态文件传输。</li>
-<li>压缩传输：使用 gzip 压缩静态文件，减少传输数据量。</li>
-</ul>
-</li>
-<li>4.2 负载均衡<ul>
-<li>轮询策略：将请求均匀分配到多个后端服务器。</li>
-<li>最少连接策略：优先将请求分配给连接数最少的服务器。</li>
-<li>IP 哈希策略：根据客户端 IP 哈希分配请求，确保同一客户端的请求分配到同一服务器。</li>
-</ul>
-</li>
-<li>4.3 反向代理与缓存<ul>
-<li>反向代理：通过 proxy_pass 将请求转发到后端服务器。</li>
-<li>缓存配置：使用 proxy_cache 配置缓存策略，减少后端服务器负载。</li>
-</ul>
-</li>
-<li>4.4 连接优化<ul>
-<li>Keep-Alive：通过 keepalive 指令复用连接，减少连接建立和关闭的开销。</li>
-<li>连接超时：合理设置连接超时时间，避免资源浪费。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>HEXO</title>
-    <url>/myblog/2025/11/06/%E5%B7%A5%E5%85%B7/hexo/hexo/</url>
-    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>一种快速、简单高效编写博客的框架。<a href="https://hexo.io/zh-cn/docs/">hexo官方文档</a></p>
-<p>个人使用主题:3-hexo <a href="https://yelog.org/">3-hexo官网</a><br>个人使用思维导图：<a href="https://markmap.org/zh-cn/hexo-markmap/">hexo-markmap</a></p>
-<p>同时支持安装各种第三方插件拓展</p>
-<figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">代码块示例:</span><br><span class="line"></span><br><span class="line">&#x27;Hello World!&#x27;</span><br><span class="line"><span class="keyword">Test</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword"></span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>node-js</title>
-    <url>/myblog/2025/11/06/%E5%B7%A5%E5%85%B7/hexo/node-js/</url>
-    <content><![CDATA[<h1 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h1><ul>
-<li>介绍<ul>
-<li>Node.js 是一个开源的、跨平台的 JavaScript 运行时环境，它允许开发者在服务器端运行 JavaScript 代码。Node.js 基于 Chrome V8 引擎，具有高性能和高并发的特点，常用于构建高性能的 Web 应用、网络应用和微服务。</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Tomcat</title>
-    <url>/myblog/2025/11/06/%E5%B7%A5%E5%85%B7/hexo/tomcat/</url>
-    <content><![CDATA[<h1 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h1><ul>
-<li><p>Apache Tomcat是由Apache Software Foundation（ASF）开发的一个开源Java WEB应用服务器</p>
-</li>
-<li><p>加载类和资源的顺序如下：</p>
-<ul>
-<li>&#x2F;Web-INF&#x2F;classes</li>
-<li>&#x2F;Web-INF&#x2F;lib&#x2F;*.jar</li>
-<li>Bootstrap</li>
-<li>System</li>
-<li>$CATALINA_HOME&#x2F;common&#x2F;classes</li>
-<li>$CATALINA_HOME&#x2F;common&#x2F;endores&#x2F;*.jar</li>
-<li>$CATALINA_HOME&#x2F;common&#x2F;lib&#x2F;*.jar</li>
-<li>$CATALINA_HOME&#x2F;shared&#x2F;classes</li>
-<li>$CATALINA_HOME&#x2F;shared&#x2F;lib&#x2F;*.jar</li>
-</ul>
-</li>
-<li><p>web.xml 配置标签</p>
-<ul>
-<li>servlet: 定义Servlet，包括Servlet名称、实现类、初始化参数等。</li>
-<li>servlet-mapping-: 映射Servlet到一个或多个URL模式。<ul>
-<li>url-pattern:配置指定路径映射Servlet<ul>
-<li>如果错误的配置会导致jsp或html成接口输出成纯文本<a href="https://husama.github.io/2017/05/31/Spring-MVC%E5%AD%A6%E4%B9%A0%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98-JSP%E6%9C%AA%E6%B8%B2%E6%9F%93-%E7%9B%B4%E6%8E%A5%E6%98%BE%E7%A4%BA%E6%BA%90%E7%A0%81.html">类似</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>filter: 定义过滤器，用于在请求处理链中执行过滤任务。</li>
-<li>filter-mapping: 将过滤器应用到特定的URL模式。</li>
-<li>listener: 定义事件监听器，用于响应应用生命周期事件。</li>
-<li>session-config: 配置会话（Session）的超时时间。</li>
-<li>welcome-file-list: 定义当请求URL为目录时，应该显示哪个欢迎文件。</li>
-<li>error-page: 定义错误页面，用于处理特定错误码或异常类型。</li>
-<li>security-constraint: 定义安全约束，用于限制对特定URL模式的访问。</li>
-<li>login-config: 定义登录配置，用于指定验证方法和登录页面。</li>
-<li>DefaultServlet控制缓存<ul>
-<li>Tomcat默认不会为静态资源设置特定的缓存头</li>
-<li>web.xml配置使用过滤器CacheControlFilter去设置浏览器缓存行为</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>工具</category>
       </categories>
   </entry>
   <entry>
@@ -1719,6 +1546,32 @@
       </categories>
   </entry>
   <entry>
+    <title>Maven</title>
+    <url>/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/Maven/</url>
+    <content><![CDATA[<h1 id="是-Apache-下的一个纯-Java-开发的开源项目。基于项目对象模型（缩写：POM）概念"><a href="#是-Apache-下的一个纯-Java-开发的开源项目。基于项目对象模型（缩写：POM）概念" class="headerlink" title="是 Apache 下的一个纯 Java 开发的开源项目。基于项目对象模型（缩写：POM）概念"></a>是 Apache 下的一个纯 Java 开发的开源项目。基于项目对象模型（缩写：POM）概念</h1><ul>
+<li><p>Maven利用一个中央信息片断能管理一个项目的构建、报告和文档等步骤。Maven 是一个项目管理工具，可以对 Java 项目进行构建、依赖管理。Maven 也可被用于构建和管理各种项目，例如 C#，Ruby，Scala 和其他语言编写的项目。Maven 曾是 Jakarta 项目的子项目，现为由 Apache 软件基金会主持的独立 Apache 项目。</p>
+</li>
+<li><p>Maven 的核心功能包括：</p>
+<ul>
+<li>项目构建（编译、测试、打包、部署）</li>
+<li>依赖管理（自动下载和管理第三方库）</li>
+<li>标准化项目结构（约定优于配置）</li>
+<li>插件扩展（支持自定义构建流程）</li>
+</ul>
+</li>
+<li><p>pom.xml 详解</p>
+<ul>
+<li>这是 Maven 的核心配置文件，定义了项目的基本信息和依赖。</li>
+<li>生成的 pom.xml 示例：<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">project</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- POM 模型版本，固定 4.0.0 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 项目坐标（唯一标识） --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.example<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>my-first-app<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 项目打包方式（默认 jar，也可以是 war、pom 等） --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">packaging</span>&gt;</span>jar<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 项目名称和 URL（可选） --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>my-first-app<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://www.example.com<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 依赖管理 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- JUnit 测试依赖 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span>  <span class="comment">&lt;!-- 仅用于测试 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!--  环境配置 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">properties</span>&gt;</span>...<span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">repositories</span>&gt;</span>...<span class="tag">&lt;/<span class="name">repositories</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!--  构建配置 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">build</span>&gt;</span>...<span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Hibernate</title>
     <url>/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/Hibernate/</url>
     <content><![CDATA[<h1 id="Hibernate-一种ORM-Object-Relative-DateBase-Mapping-框架"><a href="#Hibernate-一种ORM-Object-Relative-DateBase-Mapping-框架" class="headerlink" title="Hibernate 一种ORM(Object_Relative DateBase-Mapping)框架"></a>Hibernate 一种ORM(Object_Relative DateBase-Mapping)框架</h1><ul>
@@ -1799,23 +1652,52 @@
       </categories>
   </entry>
   <entry>
-    <title>Maven</title>
-    <url>/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/Maven/</url>
-    <content><![CDATA[<h1 id="是-Apache-下的一个纯-Java-开发的开源项目。基于项目对象模型（缩写：POM）概念"><a href="#是-Apache-下的一个纯-Java-开发的开源项目。基于项目对象模型（缩写：POM）概念" class="headerlink" title="是 Apache 下的一个纯 Java 开发的开源项目。基于项目对象模型（缩写：POM）概念"></a>是 Apache 下的一个纯 Java 开发的开源项目。基于项目对象模型（缩写：POM）概念</h1><ul>
-<li><p>Maven利用一个中央信息片断能管理一个项目的构建、报告和文档等步骤。Maven 是一个项目管理工具，可以对 Java 项目进行构建、依赖管理。Maven 也可被用于构建和管理各种项目，例如 C#，Ruby，Scala 和其他语言编写的项目。Maven 曾是 Jakarta 项目的子项目，现为由 Apache 软件基金会主持的独立 Apache 项目。</p>
+    <title>Mybatis缓存</title>
+    <url>/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/Mybatis%E7%BC%93%E5%AD%98/</url>
+    <content><![CDATA[<ul>
+<li><p>理解1、2、3级缓存和实战 <a href="https://www.cnblogs.com/cxuanBlog/p/11324034.html">原理参考文档</a> <a href="https://zhuanlan.zhihu.com/p/23650823064">实战参考文档</a></p>
 </li>
-<li><p>Maven 的核心功能包括：</p>
+<li><p>缓存执行过程</p>
 <ul>
-<li>项目构建（编译、测试、打包、部署）</li>
-<li>依赖管理（自动下载和管理第三方库）</li>
-<li>标准化项目结构（约定优于配置）</li>
-<li>插件扩展（支持自定义构建流程）</li>
+<li>3级缓存（自定义应用级缓存）：redis\Ehcache<ul>
+<li>因为二级缓存和一级缓存只适合单机单服务器的情况，针对集群或分布式就提供了自定义应用级缓存的方式解决</li>
+<li>Ehcache是进程内缓存（JVM堆内存&#x2F;堆外内存+本地磁盘）很多缓存都存储在本地服务器中，所以更适合本地单机的服务器用作2级缓存</li>
+<li>redis虽然本地没有Ehcache响应，但独立内存数据库，跨进程共享，且redis本身就支持分布式、哨兵等，所以更适合分布式和集群的缓存</li>
 </ul>
 </li>
-<li><p>pom.xml 详解</p>
+<li>2级缓存:同一Mapper共享<ul>
+<li>2级缓存相关配置参考说明 <a href="https://mybatis.net.cn/sqlmap-xml.html#cache">官服文档</a></li>
+</ul>
+</li>
+<li>1级缓存:同一session时</li>
+<li>最终db数据库执行sql<table><tr><th>缓存级别</th><th>作用域</th><th>生命周期</th><th>开启方式</th></tr><tr><td>一级缓存</td><td><span>SqlSession</span>级别</td><td>会话级（请求级）</td><td>默认开启</td></tr><tr><td>二级缓存</td><td>Mapper级别</td><td>应用级（跨会话）</td><td>需显式配置</td></tr><tr><td>三级缓存</td><td>应用集群级</td><td>分布式环境</td><td>需集成第三方</td></tr></table></li>
+</ul>
+</li>
+<li><p>1级缓存 session级别缓存</p>
 <ul>
-<li>这是 Maven 的核心配置文件，定义了项目的基本信息和依赖。</li>
-<li>生成的 pom.xml 示例：<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">project</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- POM 模型版本，固定 4.0.0 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 项目坐标（唯一标识） --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.example<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>my-first-app<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 项目打包方式（默认 jar，也可以是 war、pom 等） --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">packaging</span>&gt;</span>jar<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 项目名称和 URL（可选） --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>my-first-app<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://www.example.com<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 依赖管理 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- JUnit 测试依赖 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span>  <span class="comment">&lt;!-- 仅用于测试 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!--  环境配置 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">properties</span>&gt;</span>...<span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">repositories</span>&gt;</span>...<span class="tag">&lt;/<span class="name">repositories</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!--  构建配置 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">build</span>&gt;</span>...<span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>在同一个session中执行sql后会缓存执行的sql和结果</li>
+<li><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">try(SqlSession <span class="keyword">session</span> = sqlSessionFactory.openSession())&#123;</span><br><span class="line">    UserMapper mapper =  <span class="keyword">session</span>.getMapper(UserMapper.<span class="keyword">class</span>);</span><br><span class="line">    <span class="keyword">System</span>.<span class="keyword">out</span>.println(&quot;查询时间1开始:&quot;+<span class="keyword">System</span>.currentTimeMillis());</span><br><span class="line">    List&lt;<span class="keyword">User</span>&gt; userList = mapper.getUserList();</span><br><span class="line">    <span class="keyword">System</span>.<span class="keyword">out</span>.println(&quot;查询时间1结束:&quot;+<span class="keyword">System</span>.currentTimeMillis());</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">User</span> <span class="keyword">user</span> : userList) &#123;</span><br><span class="line">        <span class="keyword">System</span>.<span class="keyword">out</span>.println(<span class="keyword">user</span>.getId()+&quot;:&quot;+<span class="keyword">user</span>.getUsername());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">System</span>.<span class="keyword">out</span>.println(&quot;查询时间2开始:&quot;+<span class="keyword">System</span>.currentTimeMillis());</span><br><span class="line">    List&lt;<span class="keyword">User</span>&gt; userList2 = mapper.getUserList();</span><br><span class="line">    <span class="keyword">System</span>.<span class="keyword">out</span>.println(&quot;查询时间2结束:&quot;+<span class="keyword">System</span>.currentTimeMillis());</span><br><span class="line">    <span class="keyword">if</span>(userList==userList2)&#123;</span><br><span class="line">        <span class="keyword">System</span>.<span class="keyword">out</span>.println(&quot;缓存命中&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//执行结果</span><br><span class="line">//查询时间<span class="number">1</span>开始:<span class="number">1753322770960</span></span><br><span class="line">//查询时间<span class="number">1</span>结束:<span class="number">1753322771130</span></span><br><span class="line">//查询时间<span class="number">2</span>开始:<span class="number">1753322771135</span></span><br><span class="line">//查询时间<span class="number">2</span>结束:<span class="number">1753322771135</span></span><br><span class="line">//缓存命中</span><br><span class="line">    </span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>2级缓存 Mapper级别的共享缓存</p>
+<ul>
+<li>Step1：全局启用缓存  <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">&quot;cacheEnabled&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>Step2：Mapper文件声明缓存  <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">&quot;com.user.mapper.UserMapper&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">cache</span></span></span><br><span class="line"><span class="tag">            <span class="attr">eviction</span>=<span class="string">&quot;FIFO&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">flushInterval</span>=<span class="string">&quot;600000&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">size</span>=<span class="string">&quot;512&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">readOnly</span>=<span class="string">&quot;true&quot;</span>/&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 通用查询结果列 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">sql</span> <span class="attr">id</span>=<span class="string">&quot;Base_Column_List&quot;</span>&gt;</span></span><br><span class="line">        id, username, password, email, phone, status, create_time, update_time</span><br><span class="line">    <span class="tag">&lt;/<span class="name">sql</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;getUserList&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;com.user.entity.User&quot;</span> <span class="attr">useCache</span>=<span class="string">&quot;true&quot;</span> &gt;</span></span><br><span class="line">        select <span class="tag">&lt;<span class="name">include</span> <span class="attr">refid</span>=<span class="string">&quot;Base_Column_List&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">include</span>&gt;</span>  from user</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>测试代码  <figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">List&lt;User&gt; userList;</span><br><span class="line">List&lt;User&gt; userList2;</span><br><span class="line"><span class="keyword">try</span>(SqlSession session = sqlSessionFactory.openSession())&#123;</span><br><span class="line">    System.out.<span class="keyword">println</span>(<span class="string">&quot;session&quot;</span>);</span><br><span class="line">    UserMapper mapper =  session.getMapper(UserMapper.<span class="keyword">class</span>);</span><br><span class="line">    System.out.<span class="keyword">println</span>(<span class="string">&quot;查询时间1开始:&quot;</span>+System.currentTimeMillis());</span><br><span class="line">    userList = mapper.getUserList();</span><br><span class="line">    System.out.<span class="keyword">println</span>(<span class="string">&quot;userList长度:&quot;</span>+userList.<span class="keyword">size</span>());</span><br><span class="line">    System.out.<span class="keyword">println</span>(<span class="string">&quot;查询时间1结束:&quot;</span>+System.currentTimeMillis());</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">try</span>(SqlSession session2 = sqlSessionFactory.openSession())&#123;</span><br><span class="line">    System.out.<span class="keyword">println</span>(<span class="string">&quot;session2&quot;</span>);</span><br><span class="line">    UserMapper mapper =  session2.getMapper(UserMapper.<span class="keyword">class</span>);</span><br><span class="line">    System.out.<span class="keyword">println</span>(<span class="string">&quot;查询时间2开始:&quot;</span>+System.currentTimeMillis());</span><br><span class="line">    userList2 = mapper.getUserList();</span><br><span class="line">    System.out.<span class="keyword">println</span>(<span class="string">&quot;userList2长度:&quot;</span>+userList2.<span class="keyword">size</span>());</span><br><span class="line">    System.out.<span class="keyword">println</span>(<span class="string">&quot;查询时间2结束:&quot;</span>+System.currentTimeMillis());</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (userList==userList2)&#123;</span><br><span class="line">    System.out.<span class="keyword">println</span>(<span class="string">&quot;二级缓存命中&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//测试结果</span></span><br><span class="line"><span class="comment">//session</span></span><br><span class="line"><span class="comment">//查询时间1开始:1753328802014</span></span><br><span class="line"><span class="comment">//userList长度:72</span></span><br><span class="line"><span class="comment">//查询时间1结束:1753328802125</span></span><br><span class="line"><span class="comment">//session2</span></span><br><span class="line"><span class="comment">//查询时间2开始:1753328802126</span></span><br><span class="line"><span class="comment">//userList2长度:72</span></span><br><span class="line"><span class="comment">//查询时间2结束:1753328802126</span></span><br><span class="line"><span class="comment">//二级缓存命中</span></span><br><span class="line">    </span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>3级缓存</p>
+<ul>
+<li>本质上是实现了org.apache.ibatis.cache.Cache 接口的2级缓存，<ul>
+<li>这个接口定义了缓存的基本操作：putObject, getObject, removeObject, clear, getSize, getReadWriteLock，</li>
+</ul>
+</li>
+<li>值得注意的是RedisCache二级缓存响应的是redis库中的数据，返回的实体不能用’&#x3D;&#x3D;’判断，因为实体在内存中不是同一个<ul>
+<li>查询结果会存在redis中用hash命名实体,key(时间戳+全路径实体名+sql):value(sql结果)</li>
+</ul>
+</li>
+<li>Ehcache则可以用’&#x3D;&#x3D;’判断,获取到的二级缓存是同一个  <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">//mapper文件</span><br><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">&quot;com.user.mapper.UserMapper&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">cache</span>  <span class="attr">type</span>=<span class="string">&quot;org.mybatis.caches.ehcache.EhcacheCache&quot;</span> /&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 或 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">cache</span> <span class="attr">type</span>=<span class="string">&quot;org.mybatis.caches.redis.RedisCache&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br><span class="line"></span><br><span class="line">// application文件 </span><br><span class="line"></span><br><span class="line">//开启缓存</span><br><span class="line">//mybatis-plus.configuration.cache-enabled=true</span><br><span class="line"></span><br><span class="line">//redis 配置</span><br><span class="line">//redis.host=localhost</span><br><span class="line">//redis.port=6379</span><br><span class="line">//redis.connectionTimeout=5000</span><br><span class="line">//redis.password=</span><br><span class="line">//redis.database=0</span><br><span class="line"></span><br><span class="line">//pom文件</span><br><span class="line">    <span class="comment">&lt;!-- mybatis cache --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.caches<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-ehcache<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- ehcache --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.ehcache<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>ehcache<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.8.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- redis --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>redis.clients<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jedis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.7.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- mybatis redis --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.caches<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-redis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.0-beta2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>测试响应  <figure class="highlight ceylon"><table><tr><td class="code"><pre><span class="line">        List&lt;User&gt; userList;</span><br><span class="line">        List&lt;User&gt; userList<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">try</span>(SqlSession session = sqlSessionFactory.openSession())&#123;</span><br><span class="line">            UserMapper mapper =  session.getMapper(UserMapper.<span class="keyword">class</span>);</span><br><span class="line">            System.<span class="keyword">out</span>.println(<span class="string">&quot;查询时间1开始:&quot;</span>+System.currentTimeMillis());</span><br><span class="line">            userList = mapper.getUserList();</span><br><span class="line">            System.<span class="keyword">out</span>.println(<span class="string">&quot;查询时间1结束:&quot;</span>+System.currentTimeMillis());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">try</span>(SqlSession session<span class="number">2</span> = sqlSessionFactory.openSession())&#123;</span><br><span class="line">            UserMapper mapper =  session<span class="number">2</span>.getMapper(UserMapper.<span class="keyword">class</span>);</span><br><span class="line">            System.<span class="keyword">out</span>.println(<span class="string">&quot;查询时间2开始:&quot;</span>+System.currentTimeMillis());</span><br><span class="line">            userList<span class="number">2</span> = mapper.getUserList();</span><br><span class="line">            System.<span class="keyword">out</span>.println(<span class="string">&quot;查询时间2结束:&quot;</span>+System.currentTimeMillis());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (userList==userList<span class="number">2</span>)&#123;</span><br><span class="line">            System.<span class="keyword">out</span>.println(<span class="string">&quot;二级缓存命中&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//reids测试结果 </span></span><br><span class="line"><span class="comment">//查询时间1开始:1753351457712</span></span><br><span class="line"><span class="comment">//查询时间1结束:1753351457825</span></span><br><span class="line"><span class="comment">//查询时间2开始:1753351457828</span></span><br><span class="line"><span class="comment">//查询时间2结束:1753351457829</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Ehcache测试结果</span></span><br><span class="line"><span class="comment">//查询时间1开始:1753352167864</span></span><br><span class="line"><span class="comment">//查询时间1结束:1753352167972</span></span><br><span class="line"><span class="comment">//查询时间2开始:1753352167974</span></span><br><span class="line"><span class="comment">//查询时间2结束:1753352167974</span></span><br><span class="line"><span class="comment">//二级缓存命中</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 </ul>
@@ -2007,61 +1889,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Mybatis缓存</title>
-    <url>/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/Mybatis%E7%BC%93%E5%AD%98/</url>
-    <content><![CDATA[<ul>
-<li><p>理解1、2、3级缓存和实战 <a href="https://www.cnblogs.com/cxuanBlog/p/11324034.html">原理参考文档</a> <a href="https://zhuanlan.zhihu.com/p/23650823064">实战参考文档</a></p>
-</li>
-<li><p>缓存执行过程</p>
-<ul>
-<li>3级缓存（自定义应用级缓存）：redis\Ehcache<ul>
-<li>因为二级缓存和一级缓存只适合单机单服务器的情况，针对集群或分布式就提供了自定义应用级缓存的方式解决</li>
-<li>Ehcache是进程内缓存（JVM堆内存&#x2F;堆外内存+本地磁盘）很多缓存都存储在本地服务器中，所以更适合本地单机的服务器用作2级缓存</li>
-<li>redis虽然本地没有Ehcache响应，但独立内存数据库，跨进程共享，且redis本身就支持分布式、哨兵等，所以更适合分布式和集群的缓存</li>
-</ul>
-</li>
-<li>2级缓存:同一Mapper共享<ul>
-<li>2级缓存相关配置参考说明 <a href="https://mybatis.net.cn/sqlmap-xml.html#cache">官服文档</a></li>
-</ul>
-</li>
-<li>1级缓存:同一session时</li>
-<li>最终db数据库执行sql<table><tr><th>缓存级别</th><th>作用域</th><th>生命周期</th><th>开启方式</th></tr><tr><td>一级缓存</td><td><span>SqlSession</span>级别</td><td>会话级（请求级）</td><td>默认开启</td></tr><tr><td>二级缓存</td><td>Mapper级别</td><td>应用级（跨会话）</td><td>需显式配置</td></tr><tr><td>三级缓存</td><td>应用集群级</td><td>分布式环境</td><td>需集成第三方</td></tr></table></li>
-</ul>
-</li>
-<li><p>1级缓存 session级别缓存</p>
-<ul>
-<li>在同一个session中执行sql后会缓存执行的sql和结果</li>
-<li><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">try(SqlSession <span class="keyword">session</span> = sqlSessionFactory.openSession())&#123;</span><br><span class="line">    UserMapper mapper =  <span class="keyword">session</span>.getMapper(UserMapper.<span class="keyword">class</span>);</span><br><span class="line">    <span class="keyword">System</span>.<span class="keyword">out</span>.println(&quot;查询时间1开始:&quot;+<span class="keyword">System</span>.currentTimeMillis());</span><br><span class="line">    List&lt;<span class="keyword">User</span>&gt; userList = mapper.getUserList();</span><br><span class="line">    <span class="keyword">System</span>.<span class="keyword">out</span>.println(&quot;查询时间1结束:&quot;+<span class="keyword">System</span>.currentTimeMillis());</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">User</span> <span class="keyword">user</span> : userList) &#123;</span><br><span class="line">        <span class="keyword">System</span>.<span class="keyword">out</span>.println(<span class="keyword">user</span>.getId()+&quot;:&quot;+<span class="keyword">user</span>.getUsername());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">System</span>.<span class="keyword">out</span>.println(&quot;查询时间2开始:&quot;+<span class="keyword">System</span>.currentTimeMillis());</span><br><span class="line">    List&lt;<span class="keyword">User</span>&gt; userList2 = mapper.getUserList();</span><br><span class="line">    <span class="keyword">System</span>.<span class="keyword">out</span>.println(&quot;查询时间2结束:&quot;+<span class="keyword">System</span>.currentTimeMillis());</span><br><span class="line">    <span class="keyword">if</span>(userList==userList2)&#123;</span><br><span class="line">        <span class="keyword">System</span>.<span class="keyword">out</span>.println(&quot;缓存命中&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//执行结果</span><br><span class="line">//查询时间<span class="number">1</span>开始:<span class="number">1753322770960</span></span><br><span class="line">//查询时间<span class="number">1</span>结束:<span class="number">1753322771130</span></span><br><span class="line">//查询时间<span class="number">2</span>开始:<span class="number">1753322771135</span></span><br><span class="line">//查询时间<span class="number">2</span>结束:<span class="number">1753322771135</span></span><br><span class="line">//缓存命中</span><br><span class="line">    </span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>2级缓存 Mapper级别的共享缓存</p>
-<ul>
-<li>Step1：全局启用缓存  <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">&quot;cacheEnabled&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li>Step2：Mapper文件声明缓存  <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">&quot;com.user.mapper.UserMapper&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">cache</span></span></span><br><span class="line"><span class="tag">            <span class="attr">eviction</span>=<span class="string">&quot;FIFO&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">flushInterval</span>=<span class="string">&quot;600000&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">size</span>=<span class="string">&quot;512&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">readOnly</span>=<span class="string">&quot;true&quot;</span>/&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 通用查询结果列 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">sql</span> <span class="attr">id</span>=<span class="string">&quot;Base_Column_List&quot;</span>&gt;</span></span><br><span class="line">        id, username, password, email, phone, status, create_time, update_time</span><br><span class="line">    <span class="tag">&lt;/<span class="name">sql</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;getUserList&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;com.user.entity.User&quot;</span> <span class="attr">useCache</span>=<span class="string">&quot;true&quot;</span> &gt;</span></span><br><span class="line">        select <span class="tag">&lt;<span class="name">include</span> <span class="attr">refid</span>=<span class="string">&quot;Base_Column_List&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">include</span>&gt;</span>  from user</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li>测试代码  <figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">List&lt;User&gt; userList;</span><br><span class="line">List&lt;User&gt; userList2;</span><br><span class="line"><span class="keyword">try</span>(SqlSession session = sqlSessionFactory.openSession())&#123;</span><br><span class="line">    System.out.<span class="keyword">println</span>(<span class="string">&quot;session&quot;</span>);</span><br><span class="line">    UserMapper mapper =  session.getMapper(UserMapper.<span class="keyword">class</span>);</span><br><span class="line">    System.out.<span class="keyword">println</span>(<span class="string">&quot;查询时间1开始:&quot;</span>+System.currentTimeMillis());</span><br><span class="line">    userList = mapper.getUserList();</span><br><span class="line">    System.out.<span class="keyword">println</span>(<span class="string">&quot;userList长度:&quot;</span>+userList.<span class="keyword">size</span>());</span><br><span class="line">    System.out.<span class="keyword">println</span>(<span class="string">&quot;查询时间1结束:&quot;</span>+System.currentTimeMillis());</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">try</span>(SqlSession session2 = sqlSessionFactory.openSession())&#123;</span><br><span class="line">    System.out.<span class="keyword">println</span>(<span class="string">&quot;session2&quot;</span>);</span><br><span class="line">    UserMapper mapper =  session2.getMapper(UserMapper.<span class="keyword">class</span>);</span><br><span class="line">    System.out.<span class="keyword">println</span>(<span class="string">&quot;查询时间2开始:&quot;</span>+System.currentTimeMillis());</span><br><span class="line">    userList2 = mapper.getUserList();</span><br><span class="line">    System.out.<span class="keyword">println</span>(<span class="string">&quot;userList2长度:&quot;</span>+userList2.<span class="keyword">size</span>());</span><br><span class="line">    System.out.<span class="keyword">println</span>(<span class="string">&quot;查询时间2结束:&quot;</span>+System.currentTimeMillis());</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (userList==userList2)&#123;</span><br><span class="line">    System.out.<span class="keyword">println</span>(<span class="string">&quot;二级缓存命中&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//测试结果</span></span><br><span class="line"><span class="comment">//session</span></span><br><span class="line"><span class="comment">//查询时间1开始:1753328802014</span></span><br><span class="line"><span class="comment">//userList长度:72</span></span><br><span class="line"><span class="comment">//查询时间1结束:1753328802125</span></span><br><span class="line"><span class="comment">//session2</span></span><br><span class="line"><span class="comment">//查询时间2开始:1753328802126</span></span><br><span class="line"><span class="comment">//userList2长度:72</span></span><br><span class="line"><span class="comment">//查询时间2结束:1753328802126</span></span><br><span class="line"><span class="comment">//二级缓存命中</span></span><br><span class="line">    </span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>3级缓存</p>
-<ul>
-<li>本质上是实现了org.apache.ibatis.cache.Cache 接口的2级缓存，<ul>
-<li>这个接口定义了缓存的基本操作：putObject, getObject, removeObject, clear, getSize, getReadWriteLock，</li>
-</ul>
-</li>
-<li>值得注意的是RedisCache二级缓存响应的是redis库中的数据，返回的实体不能用’&#x3D;&#x3D;’判断，因为实体在内存中不是同一个<ul>
-<li>查询结果会存在redis中用hash命名实体,key(时间戳+全路径实体名+sql):value(sql结果)</li>
-</ul>
-</li>
-<li>Ehcache则可以用’&#x3D;&#x3D;’判断,获取到的二级缓存是同一个  <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">//mapper文件</span><br><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">&quot;com.user.mapper.UserMapper&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">cache</span>  <span class="attr">type</span>=<span class="string">&quot;org.mybatis.caches.ehcache.EhcacheCache&quot;</span> /&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 或 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">cache</span> <span class="attr">type</span>=<span class="string">&quot;org.mybatis.caches.redis.RedisCache&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br><span class="line"></span><br><span class="line">// application文件 </span><br><span class="line"></span><br><span class="line">//开启缓存</span><br><span class="line">//mybatis-plus.configuration.cache-enabled=true</span><br><span class="line"></span><br><span class="line">//redis 配置</span><br><span class="line">//redis.host=localhost</span><br><span class="line">//redis.port=6379</span><br><span class="line">//redis.connectionTimeout=5000</span><br><span class="line">//redis.password=</span><br><span class="line">//redis.database=0</span><br><span class="line"></span><br><span class="line">//pom文件</span><br><span class="line">    <span class="comment">&lt;!-- mybatis cache --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.caches<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-ehcache<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- ehcache --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.ehcache<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>ehcache<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.8.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- redis --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>redis.clients<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jedis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.7.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- mybatis redis --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.caches<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-redis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.0-beta2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li>测试响应  <figure class="highlight ceylon"><table><tr><td class="code"><pre><span class="line">        List&lt;User&gt; userList;</span><br><span class="line">        List&lt;User&gt; userList<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">try</span>(SqlSession session = sqlSessionFactory.openSession())&#123;</span><br><span class="line">            UserMapper mapper =  session.getMapper(UserMapper.<span class="keyword">class</span>);</span><br><span class="line">            System.<span class="keyword">out</span>.println(<span class="string">&quot;查询时间1开始:&quot;</span>+System.currentTimeMillis());</span><br><span class="line">            userList = mapper.getUserList();</span><br><span class="line">            System.<span class="keyword">out</span>.println(<span class="string">&quot;查询时间1结束:&quot;</span>+System.currentTimeMillis());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">try</span>(SqlSession session<span class="number">2</span> = sqlSessionFactory.openSession())&#123;</span><br><span class="line">            UserMapper mapper =  session<span class="number">2</span>.getMapper(UserMapper.<span class="keyword">class</span>);</span><br><span class="line">            System.<span class="keyword">out</span>.println(<span class="string">&quot;查询时间2开始:&quot;</span>+System.currentTimeMillis());</span><br><span class="line">            userList<span class="number">2</span> = mapper.getUserList();</span><br><span class="line">            System.<span class="keyword">out</span>.println(<span class="string">&quot;查询时间2结束:&quot;</span>+System.currentTimeMillis());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (userList==userList<span class="number">2</span>)&#123;</span><br><span class="line">            System.<span class="keyword">out</span>.println(<span class="string">&quot;二级缓存命中&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//reids测试结果 </span></span><br><span class="line"><span class="comment">//查询时间1开始:1753351457712</span></span><br><span class="line"><span class="comment">//查询时间1结束:1753351457825</span></span><br><span class="line"><span class="comment">//查询时间2开始:1753351457828</span></span><br><span class="line"><span class="comment">//查询时间2结束:1753351457829</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Ehcache测试结果</span></span><br><span class="line"><span class="comment">//查询时间1开始:1753352167864</span></span><br><span class="line"><span class="comment">//查询时间1结束:1753352167972</span></span><br><span class="line"><span class="comment">//查询时间2开始:1753352167974</span></span><br><span class="line"><span class="comment">//查询时间2结束:1753352167974</span></span><br><span class="line"><span class="comment">//二级缓存命中</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-  </entry>
-  <entry>
     <title>SrpingMVC</title>
     <url>/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/SpinrgMVC/</url>
     <content><![CDATA[<ul>
@@ -2140,6 +1967,61 @@
 </style>
 
 <h1 id="思维导图未加载就请刷新网页"><a href="#思维导图未加载就请刷新网页" class="headerlink" title="思维导图未加载就请刷新网页"></a>思维导图未加载就请刷新网页</h1>]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>SpringCloud</title>
+    <url>/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/SpringCloud/</url>
+    <content><![CDATA[<h1 id="SpringCloud"><a href="#SpringCloud" class="headerlink" title="SpringCloud"></a>SpringCloud</h1><ul>
+<li>SpringCloud是基于SpringBoot的集合框架，主要用与开发分布式服务器。</li>
+<li><ol>
+<li>Spring Cloud 简介</li>
+</ol>
+<ul>
+<li>Spring Cloud 是一系列框架的有序集合，利用 Spring Boot 的开发便利性，简化了分布式系统基础设施的开发。它整合了 Netflix 等公司的成熟框架，提供了服务发现注册、配置中心、消息总线、负载均衡、断路器等功能，是一套简单易用、易部署和易维护的分布式系统开发工具包。</li>
+</ul>
+</li>
+<li><ol start="2">
+<li>Spring Cloud 特点</li>
+</ol>
+<ul>
+<li>集成性：深度集成 Netflix 开源组件，提供完整且经过实践检验的微服务解决方案。</li>
+<li>易用性：遵循 Spring Boot 开发风格，提供丰富文档和社区支持。</li>
+<li>灵活性：可根据项目需求选择适合的组件进行集成。</li>
+<li>扩展性：支持水平或垂直扩展，适应业务发展。</li>
+<li>可靠性：通过熔断器、负载均衡等机制，确保系统稳定性和可靠性。</li>
+</ul>
+</li>
+<li><ol start="3">
+<li>Spring Cloud 核心组件与原理</li>
+</ol>
+<ul>
+<li>3.1 服务注册与发现<ul>
+<li>服务提供者启动时，会将自己的网络地址、端口号等信息注册到注册中心（如 Eureka、Consul 或 Zookeeper 等），服务消费者通过注册中心查询所需服务的信息，实现服务的动态发现。</li>
+</ul>
+</li>
+<li>3.2 负载均衡<ul>
+<li>Spring Cloud 通过集成 Ribbon 或 Feign 等组件来实现负载均衡，根据一定的算法选择合适的服务实例进行请求转发。</li>
+</ul>
+</li>
+<li>3.3 容错处理<ul>
+<li>引入熔断器模式（如 Hystrix），在服务调用出现连续失败时，暂时停止对该服务的调用，避免进一步的资源浪费和性能下降。</li>
+</ul>
+</li>
+<li>3.4 服务网关<ul>
+<li>服务网关（如 Zuul 或 Spring Cloud Gateway）作为微服务架构的入口，负责处理外部请求并转发到内部的服务实例上，支持动态路由、请求过滤、安全认证等功能。</li>
+</ul>
+</li>
+<li>3.5 配置管理<ul>
+<li>Spring Cloud Config 将配置信息存储在外部的配置中心（如 Git 仓库、数据库等），各个微服务在启动时从配置中心获取所需的配置信息，支持配置的版本控制和动态刷新功能</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
       <categories>
         <category>后端</category>
       </categories>
@@ -2313,6 +2195,137 @@
       </categories>
   </entry>
   <entry>
+    <title>python编程语言</title>
+    <url>/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/python/python/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>HEXO</title>
+    <url>/myblog/2025/11/06/%E5%B7%A5%E5%85%B7/hexo/hexo/</url>
+    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>一种快速、简单高效编写博客的框架。<a href="https://hexo.io/zh-cn/docs/">hexo官方文档</a></p>
+<p>个人使用主题:3-hexo <a href="https://yelog.org/">3-hexo官网</a><br>个人使用思维导图：<a href="https://markmap.org/zh-cn/hexo-markmap/">hexo-markmap</a></p>
+<p>同时支持安装各种第三方插件拓展</p>
+<figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">代码块示例:</span><br><span class="line"></span><br><span class="line">&#x27;Hello World!&#x27;</span><br><span class="line"><span class="keyword">Test</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword"></span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Nginx</title>
+    <url>/myblog/2025/11/06/%E5%B7%A5%E5%85%B7/hexo/Nginx/</url>
+    <content><![CDATA[<h1 id="Nginx-engine-x-HTTP和反向代理web服务器"><a href="#Nginx-engine-x-HTTP和反向代理web服务器" class="headerlink" title="Nginx (engine x) HTTP和反向代理web服务器"></a>Nginx (engine x) HTTP和反向代理web服务器</h1><ul>
+<li>一、Nginx 概念<ul>
+<li>1.1 起源与特点<ul>
+<li>Nginx（发音为 “engine X”）是一个高性能的 HTTP 和反向代理服务器，由俄罗斯程序员伊戈尔·西索夫（Igor Sysoev）于 2002 年开发。其设计目标是处理高并发请求，具有以下特点：</li>
+<li>高性能：能够处理大量并发连接，资源占用低。</li>
+<li>高可用性：支持热部署和无缝升级。</li>
+<li>模块化设计：支持多种模块扩展功能。</li>
+<li>跨平台：支持 Linux、Unix、Windows 等多种操作系统。</li>
+</ul>
+</li>
+<li>1.2 用途<ul>
+<li>开源Web服务器：用于托管静态和动态网站。</li>
+<li>反向代理：主要将请求转发到后端服务器，这个后端服务器可能是集群多台，但请求过来反向代理去了后端其中一台服务器。</li>
+<li>负载均衡：分发流量到多个服务器。</li>
+<li>内容缓存：缓存静态内容，提高响应速度。</li>
+<li>API 网关：作为 API 的入口，处理请求路由和安全验证。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>二、Nginx 的工作原理<ul>
+<li>2.1 事件驱动架构<ul>
+<li>Nginx 采用事件驱动的异步架构，其核心是基于非阻塞 I&#x2F;O 和多路复用技术。主要工作流程如下：</li>
+<li>事件循环：Nginx 的工作进程通过事件循环不断监听和处理网络事件。</li>
+<li>连接复用：支持 HTTP Keep-Alive，减少连接建立和关闭的开销。</li>
+<li>非阻塞 I&#x2F;O：通过非阻塞方式读写数据，避免线程阻塞。</li>
+</ul>
+</li>
+<li>2.2 请求处理流程<ul>
+<li>接收请求：Nginx 工作进程接收客户端请求。</li>
+<li>解析配置：根据配置文件决定如何处理请求。</li>
+<li>模块处理：调用相应的模块处理请求（如静态文件处理、反向代理等）。</li>
+<li>响应请求：将处理结果返回给客户端。</li>
+</ul>
+</li>
+<li>2.3 模块化设计<ul>
+<li>Nginx 的模块化设计使其功能高度可扩展。主要模块包括：</li>
+<li>核心模块：负责基础功能，如事件处理、网络连接等。</li>
+<li>HTTP 模块：处理 HTTP 请求，支持静态文件、CGI、FastCGI 等。</li>
+<li>第三方模块：通过扩展实现更多功能，如认证、缓存等。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>三、Nginx 的架构设计<ul>
+<li>3.1 多级架构<ul>
+<li>Nginx 的架构分为以下几个层次：</li>
+<li>核心层：负责事件循环、连接管理等基础功能。</li>
+<li>模块层：提供 HTTP、反向代理等功能。</li>
+<li>网络层：处理网络通信和数据传输。</li>
+</ul>
+</li>
+<li>3.2 进程模型<ul>
+<li>Nginx 采用多进程模型，包括一个主进程和多个工作进程：</li>
+<li>主进程：负责加载配置文件、管理工作进程等。</li>
+<li>工作进程：处理客户端请求，数量通常与 CPU 核心数相同。</li>
+</ul>
+</li>
+<li>3.3 线程池<ul>
+<li>Nginx 支持线程池，用于处理耗时操作（如磁盘 I&#x2F;O），避免阻塞事件循环。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>四、Nginx 的性能优化<ul>
+<li>4.1 静态文件缓存<ul>
+<li>缓存机制：通过 sendfile 和 tcp_nopush 等指令优化静态文件传输。</li>
+<li>压缩传输：使用 gzip 压缩静态文件，减少传输数据量。</li>
+</ul>
+</li>
+<li>4.2 负载均衡<ul>
+<li>轮询策略：将请求均匀分配到多个后端服务器。</li>
+<li>最少连接策略：优先将请求分配给连接数最少的服务器。</li>
+<li>IP 哈希策略：根据客户端 IP 哈希分配请求，确保同一客户端的请求分配到同一服务器。</li>
+</ul>
+</li>
+<li>4.3 反向代理与缓存<ul>
+<li>反向代理：通过 proxy_pass 将请求转发到后端服务器。</li>
+<li>缓存配置：使用 proxy_cache 配置缓存策略，减少后端服务器负载。</li>
+</ul>
+</li>
+<li>4.4 连接优化<ul>
+<li>Keep-Alive：通过 keepalive 指令复用连接，减少连接建立和关闭的开销。</li>
+<li>连接超时：合理设置连接超时时间，避免资源浪费。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>node-js</title>
+    <url>/myblog/2025/11/06/%E5%B7%A5%E5%85%B7/hexo/node-js/</url>
+    <content><![CDATA[<h1 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h1><ul>
+<li>介绍<ul>
+<li>Node.js 是一个开源的、跨平台的 JavaScript 运行时环境，它允许开发者在服务器端运行 JavaScript 代码。Node.js 基于 Chrome V8 引擎，具有高性能和高并发的特点，常用于构建高性能的 Web 应用、网络应用和微服务。</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+  </entry>
+  <entry>
     <title>SpringBoot</title>
     <url>/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/SpringBoot/</url>
     <content><![CDATA[<h1 id="SpringBoot官网"><a href="#SpringBoot官网" class="headerlink" title="SpringBoot官网"></a>SpringBoot<a href="https://docs.spring.io/spring-boot/docs/2.0.1.RELEASE/reference/htmlsingle/?utm_source=blog0716">官网</a></h1><ul>
@@ -2361,58 +2374,45 @@
       </categories>
   </entry>
   <entry>
-    <title>python编程语言</title>
-    <url>/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/python/python/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>SpringCloud</title>
-    <url>/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/SpringCloud/</url>
-    <content><![CDATA[<h1 id="SpringCloud"><a href="#SpringCloud" class="headerlink" title="SpringCloud"></a>SpringCloud</h1><ul>
-<li>SpringCloud是基于SpringBoot的集合框架，主要用与开发分布式服务器。</li>
-<li><ol>
-<li>Spring Cloud 简介</li>
-</ol>
+    <title>Tomcat</title>
+    <url>/myblog/2025/11/06/%E5%B7%A5%E5%85%B7/hexo/tomcat/</url>
+    <content><![CDATA[<h1 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h1><ul>
+<li><p>Apache Tomcat是由Apache Software Foundation（ASF）开发的一个开源Java WEB应用服务器</p>
+</li>
+<li><p>加载类和资源的顺序如下：</p>
 <ul>
-<li>Spring Cloud 是一系列框架的有序集合，利用 Spring Boot 的开发便利性，简化了分布式系统基础设施的开发。它整合了 Netflix 等公司的成熟框架，提供了服务发现注册、配置中心、消息总线、负载均衡、断路器等功能，是一套简单易用、易部署和易维护的分布式系统开发工具包。</li>
+<li>&#x2F;Web-INF&#x2F;classes</li>
+<li>&#x2F;Web-INF&#x2F;lib&#x2F;*.jar</li>
+<li>Bootstrap</li>
+<li>System</li>
+<li>$CATALINA_HOME&#x2F;common&#x2F;classes</li>
+<li>$CATALINA_HOME&#x2F;common&#x2F;endores&#x2F;*.jar</li>
+<li>$CATALINA_HOME&#x2F;common&#x2F;lib&#x2F;*.jar</li>
+<li>$CATALINA_HOME&#x2F;shared&#x2F;classes</li>
+<li>$CATALINA_HOME&#x2F;shared&#x2F;lib&#x2F;*.jar</li>
 </ul>
 </li>
-<li><ol start="2">
-<li>Spring Cloud 特点</li>
-</ol>
+<li><p>web.xml 配置标签</p>
 <ul>
-<li>集成性：深度集成 Netflix 开源组件，提供完整且经过实践检验的微服务解决方案。</li>
-<li>易用性：遵循 Spring Boot 开发风格，提供丰富文档和社区支持。</li>
-<li>灵活性：可根据项目需求选择适合的组件进行集成。</li>
-<li>扩展性：支持水平或垂直扩展，适应业务发展。</li>
-<li>可靠性：通过熔断器、负载均衡等机制，确保系统稳定性和可靠性。</li>
+<li>servlet: 定义Servlet，包括Servlet名称、实现类、初始化参数等。</li>
+<li>servlet-mapping-: 映射Servlet到一个或多个URL模式。<ul>
+<li>url-pattern:配置指定路径映射Servlet<ul>
+<li>如果错误的配置会导致jsp或html成接口输出成纯文本<a href="https://husama.github.io/2017/05/31/Spring-MVC%E5%AD%A6%E4%B9%A0%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98-JSP%E6%9C%AA%E6%B8%B2%E6%9F%93-%E7%9B%B4%E6%8E%A5%E6%98%BE%E7%A4%BA%E6%BA%90%E7%A0%81.html">类似</a></li>
 </ul>
 </li>
-<li><ol start="3">
-<li>Spring Cloud 核心组件与原理</li>
-</ol>
-<ul>
-<li>3.1 服务注册与发现<ul>
-<li>服务提供者启动时，会将自己的网络地址、端口号等信息注册到注册中心（如 Eureka、Consul 或 Zookeeper 等），服务消费者通过注册中心查询所需服务的信息，实现服务的动态发现。</li>
 </ul>
 </li>
-<li>3.2 负载均衡<ul>
-<li>Spring Cloud 通过集成 Ribbon 或 Feign 等组件来实现负载均衡，根据一定的算法选择合适的服务实例进行请求转发。</li>
-</ul>
-</li>
-<li>3.3 容错处理<ul>
-<li>引入熔断器模式（如 Hystrix），在服务调用出现连续失败时，暂时停止对该服务的调用，避免进一步的资源浪费和性能下降。</li>
-</ul>
-</li>
-<li>3.4 服务网关<ul>
-<li>服务网关（如 Zuul 或 Spring Cloud Gateway）作为微服务架构的入口，负责处理外部请求并转发到内部的服务实例上，支持动态路由、请求过滤、安全认证等功能。</li>
-</ul>
-</li>
-<li>3.5 配置管理<ul>
-<li>Spring Cloud Config 将配置信息存储在外部的配置中心（如 Git 仓库、数据库等），各个微服务在启动时从配置中心获取所需的配置信息，支持配置的版本控制和动态刷新功能</li>
+<li>filter: 定义过滤器，用于在请求处理链中执行过滤任务。</li>
+<li>filter-mapping: 将过滤器应用到特定的URL模式。</li>
+<li>listener: 定义事件监听器，用于响应应用生命周期事件。</li>
+<li>session-config: 配置会话（Session）的超时时间。</li>
+<li>welcome-file-list: 定义当请求URL为目录时，应该显示哪个欢迎文件。</li>
+<li>error-page: 定义错误页面，用于处理特定错误码或异常类型。</li>
+<li>security-constraint: 定义安全约束，用于限制对特定URL模式的访问。</li>
+<li>login-config: 定义登录配置，用于指定验证方法和登录页面。</li>
+<li>DefaultServlet控制缓存<ul>
+<li>Tomcat默认不会为静态资源设置特定的缓存头</li>
+<li>web.xml配置使用过滤器CacheControlFilter去设置浏览器缓存行为</li>
 </ul>
 </li>
 </ul>
@@ -2420,7 +2420,7 @@
 </ul>
 ]]></content>
       <categories>
-        <category>后端</category>
+        <category>工具</category>
       </categories>
   </entry>
 </search>
