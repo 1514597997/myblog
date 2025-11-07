@@ -20,16 +20,17 @@
     var CONFIG = {"hostname":"151459797.github.io","root":"/myblog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Hibernate 一种ORM(Object_Relative DateBase-Mapping)框架 一、Hibernate 的基本概念 1.1 核心思想 Hibernate 是一个开源的对象关系映射（ORM）框架，用于将 Java 对象映射到关系型数据库。它通过提供透明的持久化机制，使开发者可以使用面向对象的方式操作数据库，而无需编写复杂的 SQL 语句。   1.2 主要特性 对象关系映射（">
+  <meta name="description" content="Hibernate 一种全ORM(Object_Relative DateBase-Mapping)框架   Hibernate 的基本概念  核心思想 Hibernate 是一个开源的对象关系映射（ORM）框架，用于将 Java 对象映射到关系型数据库。它通过提供透明的持久化机制，使开发者可以使用面向对象的方式操作数据库，而无需编写复杂的 SQL 语句。  主要特性 对象关系映射（ORM）：将">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hibernate">
 <meta property="og:url" content="https://151459797.github.io/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/Hibernate/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Hibernate 一种ORM(Object_Relative DateBase-Mapping)框架 一、Hibernate 的基本概念 1.1 核心思想 Hibernate 是一个开源的对象关系映射（ORM）框架，用于将 Java 对象映射到关系型数据库。它通过提供透明的持久化机制，使开发者可以使用面向对象的方式操作数据库，而无需编写复杂的 SQL 语句。   1.2 主要特性 对象关系映射（">
+<meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="Hibernate 一种全ORM(Object_Relative DateBase-Mapping)框架   Hibernate 的基本概念  核心思想 Hibernate 是一个开源的对象关系映射（ORM）框架，用于将 Java 对象映射到关系型数据库。它通过提供透明的持久化机制，使开发者可以使用面向对象的方式操作数据库，而无需编写复杂的 SQL 语句。  主要特性 对象关系映射（ORM）：将">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-11-06T12:36:10.961Z">
-<meta property="article:modified_time" content="2025-11-06T01:12:29.542Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:modified_time" content="2025-11-07T08:12:01.987Z">
+<meta property="article:author" content="YaoHao">
+<meta property="article:tag" content="Java,C#,Spring,MVC,Hibernate,Spring,SpringMVC,SpringBoot,SpringCloud,个人学习博客,YaoHao,EFcode,Mybatis,Sql">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://151459797.github.io/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/Hibernate/">
@@ -45,7 +46,7 @@
   };
 </script>
 
-  <title>Hibernate | Hexo</title>
+  <title>Hibernate | 个人博客</title>
   
 
 
@@ -96,9 +97,10 @@
 
     <a href="/myblog/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Hexo</h1>
+      <h1 class="site-title">个人博客</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
+      <p class="site-subtitle" itemprop="description">主要学习记录博客</p>
   </div>
 
   <div class="site-nav-right">
@@ -181,13 +183,13 @@
     <link itemprop="mainEntityOfPage" href="https://151459797.github.io/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/Hibernate/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/myblog/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/myblog/images/avatar.jpg">
+      <meta itemprop="name" content="YaoHao">
+      <meta itemprop="description" content="使用hexo+next主题搭建的学习博客">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="个人博客">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -200,10 +202,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2025-11-06 20:36:10 / 修改时间：09:12:29" itemprop="dateCreated datePublished" datetime="2025-11-06T20:36:10+08:00">2025-11-06</time>
+              <time title="创建时间：2025-11-06 20:36:10" itemprop="dateCreated datePublished" datetime="2025-11-06T20:36:10+08:00">2025-11-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-11-07 16:12:01" itemprop="dateModified" datetime="2025-11-07T16:12:01+08:00">2025-11-07</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -225,32 +233,27 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Hibernate-一种ORM-Object-Relative-DateBase-Mapping-框架"><a href="#Hibernate-一种ORM-Object-Relative-DateBase-Mapping-框架" class="headerlink" title="Hibernate 一种ORM(Object_Relative DateBase-Mapping)框架"></a>Hibernate 一种ORM(Object_Relative DateBase-Mapping)框架</h1><ul>
-<li>一、Hibernate 的基本概念<ul>
-<li>1.1 核心思想<ul>
+        <blockquote class="blockquote-center">Hibernate 一种全ORM(Object_Relative DateBase-Mapping)框架 </blockquote> 
+Hibernate 的基本概念
+
+<h1 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h1><ul>
 <li>Hibernate 是一个开源的对象关系映射（ORM）框架，用于将 Java 对象映射到关系型数据库。它通过提供透明的持久化机制，使开发者可以使用面向对象的方式操作数据库，而无需编写复杂的 SQL 语句。</li>
 </ul>
-</li>
-<li>1.2 主要特性<ul>
+<h1 id="主要特性"><a href="#主要特性" class="headerlink" title="主要特性"></a>主要特性</h1><ul>
 <li>对象关系映射（ORM）：将 Java 类和数据库表进行映射，支持多种映射策略和注解。</li>
 <li>数据库无关性：支持多种数据库（如 MySQL、Oracle、SQL Server 等），通过配置文件或注解实现数据库的无缝切换。</li>
 <li>缓存机制：提供一级缓存（会话级别）和二级缓存（跨会话），提升查询性能。</li>
 <li>事务管理：支持标准的 Java 事务 API（JTA）和本地事务管理。</li>
 <li>延迟加载：按需加载关联对象，减少不必要的数据库访问。</li>
 </ul>
-</li>
-</ul>
-</li>
-<li>二、Hibernate 的工作原理<ul>
-<li>2.1 核心组件<ul>
+<h1 id="Hibernate-的工作原理"><a href="#Hibernate-的工作原理" class="headerlink" title="Hibernate 的工作原理"></a>Hibernate 的工作原理</h1><h2 id="核心组件"><a href="#核心组件" class="headerlink" title="核心组件"></a>核心组件</h2><ul>
 <li>Configuration：加载配置文件（如 hibernate.cfg.xml）和映射文件，初始化会话工厂。</li>
 <li>SessionFactory：会话工厂，线程安全，负责创建 Session 对象。</li>
 <li>Session：与数据库的会话接口，用于执行 CRUD 操作，非线程安全。</li>
 <li>Transaction：事务管理接口，用于控制事务的开始、提交和回滚。</li>
 <li>Query：用于执行数据库查询，支持 HQL（Hibernate Query Language）和原生 SQL。</li>
 </ul>
-</li>
-<li>2.2 工作流程<ul>
+<h2 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h2><ul>
 <li>配置加载：通过 Configuration 加载配置文件和映射文件。</li>
 <li>创建会话工厂：使用 Configuration 构建 SessionFactory。</li>
 <li>获取会话：通过 SessionFactory 创建 Session 对象。</li>
@@ -259,44 +262,33 @@
 <li>提交事务：提交事务以确保数据一致性。</li>
 <li>关闭资源：关闭 Session 和 SessionFactory。</li>
 </ul>
-</li>
-</ul>
-</li>
-<li>三、Hibernate 的架构设计<ul>
-<li>3.1 分层架构<ul>
+<h1 id="Hibernate-的架构设计"><a href="#Hibernate-的架构设计" class="headerlink" title="Hibernate 的架构设计"></a>Hibernate 的架构设计</h1><h2 id="分层架构"><a href="#分层架构" class="headerlink" title="分层架构"></a>分层架构</h2><ul>
 <li>Hibernate 的架构分为以下层次：</li>
 <li>Java 应用程序层：应用程序通过 Hibernate API 操作数据库。</li>
 <li>Hibernate 框架层：包括核心组件如 SessionFactory、Session 和 Transaction。</li>
 <li>后端 API 层：与 JDBC、JTA 和 JNDI 等 API 集成。</li>
 <li>数据库层：与底层数据库交互。</li>
 </ul>
-</li>
-<li>3.2 核心组件关系<ul>
+<h2 id="核心组件关系"><a href="#核心组件关系" class="headerlink" title="核心组件关系"></a>核心组件关系</h2><ul>
 <li>SessionFactory：线程安全的工厂类，负责创建 Session 对象。</li>
 <li>Session：非线程安全的会话对象，用于执行数据库操作。</li>
 <li>Transaction：事务管理接口，确保数据一致性。</li>
 </ul>
-</li>
-</ul>
-</li>
-<li>四、Hibernate 的性能优化<ul>
-<li>4.1 缓存优化<ul>
+<h1 id="Hibernate-的性能优化"><a href="#Hibernate-的性能优化" class="headerlink" title="Hibernate 的性能优化"></a>Hibernate 的性能优化</h1><h2 id="缓存优化"><a href="#缓存优化" class="headerlink" title="缓存优化"></a>缓存优化</h2><ul>
 <li>一级缓存：默认开启，用于缓存当前会话加载的对象。</li>
 <li>二级缓存：跨会话缓存，可配置第三方缓存实现（如 Ehcache）。</li>
 </ul>
-</li>
-<li>4.2 查询优化<ul>
+<h2 id="查询优化"><a href="#查询优化" class="headerlink" title="查询优化"></a>查询优化</h2><ul>
 <li>HQL 查询：使用 HQL 优化复杂查询。</li>
 <li>延迟加载：按需加载关联对象，减少不必要的数据库访问。</li>
 </ul>
-</li>
-<li>4.3 批量操作<ul>
+<h2 id="批量操作"><a href="#批量操作" class="headerlink" title="批量操作"></a>批量操作</h2><ul>
 <li>通过设置 hibernate.jdbc.batch_size 配置批量操作，提高大批量数据处理的效率</li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/myblog/css/markmap.css">
+
+<script src="/myblog/js/markmap.js"></script>
 
     </div>
 
@@ -377,20 +369,22 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hibernate-%E4%B8%80%E7%A7%8DORM-Object-Relative-DateBase-Mapping-%E6%A1%86%E6%9E%B6"><span class="nav-number">1.</span> <span class="nav-text">Hibernate 一种ORM(Object_Relative DateBase-Mapping)框架</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3"><span class="nav-number">1.</span> <span class="nav-text">核心思想</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E7%89%B9%E6%80%A7"><span class="nav-number">2.</span> <span class="nav-text">主要特性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hibernate-%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">Hibernate 的工作原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E7%BB%84%E4%BB%B6"><span class="nav-number">3.1.</span> <span class="nav-text">核心组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-number">3.2.</span> <span class="nav-text">工作流程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hibernate-%E7%9A%84%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="nav-number">4.</span> <span class="nav-text">Hibernate 的架构设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%B1%82%E6%9E%B6%E6%9E%84"><span class="nav-number">4.1.</span> <span class="nav-text">分层架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E7%BB%84%E4%BB%B6%E5%85%B3%E7%B3%BB"><span class="nav-number">4.2.</span> <span class="nav-text">核心组件关系</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hibernate-%E7%9A%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="nav-number">5.</span> <span class="nav-text">Hibernate 的性能优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%93%E5%AD%98%E4%BC%98%E5%8C%96"><span class="nav-number">5.1.</span> <span class="nav-text">缓存优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96"><span class="nav-number">5.2.</span> <span class="nav-text">查询优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%B9%E9%87%8F%E6%93%8D%E4%BD%9C"><span class="nav-number">5.3.</span> <span class="nav-text">批量操作</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">John Doe</p>
-  <div class="site-description" itemprop="description"></div>
+    <img class="site-author-image" itemprop="image" alt="YaoHao"
+      src="/myblog/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">YaoHao</p>
+  <div class="site-description" itemprop="description">使用hexo+next主题搭建的学习博客</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/myblog/archives">
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -428,7 +422,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">YaoHao</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
