@@ -2816,4 +2816,100 @@ box-shadow: 0 0 15px rgba(0,0,0,0.15);">
         <category>后端</category>
       </categories>
   </entry>
+  <entry>
+    <title>MybatisPlus</title>
+    <url>/myblog/2025/11/07/%E5%90%8E%E7%AB%AF/JAVA/MybatisPlus/</url>
+    <content><![CDATA[<blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p><a href="https://baomidou.com/introduce/">MybatisPlus</a>一款基于 Mybatis 的增强工具,可无缝集成到任何基于 Mybatis 的项目中</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+
+<ul>
+<li>具体强大代码生成器可参考：<a href="https://baomidou.com/guide/generator.html">MyBatisPlus代码生成器</a></li>
+<li>配置文件可参考：<a href="https://baomidou.com/guide/config.html">MyBatisPlus配置</a></li>
+</ul>
+<h1 id="快速开始SpringBoot3"><a href="#快速开始SpringBoot3" class="headerlink" title="快速开始SpringBoot3"></a>快速开始SpringBoot3</h1><ul>
+<li>添加依赖</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Spring MyBatis Plus 3.5.14 支持SpringBoot自动配置--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.baomidou<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-plus-spring-boot3-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.5.14<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 配置mybatis plus代码生成器 如果需要自定义代码生成器，则添加此依赖 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.baomidou<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-plus-generator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.5.14<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>添加数据源<ul>
+<li>MybatisPlus也支持原生Mybatis.xml相关配置</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#  配置spring数据源 </span></span><br><span class="line"><span class="attr">datasource:</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">jdbc:mysql://localhost:3306/yhds_user?useUnicode=true&amp;characterEncoding=utf-8&amp;verifyServerCertificate=false&amp;useSSL=false</span></span><br><span class="line">    <span class="attr">username:</span> <span class="string">root</span></span><br><span class="line">    <span class="attr">password:</span> <span class="string">&quot;123456&quot;</span></span><br><span class="line">    <span class="attr">driver-class-name:</span> <span class="string">com.mysql.jdbc.Driver</span></span><br><span class="line"><span class="comment"># MyBatis Plus配置</span></span><br><span class="line"><span class="attr">mybatis-plus:</span></span><br><span class="line">    <span class="comment"># 启动自动扫描mapperxml文件</span></span><br><span class="line">    <span class="attr">mapper-locations:</span> <span class="string">classpath*:mapperxml/*.xml</span> </span><br><span class="line">    <span class="attr">configuration:</span></span><br><span class="line">        <span class="attr">cache-enabled:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>启动SpringBoot项目<ul>
+<li>启动成功后，在控制台会打印如下信息：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  2025-11-07T17:42:13.521+08:00  WARN 23776 --- [user-service] [           main] c.b.m.core.injector.methods.Insert       : [com.user.mapper.UserMapper.insert] Has been loaded by XML or SqlProvider or Mybatis&#x27;s Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.Insert]</span><br><span class="line"> _ _   |_  _ _|_. ___ _ |    _ </span><br><span class="line">| | |\/|_)(_| | |_\  |_)||_|_\ </span><br><span class="line">     /               |         </span><br><span class="line">                        3.5.14 </span><br></pre></td></tr></table></figure></li>
+<li>启动成功</li>
+</ul>
+</li>
+</ul>
+<h1 id="java代码参考"><a href="#java代码参考" class="headerlink" title="java代码参考"></a>java代码参考</h1><ul>
+<li>实体类<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.user.entity;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.annotation.IdType;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.annotation.TableField;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.annotation.TableId;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.annotation.TableName;</span><br><span class="line"><span class="keyword">import</span> io.swagger.v3.oas.annotations.media.Schema;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * user</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Schema(description=&quot;user&quot;)</span></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@TableName(value = &quot;user&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 用户id</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@TableId(value = &quot;user_id&quot;, type = IdType.ASSIGN_UUID)</span></span><br><span class="line">    <span class="meta">@Schema(description=&quot;用户id&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String userId;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 名称</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@TableField(value = &quot;username&quot;)</span></span><br><span class="line">    <span class="meta">@Schema(description=&quot;名称&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 密码</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Schema(description=&quot;密码&quot;)</span></span><br><span class="line">    <span class="meta">@TableField(value = &quot;`password`&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 邮件</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Schema(description=&quot;邮件&quot;)</span></span><br><span class="line">    <span class="meta">@TableField(value = &quot;email&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String email;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 手机</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Schema(description=&quot;手机&quot;)</span></span><br><span class="line">    <span class="meta">@TableField(value = &quot;phone&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String phone;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 状态</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Schema(description=&quot;状态&quot;)</span></span><br><span class="line">    <span class="meta">@TableField(value = &quot;`status`&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> Integer status;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 创建时间</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Schema(description=&quot;创建时间&quot;)</span></span><br><span class="line">    <span class="meta">@TableField(value = &quot;create_time&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> Date createTime;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 更新时间</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Schema(description=&quot;更新时间&quot;)</span></span><br><span class="line">    <span class="meta">@TableField(value = &quot;update_time&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> Date updateTime;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 部门id</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Schema(description=&quot;部门id&quot;)</span></span><br><span class="line">    <span class="meta">@TableField(value = &quot;department_id&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String departmentId;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 所属部门（用于懒加载）</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@TableField(exist = false)</span></span><br><span class="line">    <span class="meta">@Schema(description=&quot;所属部门&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> Department department;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>创建mapper接口</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.user.mapper;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.core.mapper.BaseMapper;</span><br><span class="line"><span class="keyword">import</span> com.user.entity.Department;</span><br><span class="line"><span class="keyword">import</span> com.user.entity.User;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.ibatis.annotations.Mapper;</span><br><span class="line"><span class="keyword">import</span> org.apache.ibatis.annotations.Param;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Mapper</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">UserMapper</span> <span class="keyword">extends</span> <span class="title class_">BaseMapper</span>&lt;User&gt;&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建service接口</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.user.service;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.user.entity.User;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.extension.service.IService;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">IUserService</span> <span class="keyword">extends</span> <span class="title class_">IService</span>&lt;User&gt; &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>创建service实现类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.user.service.impl;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.user.entity.User;</span><br><span class="line"><span class="keyword">import</span> com.user.mapper.UserMapper;</span><br><span class="line"><span class="keyword">import</span> com.user.service.IUserService;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;</span><br><span class="line"><span class="keyword">import</span> com.user.util.SqlDatabaseUtil;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserServiceImpl</span> <span class="keyword">extends</span> <span class="title class_">ServiceImpl</span>&lt;UserMapper, User&gt; <span class="keyword">implements</span> <span class="title class_">IUserService</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>最后在控制层直接调用即可，mybatis plus自带了crud方法</p>
+</li>
+<li><p>mapper接口中定义的sql语句，可直接在mapper.xml中编写，会根据函数名对应调用sql语句</p>
+</li>
+</ul>
+<h1 id="延迟加载"><a href="#延迟加载" class="headerlink" title="延迟加载"></a>延迟加载</h1><pre><code>- 延迟加载，即在调用get方法时，才会去查询数据库，而不是在初始化时查询数据库
+- 配置文件参考
+</code></pre>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">mybatis-plus:</span></span><br><span class="line">  <span class="attr">configuration:</span></span><br><span class="line">    <span class="comment"># 开启懒加载</span></span><br><span class="line">    <span class="attr">lazy-loading-enabled:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># 当设置为 true 时，懒加载的对象可能被任何懒属性全部加载，否则，每个属性都按需加载。需要和 lazyLoadingEnabled 一起使用。</span></span><br><span class="line">    <span class="attr">aggressive-lazy-loading:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/myblog/css/markmap.css">
+
+<script src="/myblog/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Jackson序列化</title>
+    <url>/myblog/2025/11/08/%E5%90%8E%E7%AB%AF/JAVA/jackson%E5%BA%8F%E5%88%97%E5%8C%96%E6%87%92%E5%8A%A0%E8%BD%BD%E5%BC%82%E5%B8%B8/</url>
+    <content><![CDATA[<h1 id="Jackson"><a href="#Jackson" class="headerlink" title="Jackson"></a><a href="https://www.runoob.com/java/java-jackson-lib.html">Jackson</a></h1><ul>
+<li>是一个 Java 的高性能 JSON 处理库，在SpringBoot 中，默认使用的是Jackson处理序列化</li>
+<li>当Jackson尝试序列化未被初始化的JPA代理对象时，会触发意外懒加载的数据库查询，（Mybatis、SpringDataJPA），可能导致或N+1查询问题</li>
+<li>具体可参考文档<a href="https://www.duoke360.com/post/42502">老郭解决文档</a></li>
+<li>也可考虑更改处理序列化工具，但考虑项目集成框架，不建议更换</li>
+</ul>
+<table class="table table-bordered">
+<thead>
+<tr><th>方案</th><th>优点</th><th>缺点</th><th>适用场景</th></tr>
+</thead>
+<tbody>
+<tr><td>DTO模式</td><td>完全控制输出，性能最佳</td><td>需要额外编码</td><td>生产环境推荐</td></tr>
+<tr><td>@JsonIgnore</td><td>简单直接</td><td>无法动态控制</td><td>确定不需要的字段</td></tr>
+<tr><td>HibernateModule</td><td>快速解决异常</td><td>隐藏问题本质</td><td>快速原型开发</td></tr>
+<tr><td>EntityGraph</td><td>精确控制加载</td><td>需要Repository配合</td><td>需要特定关联时</td></tr>
+</tbody>
+</table><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/myblog/css/markmap.css">
+
+<script src="/myblog/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+  </entry>
 </search>
