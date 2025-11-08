@@ -177,6 +177,504 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://1514597997.github.io/myblog/2025/11/06/%E6%95%B0%E6%8D%AE%E5%BA%93/Mysql/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/myblog/images/avatar.jpg">
+      <meta itemprop="name" content="YaoHao">
+      <meta itemprop="description" content="使用hexo+next主题搭建的学习博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/myblog/2025/11/06/%E6%95%B0%E6%8D%AE%E5%BA%93/Mysql/" class="post-title-link" itemprop="url">Mysql</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-11-06 20:36:11 / 修改时间：09:12:29" itemprop="dateCreated datePublished" datetime="2025-11-06T20:36:11+08:00">2025-11-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/myblog/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Mysql-My-Structured-Query-Language"><a href="#Mysql-My-Structured-Query-Language" class="headerlink" title="Mysql (My Structured Query Language)"></a>Mysql (My Structured Query Language)</h1><ul>
+<li>MySQL 是一种流行的关系型数据库管理系统（RDBMS）</li>
+<li>一、MySQL 的基本概念<ul>
+<li>1.1 数据库与表<ul>
+<li>数据库是存储数据的仓库，表是数据库中用于存储数据的结构。一个表由行和列组成，行表示记录，列表示数据字段。</li>
+<li>数据库通过 SQL（结构化查询语言）进行数据的增删改查操作。</li>
+</ul>
+</li>
+<li>1.2 索引<ul>
+<li>索引是一种提高查询性能的数据结构，通过创建索引可以加快数据的检索速度。MySQL 支持多种索引类型，如 B+树索引、哈希索引等。</li>
+</ul>
+</li>
+<li>1.3 事务<ul>
+<li>事务是一组必须作为整体执行的操作，如果其中一个操作失败，整个事务将回滚以保持数据的一致性。MySQL 支持事务处理，并遵循 ACID（原子性、一致性、隔离性、持久性）特性。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>二、MySQL 的工作原理<ul>
+<li>2.1 查询流程<ul>
+<li>建立连接：客户端通过网络与 MySQL 服务器建立连接。</li>
+<li>解析查询：MySQL 服务器接收到查询请求后，通过解析器将查询转换为内部数据结构。</li>
+<li>查询优化：MySQL 通过查询优化器分析查询，选择最佳执行计划。</li>
+<li>执行查询：MySQL 根据执行计划执行查询，并返回结果给客户端。</li>
+<li>关闭连接：查询执行完毕后，客户端与 MySQL 服务器断开连接。</li>
+</ul>
+</li>
+<li>2.2 日志系统<ul>
+<li>redo log：用于记录数据的物理修改，确保数据在崩溃后可以恢复。</li>
+<li>binlog：用于记录数据的逻辑修改，支持主从复制。</li>
+<li>undo log：用于支持事务的回滚。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>三、MySQL 的架构设计<ul>
+<li>3.1 分层架构<ul>
+<li>MySQL 的架构可以分为以下几层：</li>
+<li>网络连接层：负责处理客户端的连接请求。</li>
+<li>系统服务层：包括 SQL 接口、解析器、优化器和缓存缓冲区。</li>
+<li>存储引擎层：支持多种存储引擎，如 InnoDB 和 MyISAM。</li>
+<li>文件系统层：负责数据和日志的存储。</li>
+</ul>
+</li>
+<li>3.2 存储引擎<ul>
+<li>InnoDB：支持事务处理，适用于 OLTP 场景。</li>
+<li>MyISAM：适合读密集型分析，但不支持事务。</li>
+<li>Memory：全内存存储，适用于缓存和临时表。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>四、MySQL 的性能优化<ul>
+<li>4.1 索引优化<ul>
+<li>合理设计索引，避免全表扫描。</li>
+<li>使用 B+树索引提高范围查询性能。</li>
+</ul>
+</li>
+<li>4.2 查询优化<ul>
+<li>优化查询语句，避免不必要的连接操作。</li>
+<li>使用查询缓存减少重复计算。</li>
+</ul>
+</li>
+<li>4.3 配置优化<ul>
+<li>调整缓冲区和线程池参数。</li>
+<li>监控数据库性能并动态调整</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/myblog/css/markmap.css">
+
+<script src="/myblog/js/markmap.js"></script>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://1514597997.github.io/myblog/2025/11/06/%E5%B7%A5%E5%85%B7/hexo/node-js/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/myblog/images/avatar.jpg">
+      <meta itemprop="name" content="YaoHao">
+      <meta itemprop="description" content="使用hexo+next主题搭建的学习博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/myblog/2025/11/06/%E5%B7%A5%E5%85%B7/hexo/node-js/" class="post-title-link" itemprop="url">node-js</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-11-06 20:36:11 / 修改时间：09:12:29" itemprop="dateCreated datePublished" datetime="2025-11-06T20:36:11+08:00">2025-11-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/myblog/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h1><ul>
+<li>介绍<ul>
+<li>Node.js 是一个开源的、跨平台的 JavaScript 运行时环境，它允许开发者在服务器端运行 JavaScript 代码。Node.js 基于 Chrome V8 引擎，具有高性能和高并发的特点，常用于构建高性能的 Web 应用、网络应用和微服务。</li>
+</ul>
+</li>
+</ul>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/myblog/css/markmap.css">
+
+<script src="/myblog/js/markmap.js"></script>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://1514597997.github.io/myblog/2025/11/06/%E5%B7%A5%E5%85%B7/hexo/tomcat/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/myblog/images/avatar.jpg">
+      <meta itemprop="name" content="YaoHao">
+      <meta itemprop="description" content="使用hexo+next主题搭建的学习博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/myblog/2025/11/06/%E5%B7%A5%E5%85%B7/hexo/tomcat/" class="post-title-link" itemprop="url">Tomcat</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-11-06 20:36:11 / 修改时间：09:12:29" itemprop="dateCreated datePublished" datetime="2025-11-06T20:36:11+08:00">2025-11-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/myblog/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h1><ul>
+<li><p>Apache Tomcat是由Apache Software Foundation（ASF）开发的一个开源Java WEB应用服务器</p>
+</li>
+<li><p>加载类和资源的顺序如下：</p>
+<ul>
+<li>&#x2F;Web-INF&#x2F;classes</li>
+<li>&#x2F;Web-INF&#x2F;lib&#x2F;*.jar</li>
+<li>Bootstrap</li>
+<li>System</li>
+<li>$CATALINA_HOME&#x2F;common&#x2F;classes</li>
+<li>$CATALINA_HOME&#x2F;common&#x2F;endores&#x2F;*.jar</li>
+<li>$CATALINA_HOME&#x2F;common&#x2F;lib&#x2F;*.jar</li>
+<li>$CATALINA_HOME&#x2F;shared&#x2F;classes</li>
+<li>$CATALINA_HOME&#x2F;shared&#x2F;lib&#x2F;*.jar</li>
+</ul>
+</li>
+<li><p>web.xml 配置标签</p>
+<ul>
+<li>servlet: 定义Servlet，包括Servlet名称、实现类、初始化参数等。</li>
+<li>servlet-mapping-: 映射Servlet到一个或多个URL模式。<ul>
+<li>url-pattern:配置指定路径映射Servlet<ul>
+<li>如果错误的配置会导致jsp或html成接口输出成纯文本<a target="_blank" rel="noopener" href="https://husama.github.io/2017/05/31/Spring-MVC%E5%AD%A6%E4%B9%A0%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98-JSP%E6%9C%AA%E6%B8%B2%E6%9F%93-%E7%9B%B4%E6%8E%A5%E6%98%BE%E7%A4%BA%E6%BA%90%E7%A0%81.html">类似</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>filter: 定义过滤器，用于在请求处理链中执行过滤任务。</li>
+<li>filter-mapping: 将过滤器应用到特定的URL模式。</li>
+<li>listener: 定义事件监听器，用于响应应用生命周期事件。</li>
+<li>session-config: 配置会话（Session）的超时时间。</li>
+<li>welcome-file-list: 定义当请求URL为目录时，应该显示哪个欢迎文件。</li>
+<li>error-page: 定义错误页面，用于处理特定错误码或异常类型。</li>
+<li>security-constraint: 定义安全约束，用于限制对特定URL模式的访问。</li>
+<li>login-config: 定义登录配置，用于指定验证方法和登录页面。</li>
+<li>DefaultServlet控制缓存<ul>
+<li>Tomcat默认不会为静态资源设置特定的缓存头</li>
+<li>web.xml配置使用过滤器CacheControlFilter去设置浏览器缓存行为</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/myblog/css/markmap.css">
+
+<script src="/myblog/js/markmap.js"></script>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://1514597997.github.io/myblog/2025/11/06/%E5%B7%A5%E5%85%B7/hexo/Nginx/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/myblog/images/avatar.jpg">
+      <meta itemprop="name" content="YaoHao">
+      <meta itemprop="description" content="使用hexo+next主题搭建的学习博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/myblog/2025/11/06/%E5%B7%A5%E5%85%B7/hexo/Nginx/" class="post-title-link" itemprop="url">Nginx</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-11-06 20:36:11" itemprop="dateCreated datePublished" datetime="2025-11-06T20:36:11+08:00">2025-11-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-11-07 17:03:01" itemprop="dateModified" datetime="2025-11-07T17:03:01+08:00">2025-11-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/myblog/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Nginx-engine-x-HTTP和反向代理web服务器"><a href="#Nginx-engine-x-HTTP和反向代理web服务器" class="headerlink" title="Nginx (engine x) HTTP和反向代理web服务器"></a>Nginx (engine x) HTTP和反向代理web服务器</h1><ul>
+<li>一、Nginx 概念<ul>
+<li>1.1 起源与特点<ul>
+<li>Nginx（发音为 “engine X”）是一个高性能的 HTTP 和反向代理服务器，由俄罗斯程序员伊戈尔·西索夫（Igor Sysoev）于 2002 年开发。其设计目标是处理高并发请求，具有以下特点：</li>
+<li>高性能：能够处理大量并发连接，资源占用低。</li>
+<li>高可用性：支持热部署和无缝升级。</li>
+<li>模块化设计：支持多种模块扩展功能。</li>
+<li>跨平台：支持 Linux、Unix、Windows 等多种操作系统。</li>
+</ul>
+</li>
+<li>1.2 用途<ul>
+<li>开源Web服务器：用于托管静态和动态网站。</li>
+<li>反向代理：主要将请求转发到后端服务器，这个后端服务器可能是集群多台，但请求过来反向代理去了后端其中一台服务器。</li>
+<li>负载均衡：分发流量到多个服务器。</li>
+<li>内容缓存：缓存静态内容，提高响应速度。</li>
+<li>API 网关：作为 API 的入口，处理请求路由和安全验证。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>二、Nginx 的工作原理<ul>
+<li>2.1 事件驱动架构<ul>
+<li>Nginx 采用事件驱动的异步架构，其核心是基于非阻塞 I&#x2F;O 和多路复用技术。主要工作流程如下：</li>
+<li>事件循环：Nginx 的工作进程通过事件循环不断监听和处理网络事件。</li>
+<li>连接复用：支持 HTTP Keep-Alive，减少连接建立和关闭的开销。</li>
+<li>非阻塞 I&#x2F;O：通过非阻塞方式读写数据，避免线程阻塞。</li>
+</ul>
+</li>
+<li>2.2 请求处理流程<ul>
+<li>接收请求：Nginx 工作进程接收客户端请求。</li>
+<li>解析配置：根据配置文件决定如何处理请求。</li>
+<li>模块处理：调用相应的模块处理请求（如静态文件处理、反向代理等）。</li>
+<li>响应请求：将处理结果返回给客户端。</li>
+</ul>
+</li>
+<li>2.3 模块化设计<ul>
+<li>Nginx 的模块化设计使其功能高度可扩展。主要模块包括：</li>
+<li>核心模块：负责基础功能，如事件处理、网络连接等。</li>
+<li>HTTP 模块：处理 HTTP 请求，支持静态文件、CGI、FastCGI 等。</li>
+<li>第三方模块：通过扩展实现更多功能，如认证、缓存等。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>三、Nginx 的架构设计<ul>
+<li>3.1 多级架构<ul>
+<li>Nginx 的架构分为以下几个层次：</li>
+<li>核心层：负责事件循环、连接管理等基础功能。</li>
+<li>模块层：提供 HTTP、反向代理等功能。</li>
+<li>网络层：处理网络通信和数据传输。</li>
+</ul>
+</li>
+<li>3.2 进程模型<ul>
+<li>Nginx 采用多进程模型，包括一个主进程和多个工作进程：</li>
+<li>主进程：负责加载配置文件、管理工作进程等。</li>
+<li>工作进程：处理客户端请求，数量通常与 CPU 核心数相同。</li>
+</ul>
+</li>
+<li>3.3 线程池<ul>
+<li>Nginx 支持线程池，用于处理耗时操作（如磁盘 I&#x2F;O），避免阻塞事件循环。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>四、Nginx 的性能优化<ul>
+<li>4.1 静态文件缓存<ul>
+<li>缓存机制：通过 sendfile 和 tcp_nopush 等指令优化静态文件传输。</li>
+<li>压缩传输：使用 gzip 压缩静态文件，减少传输数据量。</li>
+</ul>
+</li>
+<li>4.2 负载均衡<ul>
+<li>轮询策略：将请求均匀分配到多个后端服务器。</li>
+<li>最少连接策略：优先将请求分配给连接数最少的服务器。</li>
+<li>IP 哈希策略：根据客户端 IP 哈希分配请求，确保同一客户端的请求分配到同一服务器。</li>
+</ul>
+</li>
+<li>4.3 反向代理与缓存<ul>
+<li>反向代理：通过 proxy_pass 将请求转发到后端服务器。</li>
+<li>缓存配置：使用 proxy_cache 配置缓存策略，减少后端服务器负载。</li>
+</ul>
+</li>
+<li>4.4 连接优化<ul>
+<li>Keep-Alive：通过 keepalive 指令复用连接，减少连接建立和关闭的开销。</li>
+<li>连接超时：合理设置连接超时时间，避免资源浪费。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/myblog/css/markmap.css">
+
+<script src="/myblog/js/markmap.js"></script>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://1514597997.github.io/myblog/2025/11/06/%E5%B7%A5%E5%85%B7/hexo/hexo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -979,434 +1477,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://1514597997.github.io/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/SpringCloud/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/myblog/images/avatar.jpg">
-      <meta itemprop="name" content="YaoHao">
-      <meta itemprop="description" content="使用hexo+next主题搭建的学习博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="个人博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/SpringCloud/" class="post-title-link" itemprop="url">SpringCloud</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-11-06 20:36:10" itemprop="dateCreated datePublished" datetime="2025-11-06T20:36:10+08:00">2025-11-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-11-07 16:58:50" itemprop="dateModified" datetime="2025-11-07T16:58:50+08:00">2025-11-07</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/myblog/categories/%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">后端</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="SpringCloud"><a href="#SpringCloud" class="headerlink" title="SpringCloud"></a><a target="_blank" rel="noopener" href="https://springframework.org.cn/projects/spring-cloud/">SpringCloud</a></h1><ul>
-<li>SpringCloud是基于SpringBoot的集合框架，主要用与开发分布式服务器。</li>
-<li><ol>
-<li>Spring Cloud 简介</li>
-</ol>
-<ul>
-<li>Spring Cloud 是一系列框架的有序集合，利用 Spring Boot 的开发便利性，简化了分布式系统基础设施的开发。它整合了 Netflix 等公司的成熟框架，提供了服务发现注册、配置中心、消息总线、负载均衡、断路器等功能，是一套简单易用、易部署和易维护的分布式系统开发工具包。</li>
-</ul>
-</li>
-<li><ol start="2">
-<li>Spring Cloud 特点</li>
-</ol>
-<ul>
-<li>集成性：深度集成 Netflix 开源组件，提供完整且经过实践检验的微服务解决方案。</li>
-<li>易用性：遵循 Spring Boot 开发风格，提供丰富文档和社区支持。</li>
-<li>灵活性：可根据项目需求选择适合的组件进行集成。</li>
-<li>扩展性：支持水平或垂直扩展，适应业务发展。</li>
-<li>可靠性：通过熔断器、负载均衡等机制，确保系统稳定性和可靠性。</li>
-</ul>
-</li>
-<li><ol start="3">
-<li>Spring Cloud 核心组件与原理</li>
-</ol>
-<ul>
-<li>3.1 服务注册与发现<ul>
-<li>服务提供者启动时，会将自己的网络地址、端口号等信息注册到注册中心（如 Eureka、Consul 或 Zookeeper 等），服务消费者通过注册中心查询所需服务的信息，实现服务的动态发现。</li>
-</ul>
-</li>
-<li>3.2 负载均衡<ul>
-<li>Spring Cloud 通过集成 Ribbon 或 Feign 等组件来实现负载均衡，根据一定的算法选择合适的服务实例进行请求转发。</li>
-</ul>
-</li>
-<li>3.3 容错处理<ul>
-<li>引入熔断器模式（如 Hystrix），在服务调用出现连续失败时，暂时停止对该服务的调用，避免进一步的资源浪费和性能下降。</li>
-</ul>
-</li>
-<li>3.4 服务网关<ul>
-<li>服务网关（如 Zuul 或 Spring Cloud Gateway）作为微服务架构的入口，负责处理外部请求并转发到内部的服务实例上，支持动态路由、请求过滤、安全认证等功能。</li>
-</ul>
-</li>
-<li>3.5 配置管理<ul>
-<li>Spring Cloud Config 将配置信息存储在外部的配置中心（如 Git 仓库、数据库等），各个微服务在启动时从配置中心获取所需的配置信息，支持配置的版本控制和动态刷新功能</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/myblog/css/markmap.css">
-
-<script src="/myblog/js/markmap.js"></script>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://1514597997.github.io/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/Mybatis%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/myblog/images/avatar.jpg">
-      <meta itemprop="name" content="YaoHao">
-      <meta itemprop="description" content="使用hexo+next主题搭建的学习博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="个人博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/Mybatis%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD/" class="post-title-link" itemprop="url">Mybatis延迟加载(懒加载)</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-11-06 20:36:10" itemprop="dateCreated datePublished" datetime="2025-11-06T20:36:10+08:00">2025-11-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-11-07 16:50:50" itemprop="dateModified" datetime="2025-11-07T16:50:50+08:00">2025-11-07</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/myblog/categories/%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">后端</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li>在Mybatis中使用多表联查时，可能会有不需要的数据被相关查询，这时就可以使用该技术优化节省查询次数。<ul>
-<li>列如查询订单信息，默认关联用户、部门、岗位相关信息，可设置只有需要获取时才查询用户、部门、岗位相关信息</li>
-</ul>
-</li>
-</ul>
-<h2>使用示例:</h2>
-
-<ul>
-<li>先mybaits-config.xml全局配置懒加载<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//mybatis-config.xml 开启懒加载</span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 设置mybatis全局属性 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--延迟加载 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 懒加载  避免在加载一个属性时就加载所有属性--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">&quot;lazyLoadingEnabled&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span> /&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 积极加载  只有访问在访问到某个属性才执行相关sql --&gt;</span></span><br><span class="line">     <span class="comment">&lt;!--3.4.1版本之前默认是true，之后默认是false--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">&quot;aggressiveLazyLoading&quot;</span> <span class="attr">value</span>=<span class="string">&quot;false&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li>在Mapper文件中定义相关依赖sql和结构</li>
-<li>部门Mapper:<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 通用查询映射结果 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">&quot;BaseResultMap&quot;</span> <span class="attr">type</span>=<span class="string">&quot;com.user.entity.Department&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span> <span class="attr">column</span>=<span class="string">&quot;id&quot;</span> <span class="attr">property</span>=<span class="string">&quot;id&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">&quot;name&quot;</span> <span class="attr">property</span>=<span class="string">&quot;name&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">&quot;code&quot;</span> <span class="attr">property</span>=<span class="string">&quot;code&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">&quot;manager_id&quot;</span> <span class="attr">property</span>=<span class="string">&quot;managerId&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">&quot;parent_id&quot;</span> <span class="attr">property</span>=<span class="string">&quot;parentId&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">&quot;description&quot;</span> <span class="attr">property</span>=<span class="string">&quot;description&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">&quot;remark&quot;</span> <span class="attr">property</span>=<span class="string">&quot;remark&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">&quot;status&quot;</span> <span class="attr">property</span>=<span class="string">&quot;status&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">&quot;create_time&quot;</span> <span class="attr">property</span>=<span class="string">&quot;createTime&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">&quot;update_time&quot;</span> <span class="attr">property</span>=<span class="string">&quot;updateTime&quot;</span> /&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 懒加载用户信息 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 关联用户表 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">collection</span> <span class="attr">property</span>=<span class="string">&quot;users&quot;</span> <span class="attr">column</span>=<span class="string">&quot;id&quot;</span> <span class="attr">select</span>=<span class="string">&quot;com.user.mapper.UserMapper.queryUserByDepartmentId&quot;</span> &gt;</span><span class="tag">&lt;/<span class="name">collection</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 查询部门相关所有用户映射结果 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">&quot;UserAndDepartment&quot;</span> <span class="attr">type</span>=<span class="string">&quot;com.user.entity.Department&quot;</span> <span class="attr">extends</span>=<span class="string">&quot;BaseResultMap&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">collection</span> <span class="attr">property</span>=<span class="string">&quot;users&quot;</span> <span class="attr">ofType</span>=<span class="string">&quot;com.user.entity.User&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span> <span class="attr">column</span>=<span class="string">&quot;u_id&quot;</span> <span class="attr">property</span>=<span class="string">&quot;id&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">&quot;username&quot;</span> <span class="attr">property</span>=<span class="string">&quot;username&quot;</span> /&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 用户密码</span></span><br><span class="line"><span class="comment">        &lt;result column=&quot;password&quot; property=&quot;password&quot; /&gt;</span></span><br><span class="line"><span class="comment">        --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">&quot;email&quot;</span> <span class="attr">property</span>=<span class="string">&quot;email&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">&quot;phone&quot;</span> <span class="attr">property</span>=<span class="string">&quot;phone&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">&quot;u_status&quot;</span> <span class="attr">property</span>=<span class="string">&quot;status&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">&quot;u_create_time&quot;</span> <span class="attr">property</span>=<span class="string">&quot;createTime&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">&quot;u_update_time&quot;</span> <span class="attr">property</span>=<span class="string">&quot;updateTime&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">&quot;departmentId&quot;</span> <span class="attr">property</span>=<span class="string">&quot;departmentId&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">collection</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 根据id获取部门 懒加载用户 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;getDepartmentMaybeUsers&quot;</span> <span class="attr">resultMap</span>=<span class="string">&quot;BaseResultMap&quot;</span>&gt;</span></span><br><span class="line">    select * from department where id = #&#123;id&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li>用户Mapper:<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 通用查询结果列 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">sql</span> <span class="attr">id</span>=<span class="string">&quot;Base_Column_List&quot;</span>&gt;</span></span><br><span class="line">    id, username, password, email, phone, status, create_time, update_time</span><br><span class="line"><span class="tag">&lt;/<span class="name">sql</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;queryUserByDepartmentId&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;com.user.entity.User&quot;</span> &gt;</span></span><br><span class="line">    select <span class="tag">&lt;<span class="name">include</span> <span class="attr">refid</span>=<span class="string">&quot;Base_Column_List&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">include</span>&gt;</span>  from user u where  u.departmentId=#&#123;departmentId&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li>服务调用示例:<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">    <span class="meta">@ApiOperation(value = &quot;获取部门 懒加载用户信息&quot;, notes = &quot;根据ID查询部门和懒加载用户信息&quot;)</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/getDepartmentMaybeUsers/&#123;id&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> Department <span class="title function_">getDepartmentMaybeUsers</span><span class="params">(<span class="meta">@PathVariable</span> String id)</span> &#123;</span><br><span class="line">        logger.info(<span class="string">&quot;开始获取部门信息和懒加载用户&quot;</span>);</span><br><span class="line">        <span class="type">Department</span> <span class="variable">department</span> <span class="operator">=</span> departmentService.getDepartmentMaybeUsers(id);</span><br><span class="line"><span class="comment">//      java程序检测是否有使用懒加载相关逻辑</span></span><br><span class="line"><span class="comment">//        for (User user: department.getUsers()) &#123;</span></span><br><span class="line"><span class="comment">//            System.out.println(user);</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line">        logger.info(<span class="string">&quot;结束获取部门信息和懒加载用户&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> department;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/myblog/css/markmap.css">
-
-<script src="/myblog/js/markmap.js"></script>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://1514597997.github.io/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/SpringBoot/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/myblog/images/avatar.jpg">
-      <meta itemprop="name" content="YaoHao">
-      <meta itemprop="description" content="使用hexo+next主题搭建的学习博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="个人博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/SpringBoot/" class="post-title-link" itemprop="url">SpringBoot</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-11-06 20:36:10" itemprop="dateCreated datePublished" datetime="2025-11-06T20:36:10+08:00">2025-11-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-11-07 16:57:18" itemprop="dateModified" datetime="2025-11-07T16:57:18+08:00">2025-11-07</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/myblog/categories/%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">后端</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="SpringBoot官网"><a href="#SpringBoot官网" class="headerlink" title="SpringBoot官网"></a>SpringBoot<a target="_blank" rel="noopener" href="https://docs.spring.io/spring-boot/docs/2.0.1.RELEASE/reference/htmlsingle/?utm_source=blog0716">官网</a></h1><ul>
-<li>基于Spring框架的应用开发框架,SpringBoot继承了Spring框架的优秀特性</li>
-<li>独立运行的Spring应用程序：Spring Boot允许开发者创建独立运行的Spring应用程序，无需部署到外部应用服务器</li>
-<li>内嵌Servlet容器：Spring Boot默认内置了Tomcat、Jetty或Undertow等Servlet容器，开发者可以根据需要选择合适的容器</li>
-<li>约定优于配置：当用户没有手动设置相关配置时，Spring Boot会根据应用程序的依赖和默认规则自动创建和配置Bean。</li>
-<li>简化依赖管理：通过“starter”项目对象模型（POMs），Spring Boot简化了Maven配置</li>
-<li>无需XML配置：Spring Boot采用注解和JavaConfig的方式进行配置，避免了繁琐的XML配置</li>
-<li>Spring Boot 是构建微服务的理想选择，结合 Spring Cloud 可以轻松实现服务发现、负载均衡、熔断器等功能。</li>
-<li>Spring Boot Actuator 监控<ul>
-<li>用于监控和管理应用程序的模块</li>
-<li>健康检查：通过 &#x2F;actuator&#x2F;health 端点检查应用程序的健康状态</li>
-<li>性能指标：通过 &#x2F;actuator&#x2F;metrics 端点获取应用程序的性能指标</li>
-<li>环境信息：查看应用程序的环境配置</li>
-<li>日志级别管理：动态调整日志级别</li>
-<li>自定义端点：开发者可以自定义监控端点</li>
-</ul>
-</li>
-<li>外部化配置（Externalized Configuration）<ul>
-<li>Spring Boot 支持通过多种方式加载配置信息，包括：</li>
-<li>配置文件：如 application.properties 或 application.yml。</li>
-<li>环境变量：可以通过环境变量覆盖配置文件中的值。</li>
-<li>命令行参数：启动时通过命令行参数传递配置。</li>
-<li>配置文件按环境分离：支持为不同环境（如开发、测试、生产）创建不同的配置文件，如 application-dev.properties</li>
-</ul>
-</li>
-<li>启动器（Starters）<ul>
-<li>Spring Boot 提供了一系列的“启动器”（Starter Dependencies），简化了依赖管理。常见的启动器包括：</li>
-<li>spring-boot-starter-web：用于构建 Web 应用。</li>
-<li>spring-boot-starter-data-jpa：用于 JPA 数据访问。</li>
-<li>spring-boot-starter-test：用于测试。</li>
-<li>spring-boot-starter-security：用于安全和认证。</li>
-</ul>
-</li>
-<li>性能优化<ul>
-<li>异步处理：通过 @Async 注解实现异步方法调用。</li>
-<li>缓存支持：集成 Redis 或 Ehcache 提高性能。</li>
-<li>连接池：使用 HikariCP 等高性能连接池。</li>
-</ul>
-</li>
-</ul>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/myblog/css/markmap.css">
-
-<script src="/myblog/js/markmap.js"></script>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://1514597997.github.io/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/SpinrgMVC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/myblog/images/avatar.jpg">
-      <meta itemprop="name" content="YaoHao">
-      <meta itemprop="description" content="使用hexo+next主题搭建的学习博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="个人博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/SpinrgMVC/" class="post-title-link" itemprop="url">SrpingMVC</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-11-06 20:36:10" itemprop="dateCreated datePublished" datetime="2025-11-06T20:36:10+08:00">2025-11-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-11-07 16:52:44" itemprop="dateModified" datetime="2025-11-07T16:52:44+08:00">2025-11-07</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/myblog/categories/%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">后端</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <div style="border: 2px solid white;
-border-radius: 8px;
-box-shadow: 0 0 15px rgba(0,0,0,0.15);">
-<div class="markmap-wrap" 
-      
-      
-    >
-      <script type="application/json">{"content":"SpringMVC&#xff08;Spring Model View Control&#xff09;","children":[{"content":"&#x57fa;&#x4e8e; Java &#x548c; Spring &#x7684; Web &#x6846;&#x67b6;","children":[],"payload":{"tag":"li","lines":"1,2"}},{"content":"Model&#xff08;&#x6a21;&#x578b;&#xff09;&#xff1a;&#x8d1f;&#x8d23;&#x5e94;&#x7528;&#x7a0b;&#x5e8f;&#x7684;&#x4e1a;&#x52a1;&#x903b;&#x8f91;&#x548c;&#x6570;&#x636e;&#x3002;","children":[],"payload":{"tag":"li","lines":"2,3"}},{"content":"View&#xff08;&#x89c6;&#x56fe;&#xff09;&#xff1a;&#x8d1f;&#x8d23;&#x7528;&#x6237;&#x754c;&#x9762;&#x548c;&#x7528;&#x6237;&#x4ea4;&#x4e92;&#x3002;","children":[],"payload":{"tag":"li","lines":"3,4"}},{"content":"Controller&#xff08;&#x63a7;&#x5236;&#x5668;&#xff09;&#xff1a;&#x4f5c;&#x4e3a;&#x6a21;&#x578b;&#x548c;&#x89c6;&#x56fe;&#x4e4b;&#x95f4;&#x7684;&#x6865;&#x6881;&#x3002;","children":[{"content":"&#x901a;&#x5e38;&#x5728;SpringMVC&#x4f7f;&#x7528;&#x5143;&#x6ce8;&#x89e3;&#x6807;&#x6ce8;","children":[{"content":"@Controller:&#x6807;&#x8bb0;&#x4e00;&#x4e2a;&#x7c7b;&#x4e3a; Spring MVC &#x7684;&#x63a7;&#x5236;&#x5668;","children":[],"payload":{"tag":"li","lines":"6,7"}},{"content":"@RestController:@Controller &#x548c; @ResponseBody&#x7684;&#x7ec4;&#x5408;&#x521b;&#x5efa; RESTful &#x98ce;&#x683c;&#x7684;&#x63a7;&#x5236;&#x5668;,&#x5176;&#x6240;&#x6709;&#x65b9;&#x6cd5;&#x7684;&#x8fd4;&#x56de;&#x503c;&#x90fd;&#x5c06;&#x76f4;&#x63a5;&#x4f5c;&#x4e3a;&#x54cd;&#x5e94;&#x4f53;&#x8fd4;&#x56de;","children":[],"payload":{"tag":"li","lines":"7,8"}},{"content":"@RequestMapping:&#x7528;&#x4e8e;&#x5c06; HTTP &#x8bf7;&#x6c42;&#x6620;&#x5c04;&#x5230;&#x63a7;&#x5236;&#x5668;&#x65b9;&#x6cd5;&#x3002;","children":[],"payload":{"tag":"li","lines":"8,9"}},{"content":"@GetMapping&#x3001;@PostMapping&#x3001;@PutMapping&#x3001;@DeleteMapping:@RequestMapping &#x7684;&#x7279;&#x5b9a; HTTP &#x65b9;&#x6cd5;&#x7248;&#x672c;&#xff0c;&#x5206;&#x522b;&#x7528;&#x4e8e;&#x5904;&#x7406; GET&#x3001;POST&#x3001;PUT &#x548c; DELETE &#x8bf7;&#x6c42;","children":[],"payload":{"tag":"li","lines":"9,10"}},{"content":"@RequestParam:&#x7528;&#x4e8e;&#x5c06;&#x8bf7;&#x6c42;&#x53c2;&#x6570;&#x7ed1;&#x5b9a;&#x5230;&#x63a7;&#x5236;&#x5668;&#x65b9;&#x6cd5;&#x7684;&#x53c2;&#x6570;&#x4e0a;","children":[],"payload":{"tag":"li","lines":"10,11"}},{"content":"@PathVariable:&#x5c06; URL &#x4e2d;&#x7684;&#x4e00;&#x90e8;&#x5206;&#x4f5c;&#x4e3a;&#x63a7;&#x5236;&#x5668;&#x65b9;&#x6cd5;&#x7684;&#x53c2;&#x6570;","children":[],"payload":{"tag":"li","lines":"11,12"}},{"content":"@RequestBody:&#x5c06;&#x8bf7;&#x6c42;&#x4f53;&#x7684;&#x5185;&#x5bb9;&#x7ed1;&#x5b9a;&#x5230;&#x63a7;&#x5236;&#x5668;&#x65b9;&#x6cd5;&#x7684;&#x53c2;&#x6570;&#x4e0a;&#xff0c;&#x901a;&#x5e38;&#x7528;&#x4e8e;&#x5904;&#x7406; JSON &#x6216; XML &#x6570;&#x636e;","children":[],"payload":{"tag":"li","lines":"12,13"}},{"content":"@ResponseBody:&#x5c06;&#x63a7;&#x5236;&#x5668;&#x65b9;&#x6cd5;&#x7684;&#x8fd4;&#x56de;&#x503c;&#x76f4;&#x63a5;&#x5199;&#x5165; HTTP &#x54cd;&#x5e94;&#x4f53;&#x4e2d;","children":[],"payload":{"tag":"li","lines":"13,14"}},{"content":"@ModelAttribute:&#x5c06;&#x8bf7;&#x6c42;&#x53c2;&#x6570;&#x7ed1;&#x5b9a;&#x5230;&#x4e00;&#x4e2a;&#x5bf9;&#x8c61;&#x4e0a;&#xff0c;&#x6216;&#x8005;&#x5c06;&#x5bf9;&#x8c61;&#x6dfb;&#x52a0;&#x5230;&#x6a21;&#x578b;&#x4e2d;","children":[],"payload":{"tag":"li","lines":"14,15"}},{"content":"@ExceptionHandler: &#x5904;&#x7406;&#x63a7;&#x5236;&#x5668;&#x4e2d;&#x51fa;&#x73b0;&#x7684;&#x5f02;&#x5e38;","children":[],"payload":{"tag":"li","lines":"15,16"}}],"payload":{"tag":"li","lines":"5,16"}},{"content":"AbstractController:Spring MVC &#x6846;&#x67b6;&#x63d0;&#x4f9b;&#x7684;&#x4e00;&#x4e2a;&#x62bd;&#x8c61;&#x7c7b;","children":[{"content":"&#x5b9a;&#x4e49;&#x63a7;&#x5236;&#x5668;&#x7684;&#x57fa;&#x672c;&#x884c;&#x4e3a;&#xff1a;&#x5b83;&#x5b9a;&#x4e49;&#x4e86;&#x63a7;&#x5236;&#x5668;&#x7684;&#x57fa;&#x672c;&#x63a5;&#x53e3;&#x548c;&#x884c;&#x4e3a;&#x6a21;&#x5f0f;&#xff0c;&#x4f8b;&#x5982;&#x8bf7;&#x6c42;&#x5904;&#x7406;&#x3001;&#x54cd;&#x5e94;&#x751f;&#x6210;&#x7b49;&#x3002;","children":[],"payload":{"tag":"li","lines":"17,18"}},{"content":"&#x63d0;&#x4f9b;&#x8bf7;&#x6c42;&#x5904;&#x7406;&#x7684;&#x751f;&#x547d;&#x5468;&#x671f;&#x7ba1;&#x7406;&#xff1a;&#x5b83;&#x7ba1;&#x7406;&#x63a7;&#x5236;&#x5668;&#x7684;&#x521d;&#x59cb;&#x5316;&#x3001;&#x9500;&#x6bc1;&#x7b49;&#x751f;&#x547d;&#x5468;&#x671f;&#x4e8b;&#x4ef6;&#x3002;","children":[],"payload":{"tag":"li","lines":"18,19"}},{"content":"&#x652f;&#x6301;&#x591a;&#x79cd;&#x8bf7;&#x6c42;&#x5904;&#x7406;&#x65b9;&#x5f0f;&#xff1a;&#x5b83;&#x5141;&#x8bb8;&#x901a;&#x8fc7;&#x91cd;&#x5199;&#x65b9;&#x6cd5;&#x6765;&#x5b9e;&#x73b0;&#x4e0d;&#x540c;&#x7684;&#x8bf7;&#x6c42;&#x5904;&#x7406;&#x903b;&#x8f91;&#xff0c;&#x4f8b;&#x5982;&#x5904;&#x7406; GET &#x8bf7;&#x6c42;&#x3001;POST &#x8bf7;&#x6c42;&#x7b49;&#x3002;","children":[],"payload":{"tag":"li","lines":"19,20"}},{"content":"&#x63d0;&#x4f9b;&#x8bf7;&#x6c42;&#x6620;&#x5c04;&#x529f;&#x80fd;&#xff1a;&#x901a;&#x8fc7; handleRequest &#x65b9;&#x6cd5;&#xff0c;&#x5b83;&#x80fd;&#x591f;&#x5c06; HTTP &#x8bf7;&#x6c42;&#x6620;&#x5c04;&#x5230;&#x5177;&#x4f53;&#x7684;&#x5904;&#x7406;&#x903b;&#x8f91;&#x4e0a;&#x3002;","children":[],"payload":{"tag":"li","lines":"20,21"}},{"content":"&#x53ef;&#x7ee7;&#x627f;&#x91cd;&#x5199;&#x4ee5;&#x4e0b;&#x5185;&#x5bb9;&#xff1a;","children":[{"content":"handleRequestInternal(HttpServletRequest request, HttpServletResponse response)","children":[{"content":"&#x8fd9;&#x662f; AbstractController &#x4e2d;&#x6700;&#x6838;&#x5fc3;&#x7684;&#x65b9;&#x6cd5;&#x4e4b;&#x4e00;&#xff0c;&#x5b83;&#x7528;&#x4e8e;&#x5904;&#x7406;&#x5177;&#x4f53;&#x7684;&#x8bf7;&#x6c42;&#x3002;&#x901a;&#x8fc7;&#x91cd;&#x5199;&#x8fd9;&#x4e2a;&#x65b9;&#x6cd5;&#xff0c;&#x53ef;&#x4ee5;&#x5b9e;&#x73b0;&#x4ee5;&#x4e0b;&#x529f;&#x80fd;&#xff1a;","children":[],"payload":{"tag":"li","lines":"23,24"}},{"content":"&#x81ea;&#x5b9a;&#x4e49;&#x8bf7;&#x6c42;&#x5904;&#x7406;&#x903b;&#x8f91;&#xff1a;&#x6839;&#x636e;&#x8bf7;&#x6c42;&#x7684;&#x7c7b;&#x578b;&#xff08;&#x5982; GET&#x3001;POST&#xff09;&#x548c;&#x5185;&#x5bb9;&#xff0c;&#x5b9e;&#x73b0;&#x7279;&#x5b9a;&#x7684;&#x4e1a;&#x52a1;&#x903b;&#x8f91;&#x3002;","children":[],"payload":{"tag":"li","lines":"24,25"}},{"content":"&#x751f;&#x6210;&#x54cd;&#x5e94;&#x5185;&#x5bb9;&#xff1a;&#x53ef;&#x4ee5;&#x751f;&#x6210; HTML &#x9875;&#x9762;&#x3001;JSON &#x6570;&#x636e;&#x3001;XML &#x6570;&#x636e;&#x7b49;&#x4f5c;&#x4e3a;&#x54cd;&#x5e94;&#x8fd4;&#x56de;&#x7ed9;&#x5ba2;&#x6237;&#x7aef;&#x3002;","children":[],"payload":{"tag":"li","lines":"25,26"}},{"content":"&#x63a7;&#x5236;&#x8bf7;&#x6c42;&#x7684;&#x6d41;&#x5411;&#xff1a;&#x4f8b;&#x5982;&#xff0c;&#x6839;&#x636e;&#x8bf7;&#x6c42;&#x7684;&#x53c2;&#x6570;&#x6216;&#x7528;&#x6237;&#x6743;&#x9650;&#xff0c;&#x51b3;&#x5b9a;&#x662f;&#x76f4;&#x63a5;&#x8fd4;&#x56de;&#x54cd;&#x5e94;&#x8fd8;&#x662f;&#x8f6c;&#x53d1;&#x5230;&#x5176;&#x4ed6;&#x63a7;&#x5236;&#x5668;&#x3002;","children":[],"payload":{"tag":"li","lines":"26,27"}}],"payload":{"tag":"li","lines":"22,27"}},{"content":"afterPropertiesSet()","children":[{"content":"&#x8fd9;&#x662f;&#x4e00;&#x4e2a;&#x521d;&#x59cb;&#x5316;&#x56de;&#x8c03;&#x65b9;&#x6cd5;&#xff0c;&#x7ee7;&#x627f;&#x81ea; InitializingBean &#x63a5;&#x53e3;&#x3002;&#x901a;&#x8fc7;&#x91cd;&#x5199;&#x8fd9;&#x4e2a;&#x65b9;&#x6cd5;&#xff0c;&#x53ef;&#x4ee5;&#x5728;&#x63a7;&#x5236;&#x5668;&#x521d;&#x59cb;&#x5316;&#x5b8c;&#x6210;&#x540e;&#x6267;&#x884c;&#x4e00;&#x4e9b;&#x521d;&#x59cb;&#x5316;&#x64cd;&#x4f5c;&#xff0c;&#x4f8b;&#x5982;&#xff1a;&#x52a0;&#x8f7d;&#x914d;&#x7f6e;&#x6587;&#x4ef6;&#xff1a;&#x52a0;&#x8f7d;&#x4e1a;&#x52a1;&#x76f8;&#x5173;&#x7684;&#x914d;&#x7f6e;&#x4fe1;&#x606f;&#x3002;","children":[],"payload":{"tag":"li","lines":"28,29"}},{"content":"&#x521d;&#x59cb;&#x5316;&#x8d44;&#x6e90;&#xff1a;&#x521d;&#x59cb;&#x5316;&#x6570;&#x636e;&#x5e93;&#x8fde;&#x63a5;&#x3001;&#x7f13;&#x5b58;&#x7b49;&#x8d44;&#x6e90;&#x3002;","children":[],"payload":{"tag":"li","lines":"29,30"}},{"content":"&#x6821;&#x9a8c;&#x914d;&#x7f6e;&#xff1a;&#x68c0;&#x67e5;&#x914d;&#x7f6e;&#x662f;&#x5426;&#x6b63;&#x786e;&#xff0c;&#x786e;&#x4fdd;&#x63a7;&#x5236;&#x5668;&#x5728;&#x542f;&#x52a8;&#x65f6;&#x5904;&#x4e8e;&#x6b63;&#x786e;&#x7684;&#x72b6;&#x6001;&#x3002;","children":[],"payload":{"tag":"li","lines":"30,31"}}],"payload":{"tag":"li","lines":"27,31"}},{"content":"destroy()","children":[{"content":"&#x8fd9;&#x662f;&#x4e00;&#x4e2a;&#x9500;&#x6bc1;&#x56de;&#x8c03;&#x65b9;&#x6cd5;&#xff0c;&#x7ee7;&#x627f;&#x81ea; DisposableBean &#x63a5;&#x53e3;&#x3002;&#x901a;&#x8fc7;&#x91cd;&#x5199;&#x8fd9;&#x4e2a;&#x65b9;&#x6cd5;&#xff0c;&#x53ef;&#x4ee5;&#x5728;&#x63a7;&#x5236;&#x5668;&#x9500;&#x6bc1;&#x65f6;&#x6267;&#x884c;&#x4e00;&#x4e9b;&#x6e05;&#x7406;&#x5de5;&#x4f5c;&#xff0c;&#x4f8b;&#x5982;&#xff1a;","children":[],"payload":{"tag":"li","lines":"32,33"}},{"content":"&#x91ca;&#x653e;&#x8d44;&#x6e90;&#xff1a;&#x5173;&#x95ed;&#x6570;&#x636e;&#x5e93;&#x8fde;&#x63a5;&#x3001;&#x91ca;&#x653e;&#x6587;&#x4ef6;&#x53e5;&#x67c4;&#x7b49;&#x3002;","children":[],"payload":{"tag":"li","lines":"33,34"}},{"content":"&#x6e05;&#x7406;&#x7f13;&#x5b58;&#xff1a;&#x6e05;&#x9664;&#x63a7;&#x5236;&#x5668;&#x4e2d;&#x4f7f;&#x7528;&#x7684;&#x7f13;&#x5b58;&#x6570;&#x636e;&#xff0c;&#x907f;&#x514d;&#x5185;&#x5b58;&#x6cc4;&#x6f0f;&#x3002;","children":[],"payload":{"tag":"li","lines":"34,35"}}],"payload":{"tag":"li","lines":"31,35"}},{"content":"supportsMethod(String method)","children":[{"content":"&#x8fd9;&#x4e2a;&#x65b9;&#x6cd5;&#x7528;&#x4e8e;&#x5224;&#x65ad;&#x63a7;&#x5236;&#x5668;&#x662f;&#x5426;&#x652f;&#x6301;&#x67d0;&#x79cd; HTTP &#x65b9;&#x6cd5;&#xff08;&#x5982; GET&#x3001;POST&#x3001;PUT &#x7b49;&#xff09;&#x3002;&#x901a;&#x8fc7;&#x91cd;&#x5199;&#x8fd9;&#x4e2a;&#x65b9;&#x6cd5;&#xff0c;&#x53ef;&#x4ee5;&#x81ea;&#x5b9a;&#x4e49;&#x63a7;&#x5236;&#x5668;&#x652f;&#x6301;&#x7684; HTTP &#x65b9;&#x6cd5;&#xff0c;&#x4f8b;&#x5982;&#xff1a;","children":[],"payload":{"tag":"li","lines":"36,37"}},{"content":"&#x9650;&#x5236;&#x8bf7;&#x6c42;&#x65b9;&#x6cd5;&#xff1a;&#x53ea;&#x5141;&#x8bb8;&#x7279;&#x5b9a;&#x7684; HTTP &#x65b9;&#x6cd5;&#x8bbf;&#x95ee;&#x63a7;&#x5236;&#x5668;&#xff0c;&#x589e;&#x5f3a;&#x5b89;&#x5168;&#x6027;&#x3002;","children":[],"payload":{"tag":"li","lines":"37,38"}},{"content":"&#x52a8;&#x6001;&#x652f;&#x6301;&#x65b9;&#x6cd5;&#xff1a;&#x6839;&#x636e;&#x67d0;&#x4e9b;&#x6761;&#x4ef6;&#x52a8;&#x6001;&#x51b3;&#x5b9a;&#x652f;&#x6301;&#x7684; HTTP &#x65b9;&#x6cd5;&#x3002;","children":[],"payload":{"tag":"li","lines":"38,39"}}],"payload":{"tag":"li","lines":"35,39"}}],"payload":{"tag":"li","lines":"21,39"}}],"payload":{"tag":"li","lines":"16,39"}}],"payload":{"tag":"li","lines":"4,39"}},{"content":"&#x603b;&#x4f53;&#x5de5;&#x4f5c;&#x6d41;&#x7a0b;","children":[{"content":"DispatcherServlet&#xff1a;&#x524d;&#x7aef;&#x63a7;&#x5236;&#x5668;&#xff0c;&#x8d1f;&#x8d23;&#x63a5;&#x6536;&#x6240;&#x6709; HTTP &#x8bf7;&#x6c42;&#x5e76;&#x5206;&#x53d1;&#x7ed9;&#x5408;&#x9002;&#x7684;&#x5904;&#x7406;&#x5668;&#x3002;","children":[],"payload":{"tag":"li","lines":"40,41"}},{"content":"HandlerMapping&#xff1a;&#x786e;&#x5b9a;&#x54ea;&#x4e2a; Controller &#x5904;&#x7406;&#x5f53;&#x524d;&#x8bf7;&#x6c42;&#x3002;","children":[],"payload":{"tag":"li","lines":"41,42"}},{"content":"HandlerAdapter&#xff1a;&#x9002;&#x914d;&#x4e0d;&#x540c;&#x7c7b;&#x578b;&#x7684;&#x5904;&#x7406;&#x5668;&#xff08;Handler&#xff09;&#xff0c;&#x786e;&#x4fdd;&#x5b83;&#x4eec;&#x80fd;&#x591f;&#x88ab;&#x6b63;&#x786e;&#x8c03;&#x7528;&#x3002;","children":[],"payload":{"tag":"li","lines":"42,43"}},{"content":"Controller&#xff1a;&#x5904;&#x7406;&#x5177;&#x4f53;&#x7684;&#x4e1a;&#x52a1;&#x903b;&#x8f91;&#xff0c;&#x901a;&#x5e38;&#x662f;&#x4e00;&#x4e2a;&#x5e26;&#x6709; @Controller &#x6ce8;&#x89e3;&#x7684;&#x7c7b;&#x3002;","children":[],"payload":{"tag":"li","lines":"43,44"}},{"content":"ModelAndView&#xff1a;&#x5c01;&#x88c5;&#x6a21;&#x578b;&#x6570;&#x636e;&#x548c;&#x89c6;&#x56fe;&#x540d;&#x79f0;&#x3002;","children":[],"payload":{"tag":"li","lines":"44,45"}},{"content":"ViewResolver&#xff1a;&#x89e3;&#x6790;&#x89c6;&#x56fe;&#x540d;&#x79f0;&#xff0c;&#x8fd4;&#x56de;&#x5b9e;&#x9645;&#x7684; View &#x5bf9;&#x8c61;&#x3002;","children":[],"payload":{"tag":"li","lines":"45,46"}},{"content":"View&#xff1a;&#x8d1f;&#x8d23;&#x5c06;&#x6a21;&#x578b;&#x6570;&#x636e;&#x6e32;&#x67d3;&#x4e3a;&#x6700;&#x7ec8;&#x7684; HTML &#x9875;&#x9762;&#x3002;","children":[],"payload":{"tag":"li","lines":"46,47"}}],"payload":{"tag":"li","lines":"39,47"}}],"payload":{"tag":"li","lines":"0,47"}}</script>
-      <script type="application/json">{}</script>
-    </div>
-</div>
-
-<style>
-.markmap {
-  --markmap-text-color: #faf9f8;
-}
-</style>
-
-<h1 id="思维导图未加载就请刷新网页"><a href="#思维导图未加载就请刷新网页" class="headerlink" title="思维导图未加载就请刷新网页"></a>思维导图未加载就请刷新网页</h1><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/myblog/css/markmap.css">
-
-<script src="/myblog/js/markmap.js"></script>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1477,7 +1547,7 @@ box-shadow: 0 0 15px rgba(0,0,0,0.15);">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/myblog/archives">
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

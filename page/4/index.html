@@ -177,6 +177,630 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://1514597997.github.io/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/Java%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE%E7%89%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/myblog/images/avatar.jpg">
+      <meta itemprop="name" content="YaoHao">
+      <meta itemprop="description" content="使用hexo+next主题搭建的学习博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/Java%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE%E7%89%88/" class="post-title-link" itemprop="url">Java编程语言(思维导图版)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-11-06 20:36:10" itemprop="dateCreated datePublished" datetime="2025-11-06T20:36:10+08:00">2025-11-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-11-07 14:31:17" itemprop="dateModified" datetime="2025-11-07T14:31:17+08:00">2025-11-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/myblog/categories/%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">后端</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <div style="border: 2px solid white;
+border-radius: 8px;
+box-shadow: 0 0 15px rgba(0,0,0,0.15);">
+
+<div class="markmap-wrap" 
+      
+      
+    >
+      <script type="application/json">{"content":"Java","children":[{"content":"&#x9762;&#x5411;&#x5bf9;&#x8c61;&#x7f16;&#x7a0b;&#x8bed;&#x8a00;","children":[{"content":"&#x662f;&#x4e00;&#x4e2a;&#x9762;&#x5411;&#x5bf9;&#x8c61;&#x7684;&#x8bed;&#x8a00;&#xff0c;&#x540c;&#x65f6;&#x57fa;&#x4e8e;JVM&#x865a;&#x62df;&#x673a;&#x652f;&#x6301;&#x8de8;&#x5e73;&#x53f0;&#x8fd0;&#x884c;&#x3002;","children":[],"payload":{"tag":"li","lines":"2,3"}},{"content":"&#x4e00;&#x6b21;&#x7f16;&#x8bd1;&#xff0c;&#x591a;&#x6b21;&#x8fd0;&#x884c;&#x3002;&#x5c5e;&#x4e8e;&#x534a;&#x7f16;&#x8bd1;&#x534a;&#x89e3;&#x91ca;&#x8bed;&#x8a00;&#x3002;","children":[],"payload":{"tag":"li","lines":"3,4"}}],"payload":{"tag":"li","lines":"1,4"}},{"content":"JVM","children":[{"content":"JVM(Java Virtual Machine) &#x5728;&#x7528;&#x6237;&#x5b89;&#x88c5;&#x73af;&#x5883;&#xff08;JRE&#xff09;&#x6216; Java &#x5f00;&#x53d1;&#x5de5;&#x5177;&#x5305;&#xff08;JDK&#xff09;&#x65f6;&#x4f1a;&#x81ea;&#x5e26;JVM&#x3002;","children":[],"payload":{"tag":"li","lines":"5,6"}},{"content":"&#x7f16;&#x8bd1;","children":[{"content":".java&#x6e90;&#x4ee3;&#x7801;&#x6587;&#x4ef6;&#x901a;&#x8fc7;Java&#x7f16;&#x8bd1;&#x5668;&#xff08;javac&#xff09;&#x8fdb;&#x884c;&#x7f16;&#x8bd1;&#x6210;.class&#x5b57;&#x8282;&#x7801;&#x6587;&#x4ef6;","children":[],"payload":{"tag":"li","lines":"7,8"}}],"payload":{"tag":"li","lines":"6,8"}},{"content":"&#x8fd0;&#x884c;","children":[{"content":"ClassLoader&#x7c7b;&#x52a0;&#x8f7d;","children":[{"content":".class&#x6587;&#x4ef6;&#x5bf9;&#x5e94;&#x9762;&#x5411;&#x7684;&#x662f;java&#x865a;&#x62df;&#x673a;&#xff08;JVM&#xff09;&#x7684;&#x6307;&#x4ee4;&#x96c6;&#x8fd0;&#x884c;","children":[],"payload":{"tag":"li","lines":"10,11"}},{"content":"&#x7c7b;&#x52a0;&#x8f7d;&#x5668;ClassLoader&#x5c06;.class&#x6587;&#x4ef6;&#x52a0;&#x8f7d;&#x5230;JVM&#x8bbe;&#x7f6e;&#x7684;&#x5185;&#x5b58;&#x5f53;&#x4e2d;&#x3002;&#x5e76;&#x5c06;&#x5176;&#x8f6c;&#x6362;&#x4e3a;java.lang.Class&#x5bf9;&#x8c61;&#x3002;&#x540c;&#x65f6;&#x652f;&#x6301;&#x52a8;&#x6001;&#x52a0;&#x8f7d;&#x7c7b;&#x3002;&#x53cd;&#x5c04;&#x673a;&#x5236;&#x57fa;&#x4e8e;&#x8fd9;&#x4e2a;&#x7279;&#x70b9;&#x5b9e;&#x73b0;&#x3002;","children":[],"payload":{"tag":"li","lines":"11,12"}}],"payload":{"tag":"li","lines":"9,12"}},{"content":"&#x65b9;&#x6cd5;&#x533a;&#xff08;Method Area&#xff09;","children":[{"content":"&#x5728;JDK1.8&#x7248;&#x672c;&#x5e9f;&#x5f03;&#x4e86;&#x6c38;&#x4e45;&#x4ee3;&#xff0c;&#x66ff;&#x4ee3;&#x7684;&#x662f;&#x5143;&#x7a7a;&#x95f4;&#xff08;MetaSpace&#xff09;&#xff0c;&#x5143;&#x7a7a;&#x95f4;&#x4e0e;&#x6c38;&#x4e45;&#x4ee3;&#x4e0a;&#x7c7b;&#x4f3c;&#xff0c;&#x90fd;&#x662f;&#x65b9;&#x6cd5;&#x533a;&#x7684;&#x5b9e;&#x73b0;&#xff0c;&#x4ed6;&#x4eec;&#x6700;&#x5927;&#x533a;&#x522b;&#x662f;&#xff1a;&#x5143;&#x7a7a;&#x95f4;&#x5e76;&#x4e0d;&#x5728;JVM&#x4e2d;&#xff0c;&#x800c;&#x662f;&#x4f7f;&#x7528;&#x672c;&#x5730;&#x5185;&#x5b58;&#x3002;","children":[],"payload":{"tag":"li","lines":"13,14"}},{"content":"&#x7c7b;&#x578b;&#x4fe1;&#x606f;&#xff1a;&#x5b58;&#x50a8;&#x4e86;&#x6bcf;&#x4e2a;&#x52a0;&#x8f7d;&#x7684;&#x7c7b;&#x7684;&#x5168;&#x540d;&#x3001;&#x7236;&#x7c7b;&#x5168;&#x540d;&#x3001;&#x4fee;&#x9970;&#x7b26;&#x3001;&#x76f4;&#x63a5;&#x63a5;&#x53e3;&#x7d22;&#x5f15;&#x7b49;&#x4fe1;&#x606f;&#x3002;","children":[],"payload":{"tag":"li","lines":"14,15"}},{"content":"&#x5e38;&#x91cf;&#x6c60;&#xff1a;&#x5305;&#x62ec;&#x7c7b;&#x4e2d;&#x6240;&#x6709;&#x7684;&#x5e38;&#x91cf;&#x4fe1;&#x606f;&#xff0c;&#x5982;&#x5b57;&#x7b26;&#x4e32;&#x5b57;&#x9762;&#x91cf;&#x3001;&#x6570;&#x503c;&#x5b57;&#x9762;&#x91cf;&#x7b49;&#x3002;","children":[],"payload":{"tag":"li","lines":"15,16"}},{"content":"&#x5b57;&#x6bb5;&#x4fe1;&#x606f;&#xff1a;&#x5b58;&#x50a8;&#x4e86;&#x7c7b;&#x4e2d;&#x6240;&#x6709;&#x5b57;&#x6bb5;&#x7684;&#x540d;&#x79f0;&#x3001;&#x7c7b;&#x578b;&#x3001;&#x4fee;&#x9970;&#x7b26;&#x7b49;&#x4fe1;&#x606f;&#x3002;","children":[],"payload":{"tag":"li","lines":"16,17"}},{"content":"&#x65b9;&#x6cd5;&#x4fe1;&#x606f;&#xff1a;&#x5b58;&#x50a8;&#x4e86;&#x7c7b;&#x4e2d;&#x6240;&#x6709;&#x65b9;&#x6cd5;&#x7684;&#x540d;&#x79f0;&#x3001;&#x8fd4;&#x56de;&#x7c7b;&#x578b;&#x3001;&#x53c2;&#x6570;&#x3001;&#x4fee;&#x9970;&#x7b26;&#x7b49;&#x4fe1;&#x606f;&#xff0c;&#x4ee5;&#x53ca;&#x65b9;&#x6cd5;&#x7684;&#x5b57;&#x8282;&#x7801;&#x3001;&#x64cd;&#x4f5c;&#x6570;&#x6808;&#x3001;&#x5c40;&#x90e8;&#x53d8;&#x91cf;&#x8868;&#x5927;&#x5c0f;&#x7b49;&#x3002;","children":[],"payload":{"tag":"li","lines":"17,18"}},{"content":"&#x7c7b;&#x53d8;&#x91cf;&#xff1a;&#x5373;&#x9759;&#x6001;&#x53d8;&#x91cf;&#xff0c;&#x4e0e;&#x7c7b;&#x76f8;&#x5173;&#x8054;&#xff0c;&#x968f;&#x7740;&#x7c7b;&#x7684;&#x52a0;&#x8f7d;&#x800c;&#x52a0;&#x8f7d;&#xff0c;&#x7531;&#x7c7b;&#x7684;&#x6240;&#x6709;&#x5b9e;&#x4f8b;&#x5171;&#x4eab;&#x3002;","children":[],"payload":{"tag":"li","lines":"18,19"}},{"content":"&#x8fd0;&#x884c;&#x65f6;&#x5e38;&#x91cf;&#x6c60;&#xff1a;&#x7c7b;&#x52a0;&#x8f7d;&#x540e;&#xff0c;&#x5e38;&#x91cf;&#x6c60;&#x8868;&#x4e2d;&#x7684;&#x5185;&#x5bb9;&#x4f1a;&#x5b58;&#x653e;&#x5230;&#x65b9;&#x6cd5;&#x533a;&#x7684;&#x8fd0;&#x884c;&#x65f6;&#x5e38;&#x91cf;&#x6c60;&#x4e2d;&#x3002;","children":[],"payload":{"tag":"li","lines":"19,20"}}],"payload":{"tag":"li","lines":"12,20"}},{"content":"&#x5806;&#xff08;Heap&#xff09;","children":[{"content":"JVM&#x5806;&#x5185;&#x5b58;&#x5e38;&#x7528;&#x53c2;&#x6570;","children":[{"content":"-Xms\t&#x5806;&#x5185;&#x5b58;&#x521d;&#x59cb;&#x5927;&#x5c0f;&#xff0c;&#x5355;&#x4f4d;m&#x3001;g","children":[],"payload":{"tag":"li","lines":"22,23"}},{"content":"-Xmx&#xff08;MaxHeapSize&#xff09;\t&#x5806;&#x5185;&#x5b58;&#x6700;&#x5927;&#x5141;&#x8bb8;&#x5927;&#x5c0f;&#xff0c;&#x4e00;&#x822c;&#x4e0d;&#x8981;&#x5927;&#x4e8e;&#x7269;&#x7406;&#x5185;&#x5b58;&#x7684;80%","children":[],"payload":{"tag":"li","lines":"23,24"}},{"content":"-XX:PermSize\t&#x975e;&#x5806;&#x5185;&#x5b58;&#x521d;&#x59cb;&#x5927;&#x5c0f;&#xff0c;&#x4e00;&#x822c;&#x5e94;&#x7528;&#x8bbe;&#x7f6e;&#x521d;&#x59cb;&#x5316;200m&#xff0c;&#x6700;&#x5927;1024m&#x5c31;&#x591f;&#x4e86; &#xff08;&#x5728;JDK1.8&#x7248;&#x672c;&#x540e;&#x5e9f;&#x5f03;&#xff09;","children":[],"payload":{"tag":"li","lines":"24,25"}},{"content":"-XX:MaxPermSize\t&#x975e;&#x5806;&#x5185;&#x5b58;&#x6700;&#x5927;&#x5141;&#x8bb8;&#x5927;&#x5c0f; &#xff08;&#x5728;JDK1.8&#x7248;&#x672c;&#x540e;&#x5e9f;&#x5f03;&#xff09;","children":[],"payload":{"tag":"li","lines":"25,26"}},{"content":"-XX:NewSize&#xff08;-Xns&#xff09;\t&#x5e74;&#x8f7b;&#x4ee3;&#x5185;&#x5b58;&#x521d;&#x59cb;&#x5927;&#x5c0f;","children":[],"payload":{"tag":"li","lines":"26,27"}},{"content":"-XX:MaxNewSize&#xff08;-Xmn&#xff09;\t&#x5e74;&#x8f7b;&#x4ee3;&#x5185;&#x5b58;&#x6700;&#x5927;&#x5141;&#x8bb8;&#x5927;&#x5c0f;&#xff0c;&#x4e5f;&#x53ef;&#x4ee5;&#x7f29;&#x5199;","children":[],"payload":{"tag":"li","lines":"27,28"}},{"content":"-XX:SurvivorRatio=8\t&#x5e74;&#x8f7b;&#x4ee3;&#x4e2d;Eden&#x533a;&#x4e0e;Survivor&#x533a;&#x7684;&#x5bb9;&#x91cf;&#x6bd4;&#x4f8b;&#x503c;&#xff0c;&#x9ed8;&#x8ba4;&#x4e3a;8&#xff0c;&#x5373;8:1","children":[],"payload":{"tag":"li","lines":"28,29"}},{"content":"-Xss\t&#x5806;&#x6808;&#x5185;&#x5b58;&#x5927;&#x5c0f;","children":[],"payload":{"tag":"li","lines":"29,30"}}],"payload":{"tag":"li","lines":"21,30"}},{"content":"&#x5806;&#x662f;JVM&#x4e2d;&#x5185;&#x5b58;&#x6700;&#x5927;&#x7684;&#x4e00;&#x5757;&#xff0c;&#x540c;&#x65f6;&#x4e5f;&#x662f;&#x5783;&#x573e;&#x6536;&#x96c6;&#x5668;&#xff08;Garbage Collector&#xff09;&#x7ba1;&#x7406;&#x7684;&#x4e3b;&#x8981;&#x533a;&#x57df;&#xff0c;&#x8d1f;&#x8d23;&#x56de;&#x6536;&#x8fd9;&#x4e9b;&#x5bf9;&#x8c61;&#x3002;","children":[],"payload":{"tag":"li","lines":"30,31"}},{"content":"&#x4e3b;&#x8981;&#x4f5c;&#x7528;&#x5b58;&#x653e;&#x5bf9;&#x8c61;&#x5b9e;&#x4f8b;&#x6570;&#x7ec4;&#x6570;&#x636e;&#x7b49;&#x3002;&#x6240;&#x6709;&#x7ebf;&#x7a0b;&#x5171;&#x4eab;&#x7684;&#x5185;&#x5b58;&#x533a;&#x57df;","children":[],"payload":{"tag":"li","lines":"31,32"}},{"content":"&#x9700;&#x8981;&#x6ce8;&#x610f;&#x7ba1;&#x7406;&#x597d;&#x5185;&#x5b58;,&#x5426;&#x5219;&#x53ef;&#x80fd;&#x5f15;&#x8d77;&#x5185;&#x5b58;&#x6ea2;&#x51fa;&#x95ee;&#x9898;&#x3002;","children":[],"payload":{"tag":"li","lines":"32,33"}}],"payload":{"tag":"li","lines":"20,33"}},{"content":"Java&#x865a;&#x62df;&#x673a;&#x6808;&#xff08;Java Virtual Machine Stack&#xff09;","children":[{"content":"JVM&#x6808;&#x7684;&#x5185;&#x5b58;&#x5206;&#x914d;&#x5728;JVM&#x542f;&#x52a8;&#x65f6;&#x786e;&#x5b9a;&#xff0c;&#x901a;&#x5e38;&#x53ef;&#x4ee5;&#x901a;&#x8fc7;-Xss&#x53c2;&#x6570;&#x8bbe;&#x7f6e;&#x6bcf;&#x4e2a;&#x7ebf;&#x7a0b;&#x7684;&#x6808;&#x5927;&#x5c0f;&#x3002;","children":[],"payload":{"tag":"li","lines":"34,35"}},{"content":"&#x6bcf;&#x4e2a;&#x7ebf;&#x7a0b;&#x90fd;&#x6709;&#x4e00;&#x4e2a;&#x79c1;&#x6709;&#x7684;&#x6808;&#xff0c;&#x7528;&#x4e8e;&#x5b58;&#x50a8;&#x65b9;&#x6cd5;&#x8c03;&#x7528;&#x65f6;&#x7684;&#x5c40;&#x90e8;&#x53d8;&#x91cf;&#x3001;&#x64cd;&#x4f5c;&#x6570;&#x6808;&#x548c;&#x52a8;&#x6001;&#x94fe;&#x63a5;&#x4fe1;&#x606f;","children":[],"payload":{"tag":"li","lines":"35,36"}},{"content":"JVM&#x6808;&#x7684;&#x751f;&#x547d;&#x5468;&#x671f;&#x4e0e;&#x7ebf;&#x7a0b;&#x7684;&#x751f;&#x547d;&#x5468;&#x671f;&#x76f8;&#x540c;&#x3002;&#x7ebf;&#x7a0b;&#x5f00;&#x59cb;&#x65f6;&#xff0c;JVM&#x6808;&#x88ab;&#x521b;&#x5efa;&#xff1b;&#x7ebf;&#x7a0b;&#x7ed3;&#x675f;&#x65f6;&#xff0c;JVM&#x6808;&#x88ab;&#x9500;&#x6bc1;&#x3002;","children":[],"payload":{"tag":"li","lines":"36,37"}},{"content":"&#x5c40;&#x90e8;&#x53d8;&#x91cf;&#x8868;&#xff08;Local Variable Table&#xff09;","children":[{"content":"&#x7528;&#x4e8e;&#x5b58;&#x50a8;&#x65b9;&#x6cd5;&#x7684;&#x53c2;&#x6570;&#x548c;&#x5c40;&#x90e8;&#x53d8;&#x91cf;&#x3002;","children":[],"payload":{"tag":"li","lines":"38,39"}},{"content":"&#x6bcf;&#x4e2a;&#x5c40;&#x90e8;&#x53d8;&#x91cf;&#x5360;&#x7528;&#x4e00;&#x4e2a;&#x69fd;&#xff08;slot&#xff09;&#xff0c;&#x69fd;&#x7684;&#x5927;&#x5c0f;&#x4e3a;32&#x4f4d;&#x3002;","children":[],"payload":{"tag":"li","lines":"39,40"}},{"content":"&#x5c40;&#x90e8;&#x53d8;&#x91cf;&#x8868;&#x7684;&#x5927;&#x5c0f;&#x5728;&#x65b9;&#x6cd5;&#x7f16;&#x8bd1;&#x65f6;&#x786e;&#x5b9a;&#x3002;","children":[],"payload":{"tag":"li","lines":"40,41"}}],"payload":{"tag":"li","lines":"37,41"}},{"content":"&#x64cd;&#x4f5c;&#x6570;&#x6808;&#xff08;Operand Stack&#xff09;","children":[{"content":"&#x7528;&#x4e8e;&#x5b58;&#x50a8;&#x64cd;&#x4f5c;&#x6570;&#x548c;&#x4e2d;&#x95f4;&#x7ed3;&#x679c;&#x3002;","children":[],"payload":{"tag":"li","lines":"42,43"}},{"content":"&#x64cd;&#x4f5c;&#x6570;&#x6808;&#x662f;&#x4e00;&#x4e2a;&#x540e;&#x8fdb;&#x5148;&#x51fa;&#x7684;&#x6808;&#xff0c;&#x5176;&#x5927;&#x5c0f;&#x5728;&#x65b9;&#x6cd5;&#x6267;&#x884c;&#x65f6;&#x52a8;&#x6001;&#x53d8;&#x5316;&#x3002;","children":[],"payload":{"tag":"li","lines":"43,44"}}],"payload":{"tag":"li","lines":"41,44"}},{"content":"&#x5e27;&#x6570;&#x636e;&#x533a;&#xff08;Frame Data Area&#xff09;","children":[{"content":"&#x5305;&#x542b;&#x65b9;&#x6cd5;&#x7684;&#x8fd0;&#x884c;&#x65f6;&#x5e38;&#x91cf;&#x6c60;&#x5f15;&#x7528;&#x3001;&#x65b9;&#x6cd5;&#x7684;&#x8fd4;&#x56de;&#x5730;&#x5740;&#x3001;&#x5f02;&#x5e38;&#x5904;&#x7406;&#x8868;&#x7b49;&#x4fe1;&#x606f;&#x3002;","children":[],"payload":{"tag":"li","lines":"45,46"}},{"content":"&#x65b9;&#x6cd5;&#x8fd4;&#x56de;&#x5730;&#x5740;&#xff08;Return Address&#xff09;-&#x5e27;&#x6570;&#x636e;&#x533a;&#x5b58;&#x50a8;&#x4e86;&#x65b9;&#x6cd5;&#x8fd4;&#x56de;&#x65f6;&#x9700;&#x8981;&#x8df3;&#x8f6c;&#x5230;&#x7684;&#x5730;&#x5740;&#x3002;&#x5f53;&#x65b9;&#x6cd5;&#x6267;&#x884c;&#x5b8c;&#x6210;&#xff08;&#x65e0;&#x8bba;&#x662f;&#x6b63;&#x5e38;&#x8fd4;&#x56de;&#x8fd8;&#x662f;&#x5f02;&#x5e38;&#x7ec8;&#x6b62;&#xff09;&#xff0c;JVM&#x4f1a;&#x6839;&#x636e;&#x8fd9;&#x4e2a;&#x8fd4;&#x56de;&#x5730;&#x5740;&#x8df3;&#x56de;&#x5230;&#x8c03;&#x7528;&#x8be5;&#x65b9;&#x6cd5;&#x7684;&#x4e0a;&#x4e00;&#x4e2a;&#x6808;&#x5e27;","children":[],"payload":{"tag":"li","lines":"46,47"}},{"content":"&#x52a8;&#x6001;&#x94fe;&#x63a5;&#xff08;Dynamic Linking&#xff09;&#x5e27;&#x6570;&#x636e;&#x533a;&#x652f;&#x6301;&#x52a8;&#x6001;&#x94fe;&#x63a5;&#x673a;&#x5236;&#x3002;&#x5f53;&#x65b9;&#x6cd5;&#x8c03;&#x7528;&#x5176;&#x4ed6;&#x65b9;&#x6cd5;&#x6216;&#x8bbf;&#x95ee;&#x5b57;&#x6bb5;&#x65f6;&#xff0c;JVM&#x9700;&#x8981;&#x89e3;&#x6790;&#x7b26;&#x53f7;&#x5f15;&#x7528;&#x3002;&#x5982;&#x679c;&#x8fd9;&#x4e9b;&#x5f15;&#x7528;&#x5c1a;&#x672a;&#x89e3;&#x6790;&#xff0c;JVM&#x4f1a;&#x5728;&#x8fd0;&#x884c;&#x65f6;&#x52a8;&#x6001;&#x89e3;&#x6790;&#x5b83;&#x4eec;","children":[],"payload":{"tag":"li","lines":"47,48"}},{"content":"&#x5f02;&#x5e38;&#x8868;&#x5f15;&#x7528;&#xff08;Exception Table Reference&#xff09;&#x5e27;&#x6570;&#x636e;&#x533a;&#x8fd8;&#x5305;&#x542b;&#x4e00;&#x4e2a;&#x5bf9;&#x5f02;&#x5e38;&#x8868;&#xff08;Exception Table&#xff09;&#x7684;&#x5f15;&#x7528;&#x3002;&#x5f02;&#x5e38;&#x8868;&#x5b9a;&#x4e49;&#x4e86;&#x65b9;&#x6cd5;&#x4e2d;&#x54ea;&#x4e9b;&#x5b57;&#x8282;&#x7801;&#x8303;&#x56f4;&#x88ab;&#x54ea;&#x4e9b;catch&#x5b50;&#x53e5;&#x4fdd;&#x62a4;&#x3002;&#x5f53;&#x65b9;&#x6cd5;&#x629b;&#x51fa;&#x5f02;&#x5e38;&#x65f6;&#xff0c;JVM&#x4f1a;&#x901a;&#x8fc7;&#x5f02;&#x5e38;&#x8868;&#x6765;&#x786e;&#x5b9a;&#x662f;&#x5426;&#x80fd;&#x627e;&#x5230;&#x5339;&#x914d;&#x7684;catch&#x5b50;&#x53e5;&#x6765;&#x5904;&#x7406;&#x5f02;&#x5e38;","children":[],"payload":{"tag":"li","lines":"48,49"}},{"content":"&#x5e38;&#x91cf;&#x6c60;&#x5f15;&#x7528;&#xff08;Constant Pool Reference&#xff09;&#x5e27;&#x6570;&#x636e;&#x533a;&#x5305;&#x542b;&#x4e00;&#x4e2a;&#x5bf9;&#x5f53;&#x524d;&#x65b9;&#x6cd5;&#x6240;&#x5c5e;&#x7c7b;&#x7684;&#x8fd0;&#x884c;&#x65f6;&#x5e38;&#x91cf;&#x6c60;&#x7684;&#x5f15;&#x7528;&#x3002;&#x8fd9;&#x4e2a;&#x5f15;&#x7528;&#x7528;&#x4e8e;&#x652f;&#x6301;&#x5e38;&#x91cf;&#x6c60;&#x89e3;&#x6790;&#xff0c;&#x5373;&#x5728;&#x6267;&#x884c;&#x5b57;&#x8282;&#x7801;&#x6307;&#x4ee4;&#x65f6;&#xff0c;JVM&#x53ef;&#x4ee5;&#x901a;&#x8fc7;&#x8fd9;&#x4e2a;&#x5f15;&#x7528;&#x8bbf;&#x95ee;&#x5e38;&#x91cf;&#x6c60;&#x4e2d;&#x7684;&#x7b26;&#x53f7;&#x5f15;&#x7528;","children":[],"payload":{"tag":"li","lines":"49,50"}}],"payload":{"tag":"li","lines":"44,50"}}],"payload":{"tag":"li","lines":"33,50"}},{"content":"&#x7a0b;&#x5e8f;&#x8ba1;&#x6570;&#x5668;&#xff08;Program Counter Register&#xff09;","children":[{"content":"&#x7a0b;&#x5e8f;&#x8ba1;&#x6570;&#x5668;&#x662f;&#x7ebf;&#x7a0b;&#x79c1;&#x6709;&#x7684;&#xff0c;&#x6bcf;&#x4e2a;&#x7ebf;&#x7a0b;&#x90fd;&#x6709;&#x81ea;&#x5df1;&#x7684;&#x7a0b;&#x5e8f;&#x8ba1;&#x6570;&#x5668;&#x3002;&#x7ebf;&#x7a0b;&#x4e4b;&#x95f4;&#x7684;&#x7a0b;&#x5e8f;&#x8ba1;&#x6570;&#x5668;&#x4e92;&#x4e0d;&#x5e72;&#x6270;","children":[],"payload":{"tag":"li","lines":"51,52"}},{"content":"&#x8bb0;&#x5f55;&#x5f53;&#x524d;&#x7ebf;&#x7a0b;&#x6240;&#x6267;&#x884c;&#x7684;&#x5b57;&#x8282;&#x7801;&#x6307;&#x4ee4;&#x5730;&#x5740;","children":[],"payload":{"tag":"li","lines":"52,53"}},{"content":"&#x5f53;&#x4e00;&#x4e2a;&#x65b9;&#x6cd5;&#x88ab;&#x8c03;&#x7528;&#x65f6;&#xff0c;&#x7a0b;&#x5e8f;&#x8ba1;&#x6570;&#x5668;&#x4f1a;&#x4fdd;&#x5b58;&#x65b9;&#x6cd5;&#x7684;&#x5165;&#x53e3;&#x5730;&#x5740;&#x3002;&#x5f53;&#x65b9;&#x6cd5;&#x6267;&#x884c;&#x5b8c;&#x6bd5;&#x540e;&#xff0c;&#x7a0b;&#x5e8f;&#x8ba1;&#x6570;&#x5668;&#x4f1a;&#x6062;&#x590d;&#x5230;&#x8c03;&#x7528;&#x65b9;&#x6cd5;&#x65f6;&#x7684;&#x5730;&#x5740;&#xff0c;&#x4ece;&#x800c;&#x5b9e;&#x73b0;&#x65b9;&#x6cd5;&#x7684;&#x8fd4;&#x56de;","children":[],"payload":{"tag":"li","lines":"53,54"}}],"payload":{"tag":"li","lines":"50,54"}},{"content":"&#x672c;&#x5730;&#x65b9;&#x6cd5;&#x6808;&#xff08;Native Method Stack&#xff09;","children":[{"content":"&#x548c;Java&#x865a;&#x62df;&#x673a;&#x6808;&#x57fa;&#x672c;&#x4e00;&#x81f4;&#xff0c;&#x672c;&#x5730;&#x65b9;&#x6cd5;&#x6808;&#x7528;&#x4e8e;&#x652f;&#x6301;&#x672c;&#x5730;&#x65b9;&#x6cd5;&#xff08;&#x5373;&#x975e;Java&#x8bed;&#x8a00;&#x7f16;&#x5199;&#x7684;&#x4ee3;&#x7801;&#xff0c;&#x5982;C&#x6216;C++&#x4ee3;&#x7801;&#xff09;&#x7684;&#x6267;&#x884c;&#x3002;&#x5f53;Java&#x7a0b;&#x5e8f;&#x901a;&#x8fc7;JNI&#xff08;Java Native Interface&#xff09;&#x8c03;&#x7528;&#x672c;&#x5730;&#x65b9;&#x6cd5;&#x65f6;&#xff0c;&#x672c;&#x5730;&#x65b9;&#x6cd5;&#x6808;&#x4f1a;&#x7ba1;&#x7406;&#x8fd9;&#x4e9b;&#x672c;&#x5730;&#x65b9;&#x6cd5;&#x7684;&#x6267;&#x884c;&#x72b6;&#x6001;&#x3002;","children":[],"payload":{"tag":"li","lines":"55,56"}}],"payload":{"tag":"li","lines":"54,56"}},{"content":"&#x6267;&#x884c;&#x5f15;&#x64ce;&#xff08;Execution Engine&#xff09;","children":[{"content":"&#x8d1f;&#x8d23;&#x5c06;&#x5b57;&#x8282;&#x7801;&#x6307;&#x4ee4;&#x89e3;&#x91ca;/&#x7f16;&#x8bd1;&#x4e3a;&#x5bf9;&#x5e94;&#x5e73;&#x53f0;&#x4e0a;&#x7684;&#x672c;&#x5730;&#x673a;&#x5668;&#x6307;&#x4ee4;,&#x6267;&#x884c;&#x5f15;&#x64ce;&#x5145;&#x5f53;&#x4e86;&#x5c06;&#x9ad8;&#x7ea7;&#x8bed;&#x8a00;&#x7ffb;&#x8bd1;&#x4e3a;&#x673a;&#x5668;&#x8bed;&#x8a00;&#x7684;&#x8bd1;&#x8005;&#x3002;","children":[],"payload":{"tag":"li","lines":"57,58"}},{"content":"&#x89e3;&#x91ca;&#x5668;&#xff08;Interpreter&#xff09;","children":[{"content":"&#x9010;&#x6761;&#x89e3;&#x91ca;&#x5b57;&#x8282;&#x7801;&#x6307;&#x4ee4;&#xff0c;&#x5e76;&#x5c06;&#x5176;&#x8f6c;&#x6362;&#x4e3a;&#x76f8;&#x5e94;&#x7684;&#x673a;&#x5668;&#x6307;&#x4ee4;&#x6267;&#x884c;&#x3002;&#x8fd9;&#x662f;&#x6700;&#x57fa;&#x672c;&#x7684;&#x6267;&#x884c;&#x65b9;&#x5f0f;&#xff0c;&#x7b80;&#x5355;&#x4f46;&#x6548;&#x7387;&#x8f83;&#x4f4e;&#x3002;","children":[],"payload":{"tag":"li","lines":"59,60"}}],"payload":{"tag":"li","lines":"58,60"}},{"content":"&#x5373;&#x65f6;&#x7f16;&#x8bd1;&#x5668;&#xff08;JIT Compiler&#xff09;","children":[{"content":"&#x5c06;&#x9891;&#x7e41;&#x6267;&#x884c;&#x7684;&#x5b57;&#x8282;&#x7801;&#x7f16;&#x8bd1;&#x4e3a;&#x672c;&#x5730;&#x673a;&#x5668;&#x7801;&#xff0c;&#x4ee5;&#x63d0;&#x9ad8;&#x6267;&#x884c;&#x901f;&#x5ea6;&#x3002;JIT&#x7f16;&#x8bd1;&#x5668;&#x5728;&#x8fd0;&#x884c;&#x65f6;&#x5bf9;&#x70ed;&#x70b9;&#x4ee3;&#x7801;&#x8fdb;&#x884c;&#x4f18;&#x5316;&#x7f16;&#x8bd1;&#xff0c;&#x63d0;&#x5347;&#x6027;&#x80fd;&#x3002;","children":[],"payload":{"tag":"li","lines":"61,62"}}],"payload":{"tag":"li","lines":"60,62"}},{"content":"&#x5783;&#x573e;&#x56de;&#x6536;&#x5668;&#xff08;GC&#xff09;","children":[{"content":"Java&#x8bed;&#x8a00;&#x7684;&#x6838;&#x5fc3;&#x6280;&#x672f;&#x7279;&#x70b9;","children":[],"payload":{"tag":"li","lines":"63,64"}},{"content":"&#x548c;C++&#x76f8;&#x6bd4;&#xff0c;&#x4f1a;&#x81ea;&#x52a8;&#x56de;&#x6536;&#x4e0d;&#x518d;&#x4f7f;&#x7528;&#x7684;&#x5bf9;&#x8c61;&#xff0c;&#x91ca;&#x653e;&#x5185;&#x5b58;&#x8d44;&#x6e90;&#x3002;&#x9632;&#x6b62;&#x5bf9;&#x8c61;&#x5360;&#x7528;&#x5185;&#x5b58;&#x8fc7;&#x591a;&#xff0c;&#x5bfc;&#x81f4;&#x5185;&#x5b58;&#x6ea2;&#x51fa;&#x548c;&#x5361;&#x987f;&#x3002;","children":[],"payload":{"tag":"li","lines":"64,65"}},{"content":"&#x4ee5;&#x4e0b;&#x662f;&#x5404;&#x4e2a;&#x7248;&#x672c;&#x7684;&#x56de;&#x6536;&#x5668;","children":[{"content":"JDK8:Parallel Scavenge&#xff08;&#x65b0;&#x751f;&#x4ee3;&#xff09;+ Parallel Old&#xff08;&#x8001;&#x5e74;&#x4ee3;&#xff09;","children":[],"payload":{"tag":"li","lines":"66,67"}},{"content":"JDK9&#x5230;JDK21&#xff1a;G1&#xff08;Garbage-First&#xff09;","children":[],"payload":{"tag":"li","lines":"67,68"}},{"content":"JDK11&#x540e;&#x589e;&#x52a0;&#x4e86;&#xff1a;ZGC&#xff08;Z Garbage Collector&#xff09;&#xff0c;&#x4f46;&#x4e0d;&#x662f;&#x9ed8;&#x8ba4;&#x5f00;&#x542f;","children":[],"payload":{"tag":"li","lines":"68,69"}}],"payload":{"tag":"li","lines":"65,69"}}],"payload":{"tag":"li","lines":"62,69"}}],"payload":{"tag":"li","lines":"56,69"}}],"payload":{"tag":"li","lines":"8,69"}}],"payload":{"tag":"li","lines":"4,69"}}],"payload":{"tag":"li","lines":"0,69"}}</script>
+      <script type="application/json">{}</script>
+    </div>
+
+</div>
+
+<style>
+.markmap {
+  --markmap-text-color: #faf9f8;
+}
+</style>
+
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/myblog/css/markmap.css">
+
+<script src="/myblog/js/markmap.js"></script>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://1514597997.github.io/myblog/2025/11/06/%E5%89%8D%E7%AB%AF/Jquery/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/myblog/images/avatar.jpg">
+      <meta itemprop="name" content="YaoHao">
+      <meta itemprop="description" content="使用hexo+next主题搭建的学习博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/myblog/2025/11/06/%E5%89%8D%E7%AB%AF/Jquery/" class="post-title-link" itemprop="url">Jquery前端框架</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-11-06 20:36:10" itemprop="dateCreated datePublished" datetime="2025-11-06T20:36:10+08:00">2025-11-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-11-07 16:00:17" itemprop="dateModified" datetime="2025-11-07T16:00:17+08:00">2025-11-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/myblog/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote class="blockquote-center">jQuery 一种轻量级的 JavaScript 库</blockquote> 
+
+<blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>jQuery 是一种轻量级的 JavaScript 库，旨在简化 HTML 文档的遍历、事件处理、动画和 AJAX 操作。本文将从基本概念、工作原理、架构设计等多个方面深入解析 jQuery 的核心特性。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+
+
+<h1 id="jQuery-的基本概念"><a href="#jQuery-的基本概念" class="headerlink" title="jQuery 的基本概念"></a>jQuery 的基本概念</h1><h2 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h2><blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>jQuery 的核心思想是“写得少，做得多”，通过简洁的语法和强大的功能，帮助开发者快速实现复杂的网页交互。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+
+<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>jQuery 提供了丰富的选择器，用于快速定位 HTML 元素。支持 CSS 选择器、XPath 选择器以及自定义选择器。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+<h2 id="链式调用"><a href="#链式调用" class="headerlink" title="链式调用"></a>链式调用</h2><blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>jQuery 支持链式调用，允许在一个语句中连续执行多个操作，提高代码的可读性和效率。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+<h1 id="jQuery-的工作原理"><a href="#jQuery-的工作原理" class="headerlink" title="jQuery 的工作原理"></a>jQuery 的工作原理</h1><h2 id="选择器引擎"><a href="#选择器引擎" class="headerlink" title="选择器引擎"></a>选择器引擎</h2><blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>jQuery 的选择器引擎（Sizzle）负责解析选择器表达式，并返回匹配的 DOM 元素集合。它通过优化选择器的解析和匹配过程，提高查找效率。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+<h2 id="DOM-操作"><a href="#DOM-操作" class="headerlink" title="DOM 操作"></a>DOM 操作</h2><blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>jQuery 提供了一系列方法来操作 DOM 元素，包括添加、删除、修改元素及其属性。这些操作通过包装 DOM API，提供更简洁的接口。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+<h2 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h2><blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>jQuery 提供了统一的事件处理机制，支持多种事件类型（如点击、鼠标悬停等），并自动处理浏览器兼容性问题。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+<blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>jQuery 简化了 AJAX 操作，通过 $.ajax 等方法，方便开发者进行异步数据请求和处理。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+<h1 id="jQuery-的架构设计"><a href="#jQuery-的架构设计" class="headerlink" title="jQuery 的架构设计"></a>jQuery 的架构设计</h1><h2 id="模块化设计"><a href="#模块化设计" class="headerlink" title="模块化设计"></a>模块化设计</h2><blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>jQuery 的架构采用模块化设计，核心模块包括选择器、DOM 操作、事件处理等，其他功能（如 AJAX、效果）作为扩展模块。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+<h2 id="插件系统"><a href="#插件系统" class="headerlink" title="插件系统"></a>插件系统</h2><blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>jQuery 提供了强大的插件系统，开发者可以扩展 jQuery 的功能，通过插件实现复杂的功能。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+<blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>jQuery 设计时充分考虑了浏览器兼容性，支持从旧版 IE 到现代浏览器的多种环境。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+<h2 id="jQuery-的性能优化"><a href="#jQuery-的性能优化" class="headerlink" title="jQuery 的性能优化"></a>jQuery 的性能优化</h2><h3 id="选择器优化"><a href="#选择器优化" class="headerlink" title="选择器优化"></a>选择器优化</h3><blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>使用高效的 CSS 选择器，如 ID 选择器。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+<blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>避免使用复杂的复合选择器。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+<h3 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h3><blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>使用事件委托减少事件绑定数量。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+<blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>通过 on 方法绑定事件，提高性能。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+<h3 id="链式调用-1"><a href="#链式调用-1" class="headerlink" title="链式调用"></a>链式调用</h3><blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>使用链式调用减少 DOM 查询次数。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+<blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>优化代码结构，提高执行效率。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+<h3 id="缓存选择器"><a href="#缓存选择器" class="headerlink" title="缓存选择器"></a>缓存选择器</h3><blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>缓存常用的选择器结果，避免重复查询。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+<blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>使用变量存储 DOM 元素引用。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/myblog/css/markmap.css">
+
+<script src="/myblog/js/markmap.js"></script>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://1514597997.github.io/myblog/2025/11/06/%E5%89%8D%E7%AB%AF/Vue/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/myblog/images/avatar.jpg">
+      <meta itemprop="name" content="YaoHao">
+      <meta itemprop="description" content="使用hexo+next主题搭建的学习博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/myblog/2025/11/06/%E5%89%8D%E7%AB%AF/Vue/" class="post-title-link" itemprop="url">Vue前端框架</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-11-06 20:36:10" itemprop="dateCreated datePublished" datetime="2025-11-06T20:36:10+08:00">2025-11-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-11-07 16:03:25" itemprop="dateModified" datetime="2025-11-07T16:03:25+08:00">2025-11-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/myblog/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote class="blockquote-center">Vue 渐进式JavaScript框架</blockquote> 
+
+<blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>Vue.js 是一种用于构建用户界面的渐进式 JavaScript 框架，以其轻量、灵活和易于学习而闻名。本文将从基本概念、工作原理、架构设计等多个方面深入解析 Vue 的核心特性。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+
+<h1 id="Vue-的基本概念"><a href="#Vue-的基本概念" class="headerlink" title="Vue 的基本概念"></a>Vue 的基本概念</h1><h2 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h2><blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>Vue 采用 MVVM（Model-View-ViewModel）架构，将数据（Model）、视图（View）和逻辑（ViewModel）分离，使得开发更加模块化和可维护。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+
+<h2 id="响应式系统"><a href="#响应式系统" class="headerlink" title="响应式系统"></a>响应式系统</h2><blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>Vue 的核心特性之一是其响应式系统，能够自动追踪数据的变化并更新 DOM。开发者只需关注数据的变化，而不需要手动操作 DOM。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+
+<h2 id="模板语法"><a href="#模板语法" class="headerlink" title="模板语法"></a>模板语法</h2><blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>Vue 提供了简洁的模板语法，通过指令（如 v-if、v-for）和表达式（如 ）来操作 DOM。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+
+<h1 id="Vue-的工作原理"><a href="#Vue-的工作原理" class="headerlink" title="Vue 的工作原理"></a>Vue 的工作原理</h1><h2 id="响应式原理"><a href="#响应式原理" class="headerlink" title="响应式原理"></a>响应式原理</h2><blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>数据劫持：Vue 通过 Object.defineProperty 或 Proxy 来劫持对象的属性，监听数据的变化。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+
+<blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>依赖收集：当数据被访问时，Vue 会自动收集依赖关系。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+
+<blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>调度更新：当数据发生变化时，Vue 会触发更新队列，批量更新视图。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+
+<h2 id="虚拟-DOM"><a href="#虚拟-DOM" class="headerlink" title="虚拟 DOM"></a>虚拟 DOM</h2><blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>Vue 使用虚拟 DOM 来提高渲染性能：</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+
+<blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>创建虚拟节点：将 DOM 转换为 JavaScript 对象。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+
+<blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>比较差异：通过比较新旧虚拟节点的差异，确定需要更新的部分。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+
+<blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>最小化更新：只更新发生变化的 DOM 节点。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>Vue 组件具有完整的生命周期，从创建到销毁，每个阶段都有对应的钩子函数（如 created、mounted），方便开发者在不同阶段执行特定逻辑。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+
+<h1 id="Vue-的架构设计"><a href="#Vue-的架构设计" class="headerlink" title="Vue 的架构设计"></a>Vue 的架构设计</h1><h2 id="组件化开发"><a href="#组件化开发" class="headerlink" title="组件化开发"></a>组件化开发</h2><blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>Vue 强调组件化开发，将复杂的界面拆分为多个独立的组件，每个组件负责特定的功能。组件之间可以通过 props 和 events 进行通信。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+
+<h2 id="单文件组件"><a href="#单文件组件" class="headerlink" title="单文件组件"></a>单文件组件</h2><blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>Vue 提供 .vue 文件格式，将 HTML、CSS 和 JavaScript 代码集中在一个文件中，提高开发效率。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+
+<h2 id="插件系统"><a href="#插件系统" class="headerlink" title="插件系统"></a>插件系统</h2><blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>Vue 提供了强大的插件系统，开发者可以扩展 Vue 的功能，如状态管理（Vuex）、路由管理（Vue Router）等。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+
+<h1 id="Vue-的性能优化"><a href="#Vue-的性能优化" class="headerlink" title="Vue 的性能优化"></a>Vue 的性能优化</h1><h2 id="组件优化"><a href="#组件优化" class="headerlink" title="组件优化"></a>组件优化</h2><blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>加载：通过动态导入组件，减少初始加载时间。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+
+<blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>缓存：使用 keep-alive 缓存组件，避免重复渲染。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+
+<h2 id="数据优化"><a href="#数据优化" class="headerlink" title="数据优化"></a>数据优化</h2><blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>计算属性：使用计算属性代替复杂逻辑，提高性能。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+
+<blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>防抖和节流：优化高频事件的处理，减少不必要的计算。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+
+<h2 id="渲染优化"><a href="#渲染优化" class="headerlink" title="渲染优化"></a>渲染优化</h2><blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>虚拟滚动：对于大量数据的渲染，使用虚拟滚动技术。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+
+<blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>异步更新：通过 nextTick 等机制优化 DOM 更新。</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/myblog/css/markmap.css">
+
+<script src="/myblog/js/markmap.js"></script>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://1514597997.github.io/myblog/2025/11/06/%E5%85%B6%E4%BB%96/%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE%E5%91%A8%E6%9C%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/myblog/images/avatar.jpg">
+      <meta itemprop="name" content="YaoHao">
+      <meta itemprop="description" content="使用hexo+next主题搭建的学习博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/myblog/2025/11/06/%E5%85%B6%E4%BB%96/%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE%E5%91%A8%E6%9C%9F/" class="post-title-link" itemprop="url">开发项目周期</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-11-06 20:36:10" itemprop="dateCreated datePublished" datetime="2025-11-06T20:36:10+08:00">2025-11-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-11-07 15:06:31" itemprop="dateModified" datetime="2025-11-07T15:06:31+08:00">2025-11-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/myblog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="项目立项"><a href="#项目立项" class="headerlink" title="项目立项"></a>项目立项</h1><ul>
+<li>1.1- 项目的起点，由发起人或部门提出项目的想法，需要进行初步的可行性分析。</li>
+<li>1.2- 组建项目团队或外包相关人员制作，根据项目的规模和复杂程度，确定项目团队成员。可能包括项目经理、需求分析师、系统架构师、程序员、测试工程师、文档工程师等角色。</li>
+</ul>
+<h1 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h1><ul>
+<li>2.1- 需求收集：通过与客户沟通、访谈、问卷调查等方式收集需求。收集需求时要考虑功能性需求和非功能性需求。</li>
+<li>2.2- 需求整理和分析：对收集到的需求进行分类、整理和分析，去除不合理或重复的需求。最终形成需求规格说明书，它是后续设计和开发阶段的重要依据。</li>
+</ul>
+<h1 id="设计阶段"><a href="#设计阶段" class="headerlink" title="设计阶段"></a>设计阶段</h1><ul>
+<li>3.1 系统架构设计：架构师根据需求规格说明书设计系统的整体架构。包括技术选型，比如选择哪种编程语言、数据库管理系统、中间件等。比如电商系统主服务用什么语言开发？是否采用分布式服务？还是单体架构？是否使用集群？采用redis缓存等。</li>
+<li>3.2 详细设计：对系统的各个模块进行详细设计，包括模块的接口设计、内部逻辑设计等。会形成详细设计说明书，为程序员编写代码提供详细的指导。例如，在设计一个视频播放软件的视频解码模块时，要详细设计解码算法的实现方式、与视频播放界面模块的接口参数等。</li>
+</ul>
+<h1 id="编码阶段"><a href="#编码阶段" class="headerlink" title="编码阶段"></a>编码阶段</h1><ul>
+<li>4.1 代码编写：程序员根据详细设计说明书编写代码。他们会遵循一定的编程规范，如代码风格规范（缩进、命名规则等）和代码结构规范。可能会采用敏捷开发等方法进行迭代开发，每次迭代完成一部分功能的代码编写。</li>
+<li>4.2 代码审查：通过代码审查来保证代码质量。可以采用同行评审的方式，让其他程序员对代码进行审查，检查代码是否存在逻辑错误、性能问题、安全漏洞等。</li>
+</ul>
+<h1 id="测试阶段"><a href="#测试阶段" class="headerlink" title="测试阶段"></a>测试阶段</h1><ul>
+<li>5.1 单元测试：程序员对编写好的代码进行单元测试。例如：单据计算金额是否正确？</li>
+<li>5.2 集成测试：当多个模块的代码集成在一起后进行集成测试。例如：对于OA系统，流程是否流转正常？流程指定人审批是否可正常审批？相关模板接口调用是否正常？</li>
+<li>5.3 系统测试：对整个系统进行测试，包括功能测试（验证系统是否实现了需求规格说明书中的所有功能）、性能测试（测试系统的响应时间、吞吐量等性能指标）、安全测试（检查系统的安全性漏洞）等。</li>
+<li>5.4 验收测试：由客户或者最终用户进行验收测试，以确定系统是否符合他们的需求。例如：制作的是财务系统，是否满足财务系统日常使用需求？</li>
+</ul>
+<h1 id="部署阶段"><a href="#部署阶段" class="headerlink" title="部署阶段"></a>部署阶段</h1><ul>
+<li>6.1 部署计划制定：根据系统的规模和复杂程度制定部署计划。例如，对于一个大型企业级软件系统，需要考虑服务器的安装、网络配置、数据库初始化等步骤。</li>
+<li>6.2 实际部署：将软件部署到生产环境中。例如，将一个网站应用部署到云服务器上，包括安装软件、配置服务器参数等操作。</li>
+<li>6.3 部署后的监控和维护：在软件部署后，要进行监控，确保系统正常运行。例如，监控服务器的CPU使用率、内存使用情况等，及时发现并解决可能出现的问题。</li>
+</ul>
+<h1 id="维护阶段"><a href="#维护阶段" class="headerlink" title="维护阶段"></a>维护阶段</h1><ul>
+<li>7.1 日常维护：对软件进行日常的维护工作，如修复软件在运行过程中出现的故障。例如：当用户反馈一个软件功能出现异常时，维护人员要及时查找原因并修复。</li>
+<li>7.2 版本更新：根据用户反馈和业务需求进行版本更新。例如：财务系统更新新功能、更新修复Bug、更新安全漏洞等。</li>
+</ul>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/myblog/css/markmap.css">
+
+<script src="/myblog/js/markmap.js"></script>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://1514597997.github.io/myblog/2025/07/10/%E5%85%B6%E4%BB%96/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -769,7 +1393,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/myblog/archives">
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
