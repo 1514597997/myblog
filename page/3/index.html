@@ -177,6 +177,251 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://1514597997.github.io/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/CSharp/CSharp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/myblog/images/avatar.jpg">
+      <meta itemprop="name" content="YaoHao">
+      <meta itemprop="description" content="使用hexo+next主题搭建的学习博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/CSharp/CSharp/" class="post-title-link" itemprop="url">C#编程语言</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-11-06 20:36:11" itemprop="dateCreated datePublished" datetime="2025-11-06T20:36:11+08:00">2025-11-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-11-07 15:02:43" itemprop="dateModified" datetime="2025-11-07T15:02:43+08:00">2025-11-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/myblog/categories/%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">后端</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="C"><a href="#C" class="headerlink" title="C#"></a>C#</h1><ul>
+<li>基于.net的面向对象开发语言</li>
+</ul>
+<h1 id="NETCore与-NETFramework"><a href="#NETCore与-NETFramework" class="headerlink" title=".NETCore与.NETFramework"></a>.NETCore与.NETFramework</h1><ul>
+<li>1.NET Framework<ul>
+<li>微软开发的运行时环境，主要用于 Windows 平台。它依赖于 Windows 操作系统，与 Windows 系统深度集成。微软已停止更新</li>
+</ul>
+</li>
+<li>2.NET Core <ul>
+<li>是跨平台的运行时环境，支持 Windows、Linux 和 macOS 等多种操作系统。它通过抽象层来屏蔽不同操作系统之间的差异，使得应用程序可以在不同平台上运行。</li>
+</ul>
+</li>
+</ul>
+<h1 id="编程环境"><a href="#编程环境" class="headerlink" title="编程环境"></a>编程环境</h1><ul>
+<li>1.安装.NET Core(Core自带了SDK和runtime)<ul>
+<li>查看是否安装版本指令：dotnet -h（显示相关版本号）</li>
+</ul>
+</li>
+<li>2.准备开发工具Ide、VisualStudio(微软官方开发工具，更适合C#)<ul>
+<li>以下是各个版本的区别</li>
+<li>isual Studio Community：这是一个免费的版本，适用于个人开发者、学术研究、教室学习和参与开源项目。它提供了完整的集成开发环境，支持Windows桌面、通用Windows应用、Web（ASP.NET）、Office 365、业务应用程序、Azure Stack、C++跨平台库开发、Python、Node.js、.NET Core和Docker工具。</li>
+<li>Visual Studio Professional：这个版本适用于专业开发人员和小型团队，提供了更高级的调试和诊断工具、测试工具、跨平台开发支持和协作工具。它还包括PowerPoint情节提要、代码评审、任务暂停&#x2F;继续和团队资源管理器（第三方开发工具支持）等功能。</li>
+<li>Visual Studio Enterprise：这是最全面的版本，提供了端到端的解决方案，以满足大型团队的严苛质量和规模需求。它包括所有Professional版本的功能，以及更高级的测试工具、协作工具和功能，如Visual Studio Live Share。</li>
+</ul>
+</li>
+</ul>
+<h1 id="编译与执行"><a href="#编译与执行" class="headerlink" title="编译与执行"></a>编译与执行</h1><ul>
+<li>C#代码首先被编译成中间语言（IL），然后在.NET运行时（CLR）中进行即时编译（JIT） </li>
+<li>和java类型预编译运行类似，但C#还会在运行时再即时编译运行</li>
+<li>C#也拥有垃圾自动回收机制，但支持底层开发人员手动操作回收垃圾。</li>
+</ul>
+<h1 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h1><ul>
+<li>依赖项:应用编译、构建、开发时的依赖项SDK</li>
+<li>Properties：.netCore项目的存放的配置信息，通过.json格式存放<ul>
+<li>launchSettings.json:.netCore应用标准配置文件，包含环境变量、ip端口等</li>
+</ul>
+</li>
+<li>wwwroot：网站根目录，存放前端静态资源，html、js、图片等。</li>
+<li>Program.cs:.netCore应用的main方法，是项目启动的入口，负责配置和启动程序</li>
+<li>Startup类:在.net5之后被废弃（原来的项目启动入口）</li>
+</ul>
+<h1 id="net-Web项目启动流程"><a href="#net-Web项目启动流程" class="headerlink" title=".net Web项目启动流程"></a>.net Web项目启动流程</h1><ul>
+<li><p>1.运行时初始化</p>
+<ul>
+<li>1.1 加载.net进程，管理内存、执行代码、处理异常等核心功能</li>
+<li>2.1 加载程序集：运行时加载项目中引用的程序集（如依赖的库文件），并解析依赖关系。</li>
+<li>3.1 初始化配置系统：运行时会解析配置文件（如appsettings.json），并初始化配置系统。</li>
+</ul>
+</li>
+<li><p>2.执行Program文件、文件内：1.构建宿主（Host）2. 配置服务 3. 构建应用程序 4.配置中间件管道 5.启动应用程序</p>
+</li>
+<li><p>3.初始化宿主（Host）WebApplication.CreateBuilder(args)</p>
+<ul>
+<li>3.1 Program代码中:WebApplication.CreateBuilder(args);宿主构建的起点。</li>
+<li>3.2 CreateBuilder方法会初始化一个宿主构建器（HostBuilder），并配置默认的服务、配置源和日志提供者。<ul>
+<li>3.2.1 加载默认的配置文件（如appsettings.json）。</li>
+<li>3.2.2 初始化依赖注入容器,Ioc容器依赖注入</li>
+<li>3.2.3 配置日志系统。</li>
+<li>3.2.4 宿主生命周期管理服务：用于管理应用程序的启动和关闭过程。</li>
+<li>3.2.5 其他基础服务：如IOptions、IConfiguration等。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>4 添加服务</p>
+<ul>
+<li>4.1 builder.Services.AddControllers();微软配置默认服务:注册了MVC控制器。</li>
+<li>4.2 builder.Services.AddEndpointsApiExplorer();微软配置默认服务:注册了端点API资源，这是Swagger&#x2F;OpenAPI支持的基础。</li>
+<li>4.3 builder.Services.AddSwaggerGen();注册了Swagger生成器，用于生成OpenAPI文档。</li>
+</ul>
+</li>
+<li><p>5 构建宿主（Host）</p>
+<ul>
+<li>5.4.1 Program执行到：var app &#x3D; builder.Build();这一行代码完成了宿主的构建过程。</li>
+<li>5.4.2 Build方法内做的事情<ul>
+<li>5.4.2.1 构建依赖注入容器。</li>
+<li>5.4.2.2 为后续项目根据自己需求，微软会默认初始化一个空的中间件管道。</li>
+<li>5.4.2.3 初始化日志系统和其他基础设施。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>6.构配置中间件管道</p>
+<ul>
+<li>根据项目需求增加自定义管道</li>
+<li>以下是微软默认提供可自主配置的管道</li>
+<li>异常处理中间件<ul>
+<li>在开发环境中显示详细的错误信息。  <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseDeveloperExceptionPage();</span><br></pre></td></tr></table></figure></li>
+<li>捕获异常并返回友好的错误页面或错误信息。  <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">app.UseEndpoints(</span><br><span class="line">    endpoints =&gt;&#123;</span><br><span class="line">        endpoints.MapControllers();</span><br><span class="line">        endpoints.MapRazorPages();</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>身份验证和授权<ul>
+<li>提供身份验证支持，如JWT、Cookie等。  <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseAuthentication();</span><br></pre></td></tr></table></figure></li>
+<li>提供授权支持，用于检查用户权限。  <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseAuthorization(); </span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>跨域资源共享（CORS）<ul>
+<li>配置跨域资源共享，允许或限制外部域对API的访问。  <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseCors(); </span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>静态文件服务<ul>
+<li>提供静态文件（如HTML、CSS、JavaScript）的访问支持。  <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseStaticFiles();</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>路由和端点<ul>
+<li>定义请求的路由规则。  <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseRouting();</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>HTTPS重定向<ul>
+<li>将所有HTTP请求重定向到HTTPS。  <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseHttpsRedirection();</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>压缩响应<ul>
+<li>对响应内容进行压缩，减少传输数据量。  <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseResponseCompression();</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>请求本地化<ul>
+<li>提供本地化支持，根据用户语言偏好返回本地化内容。  <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseRequestLocalization();</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>会话管理<ul>
+<li>管理用户会话，存储用户会话数据。  <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseSession();</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>WebSockets支持<ul>
+<li>启用WebSockets协议，支持实时通信。  <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseWebSockets();</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>健康检查<ul>
+<li>检查应用程序及其依赖项的运行状态。  <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseHealthChecks(<span class="string">&quot;/health&quot;</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>URL重写<ul>
+<li>重写URL或重定向请求，用于SEO优化或路由调整。  <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.UseRewriter(</span><br><span class="line">    <span class="keyword">new</span> RewriteOptions().AddRedirect(<span class="string">&quot;old-path&quot;</span>, <span class="string">&quot;new-path&quot;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>日志记录<ul>
+<li>记录请求和响应的详细信息，用于调试和监控。  <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseLogging();</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>单页应用程序（SPA）支持  <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.UseSpa(spa =&gt;&#123;</span><br><span class="line">    spa.Options.SourcePath = <span class="string">&quot;ClientApp&quot;</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+<li>其他中间件<ul>
+<li>管理Cookie策略，确保Cookie的安全性。  <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseCookiePolicy();</span><br></pre></td></tr></table></figure></li>
+<li>提供响应缓存支持，提高性能。  <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.UseResponseCaching();</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>7.启动应用程序</p>
+<ul>
+<li>7.1 app.Run();<ul>
+<li>7.1.1 启动Kestrel服务器，且开始根据配置的端口监听请求</li>
+<li>7.1.2 运行中间件管道：HTTP请求会按照中间件管道中配置的顺序被处理。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="委托"><a href="#委托" class="headerlink" title="委托"></a>委托</h1><ul>
+<li>C#中实现方法引用和回调机制的核心类型，类似于Java中的函数式接口</li>
+<li>定义：委托是一种类型安全的函数指针，它定义了方法的签名（参数和返回类型），可以指向任何符合签名的方法。</li>
+<li>核心作用：<ul>
+<li>将方法作为参数传递（如回调）。</li>
+<li>实现事件驱动编程（如按钮点击事件）。</li>
+<li>解耦调用方与具体实现（如插件架构）。</li>
+</ul>
+</li>
+</ul>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/myblog/css/markmap.css">
+
+<script src="/myblog/js/markmap.js"></script>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://1514597997.github.io/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/SpringCloud/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1666,172 +1911,6 @@ ASF 根据 Apache 许可证 2.0 版本（"许可证"）向您授权本文件；
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://1514597997.github.io/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/JDBC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/myblog/images/avatar.jpg">
-      <meta itemprop="name" content="YaoHao">
-      <meta itemprop="description" content="使用hexo+next主题搭建的学习博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="个人博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/JDBC/" class="post-title-link" itemprop="url">JDBC连接方式</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2025-11-06 20:36:10 / 修改时间：09:12:29" itemprop="dateCreated datePublished" datetime="2025-11-06T20:36:10+08:00">2025-11-06</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/myblog/categories/%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">后端</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Java语言链接数据库的一种方式"><a href="#Java语言链接数据库的一种方式" class="headerlink" title="Java语言链接数据库的一种方式"></a>Java语言链接数据库的一种方式</h1><p>JDBC菜鸟文档<a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/jdbc-use-guide.html">JDBC菜鸟文档</a></p>
-<ul>
-<li>支持多种数据库，mysql，Sqlserver等</li>
-<li>大多主流使用的框架如Hinbate、Mytis等底层都使用jdbc方式连接</li>
-<li>关于Jdbc连接需了解<ul>
-<li>关于连接代码：Connection conn &#x3D; DriverManager.getConnection(URL, USER, PASSWORD);</li>
-<li>资源消耗：每个连接都会占用数据库和应用的资源(内存、CPU)</li>
-<li>连接池限制：数据库通常有最大连接数限制</li>
-<li>性能影响：频繁创建&#x2F;关闭连接开销很大(连接池可缓解)</li>
-<li>潜在泄漏：未关闭的连接会导致资源耗尽</li>
-<li>事务管理：连接通常与事务生命周期绑定</li>
-</ul>
-</li>
-<li>所以每个获取到的连接都需要管理好避免 死锁、连接数过高、等问题。</li>
-<li>JDBC使用TCP方式连接<ul>
-<li>使用过程<ul>
-<li>第一步：加载Driver类，注册数据库驱动；</li>
-<li>第二步：通过DriverManager,使用url，用户名和密码建立连接(Connection)；</li>
-<li>第三步：通过Connection，使用sql语句打开Statement对象；</li>
-<li>第四步：执行语句，将结果返回resultSet；</li>
-<li>第五步：对结果resultSet进行处理；     </li>
-<li>第六步：倒叙释放资源resultSet-》preparedStatement-》connection。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>JDBC事务级别</li>
-<li>一般手动提交事务会相比jdbc自动提交性能稍高一点。<table>
-  <thead>
-  <tr>
-      <th>方法/设置</th>
-      <th>作用____________________________________________</th>
-      <th>示例代码</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-      <td>setAutoCommit(boolean autoCommit)</td>
-      <td>开启/关闭自动提交模式（默认为 true，即每条 SQL 独立事务）</td>
-      <td>conn.setAutoCommit(false); // 开启事务</td>
-  </tr>
-  <tr>
-      <td>commit()</td>
-      <td>提交当前事务（持久化更改）</td>
-      <td>conn.commit();</td>
-  </tr>
-  <tr>
-      <td>rollback()</td>
-      <td>回滚当前事务（撤销未提交的更改）</td>
-      <td>conn.rollback();</td>
-  </tr>
-  <tr>
-      <td>setSavepoint()</td>
-      <td>创建事务保存点（可部分回滚）</td>
-      <td>Savepoint sp = conn.setSavepoint();</td>
-  </tr>
-  <tr>
-      <td>rollback(Savepoint savepoint)</td>
-      <td>回滚到指定保存点</td>
-      <td>conn.rollback(sp);</td>
-  </tr>
-  <tr>
-      <td>setTransactionIsolation(int level)</td>
-      <td>设置事务隔离级别（影响锁行为和并发问题）</td>
-      <td>conn.setTransactionIsolation(Connection.TRANSACTION_REPEATABLE_READ);</td>
-  </tr>
-  </tbody>
-</table></li>
-<li>事务隔离级别（通过 JDBC 常量定义）<table>
-  <thead>
-  <tr>
-      <th>隔离级别常量</th>
-      <th>对应的数据库行为</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-      <td>TRANSACTION_READ_UNCOMMITTED (1)</td>
-      <td>读未提交（可能脏读、幻读、不可重复读）</td>
-  </tr>
-  <tr>
-      <td>TRANSACTION_READ_COMMITTED (2)</td>
-      <td>读已提交（防止脏读，但可能幻读和不可重复读）</td>
-  </tr>
-  <tr>
-      <td>TRANSACTION_REPEATABLE_READ (4)</td>
-      <td>可重复读（防止脏读和不可重复读，可能幻读。InnoDB 通过间隙锁防止幻读）</td>
-  </tr>
-  <tr>
-      <td>TRANSACTION_SERIALIZABLE (8)</td>
-      <td>串行化（最高隔离级别，完全防止并发问题，性能最低）</td>
-  </tr>
-  </tbody>
-</table></li>
-</ul>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/myblog/css/markmap.css">
-
-<script src="/myblog/js/markmap.js"></script>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1902,7 +1981,7 @@ ASF 根据 Apache 许可证 2.0 版本（"许可证"）向您授权本文件；
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/myblog/archives">
-          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-count">36</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

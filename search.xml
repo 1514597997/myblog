@@ -2968,10 +2968,11 @@ box-shadow: 0 0 15px rgba(0,0,0,0.15);">
   <entry>
     <title>SpringCloudConfig</title>
     <url>/myblog/2025/11/09/%E5%90%8E%E7%AB%AF/JAVA/SpringCloudConfig/</url>
-    <content><![CDATA[<blockquote class="blockquote-center">[SpringCloudConfig](https://springdoc.cn/spring-cloud-config/),可以将配置信息保存在云或本地中（包括Git、SVN、本地文件系统等。它还提供了一组REST API），通过服务注册中心获取配置信息。</blockquote>
-
-<ul>
-<li>启动成功后会默认自动注册到Eureka中，同时会主动根据yml配置的拿去最新配置缓存。另外如果有微服务刚启动的时候，会主动去ConfigServer获取配置信息。另外每间隔段时间会主动去ConfigServer获取最新配置信息。</li>
+    <content><![CDATA[<ul>
+<li><p><a href="https://springdoc.cn/spring-cloud-config/">SpringCloudConfig</a>可以将配置信息保存在云或本地中（包括Git、SVN、本地文件系统等。它还提供了一组REST API），通过服务注册中心获取配置信息。</p>
+</li>
+<li><p>启动成功后会默认自动注册到Eureka中，同时会主动根据yml配置的拿去最新配置缓存。另外如果有微服务刚启动的时候，会主动去ConfigServer获取配置信息。另外每间隔段时间会主动去ConfigServer获取最新配置信息。</p>
+</li>
 </ul>
 <h1 id="ConfigServer"><a href="#ConfigServer" class="headerlink" title="ConfigServer"></a>ConfigServer</h1><ul>
 <li><p>主要去获取指定地址或资源配置后分发给ConfigClient</p>
@@ -3036,13 +3037,96 @@ box-shadow: 0 0 15px rgba(0,0,0,0.15);">
       </categories>
   </entry>
   <entry>
-    <title></title>
+    <title>SpringCloud Eureka</title>
     <url>/myblog/2025/11/09/%E5%90%8E%E7%AB%AF/JAVA/SpringCloudEureka/</url>
-    <content><![CDATA[<p>���������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������</p>
+    <content><![CDATA[<ul>
+<li><p>SpringCloud Eureka是Netflix开发的服务发现框架，用于实现微服务架构中的服务注册与发现。Eureka包含两个组件：Eureka Server（服务注册中心）和Eureka Client（服务客户端）。</p>
+</li>
+<li><p>Eureka Server启动后会提供服务的注册和发现能力，微服务启动时会向Eureka Server注册自己的信息，并定期发送心跳来维持注册。Eureka Client能够从Server获取服务实例列表，实现服务的动态发现。</p>
+</li>
+</ul>
+<h1 id="Eureka-Server"><a href="#Eureka-Server" class="headerlink" title="Eureka Server"></a>Eureka Server</h1><ul>
+<li><p>作为服务注册中心，负责管理所有微服务的注册信息和服务实例状态。</p>
+</li>
+<li><p>SpringCloud Eureka服务端启动示例</p>
+<ul>
+<li><p>依赖代码参考:</p>
+<ul>
+<li><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-netflix-eureka-server<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>启动类代码参考:</p>
+<ul>
+<li><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.boot.SpringApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;</span><br><span class="line"></span><br><span class="line"><span class="meta">@EnableEurekaServer</span></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">EurekaApplication</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        SpringApplication.run(EurekaApplication.class, args);</span><br><span class="line">        System.out.println(<span class="string">&quot;EurekaApplication Started&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>application.yml配置参考</p>
+<ul>
+<li><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">    <span class="attr">port:</span> <span class="number">8761</span> <span class="comment"># Eureka Server默认端口</span></span><br><span class="line"></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line">    <span class="attr">instance:</span></span><br><span class="line">        <span class="attr">hostname:</span> <span class="string">localhost</span></span><br><span class="line">    <span class="attr">client:</span></span><br><span class="line">        <span class="attr">register-with-eureka:</span> <span class="literal">false</span> <span class="comment"># 是否向Eureka注册自己</span></span><br><span class="line">        <span class="attr">fetch-registry:</span> <span class="literal">false</span> <span class="comment"># 是否从Eureka获取注册信息</span></span><br><span class="line">        <span class="attr">service-url:</span></span><br><span class="line">            <span class="attr">defaultZone:</span> <span class="string">http://$&#123;eureka.instance.hostname&#125;:$&#123;server.port&#125;/eureka/</span></span><br><span class="line">    <span class="attr">server:</span></span><br><span class="line">        <span class="attr">enable-self-preservation:</span> <span class="literal">false</span> <span class="comment"># 关闭自我保护模式（开发环境）</span></span><br><span class="line"></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">    <span class="attr">application:</span></span><br><span class="line">        <span class="attr">name:</span> <span class="string">eureka-server</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Eureka-Client"><a href="#Eureka-Client" class="headerlink" title="Eureka Client"></a>Eureka Client</h1><ul>
+<li><p>作为服务提供者或消费者，向Eureka Server注册自身信息，并从Server获取其他服务实例信息。</p>
+<ul>
+<li><p>Eureka Client客户端代码示例:</p>
+<ul>
+<li><p>pom.xml</p>
+<ul>
+<li><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--SpringCloud euraka client--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-netflix-eureka-client<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>application.yml配置参考</p>
+<ul>
+<li><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">    <span class="attr">port:</span> <span class="number">8080</span></span><br><span class="line"></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">    <span class="attr">application:</span></span><br><span class="line">        <span class="attr">name:</span> <span class="string">service-user</span> <span class="comment"># 服务名称，用于在Eureka中标识</span></span><br><span class="line"></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line">    <span class="attr">client:</span></span><br><span class="line">        <span class="attr">service-url:</span></span><br><span class="line">            <span class="attr">defaultZone:</span> <span class="string">http://localhost:8761/eureka/</span> <span class="comment"># Eureka Server地址</span></span><br><span class="line">        <span class="attr">register-with-eureka:</span> <span class="literal">true</span> <span class="comment"># 注册到Eureka</span></span><br><span class="line">        <span class="attr">fetch-registry:</span> <span class="literal">true</span> <span class="comment"># 从Eureka获取注册表</span></span><br><span class="line">    <span class="attr">instance:</span></span><br><span class="line">        <span class="attr">prefer-ip-address:</span> <span class="literal">true</span> <span class="comment"># 使用IP地址注册</span></span><br><span class="line">        <span class="attr">instance-id:</span> <span class="string">$&#123;spring.cloud.client.ip-address&#125;:$&#123;server.port&#125;</span> <span class="comment"># 实例ID</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/myblog/css/markmap.css">
 
 <script src="/myblog/js/markmap.js"></script>
 ]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>SpringCloudGateway</title>
+    <url>/myblog/2025/11/09/%E5%90%8E%E7%AB%AF/JAVA/SpringCloudGateway/</url>
+    <content><![CDATA[<ul>
+<li>SpringCloud Gateway是Spring Cloud官方推出的API网关服务，基于WebFlux和Reactor实现，提供了一种简单有效的方式来路由到API，并提供跨领域关注点，如：安全性、监控&#x2F;指标和弹性。</li>
+</ul>
+<h1 id="Gateway-Server"><a href="#Gateway-Server" class="headerlink" title="Gateway Server"></a>Gateway Server</h1><ul>
+<li>作为API网关，负责请求路由、过滤、限流、鉴权等跨领域功能。</li>
+<li>SpringCloud Gateway服务端启动示例<ul>
+<li>依赖代码参考:</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-gateway<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-netflix-eureka-client<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>启动类代码参考:</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.boot.SpringApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cloud.client.discovery.EnableDiscoveryClient;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableDiscoveryClient</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">GatewayApplication</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        SpringApplication.run(GatewayApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>application.yml配置参考</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8080</span></span><br><span class="line"></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">application:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">api-gateway</span></span><br><span class="line">  <span class="attr">cloud:</span></span><br><span class="line">    <span class="attr">gateway:</span></span><br><span class="line">      <span class="attr">discovery:</span></span><br><span class="line">        <span class="attr">locator:</span></span><br><span class="line">          <span class="attr">enabled:</span> <span class="literal">true</span>  <span class="comment"># 开启从注册中心动态创建路由</span></span><br><span class="line">          <span class="attr">lower-case-service-id:</span> <span class="literal">true</span>  <span class="comment"># 服务名小写</span></span><br><span class="line">      <span class="attr">routes:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">id:</span> <span class="string">user-service</span>  <span class="comment"># 路由ID，唯一</span></span><br><span class="line">          <span class="attr">uri:</span> <span class="string">lb://user-service</span>  <span class="comment"># lb表示从注册中心获取服务，负载均衡</span></span><br><span class="line">          <span class="attr">predicates:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">Path=/user/**</span>  <span class="comment"># 路径匹配</span></span><br><span class="line">          <span class="attr">filters:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">StripPrefix=1</span>  <span class="comment"># 去掉前缀</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">id:</span> <span class="string">order-service</span></span><br><span class="line">          <span class="attr">uri:</span> <span class="string">lb://order-service</span></span><br><span class="line">          <span class="attr">predicates:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">Path=/order/**</span></span><br><span class="line">          <span class="attr">filters:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">StripPrefix=1</span></span><br><span class="line"></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line">  <span class="attr">client:</span></span><br><span class="line">    <span class="attr">service-url:</span></span><br><span class="line">      <span class="attr">defaultZone:</span> <span class="string">http://localhost:8761/eureka/</span></span><br></pre></td></tr></table></figure><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/myblog/css/markmap.css">
+
+<script src="/myblog/js/markmap.js"></script>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
   </entry>
 </search>
