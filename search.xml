@@ -3169,76 +3169,79 @@ box-shadow: 0 0 15px rgba(0,0,0,0.15);">
 <h1 id="SpringDoc-说明"><a href="#SpringDoc-说明" class="headerlink" title="SpringDoc 说明"></a>SpringDoc 说明</h1><ul>
 <li>在官方中可以指定只要符合 OpenApi 的规范的接口都会被 swaggerUi 展示</li>
 <li>因此可以使用官方的 swaggerUi 配置即可聚合文档统一展示</li>
-<li>官方针对不同模式的项目提供了不同的依赖<table>
-  <thead>
-      <tr>
-          <th>
-              <span>依赖模块artifactId</span>
-          </th>
-          <th>
-              <span>适用技术栈</span>
-          </th>
-          <th>
-              <span>说明</span>
-          </th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>
-              <code>springdoc-openapi-starter-common</code>
-          </td>
-          <td>
-              <strong>
-                  <span>openapi核心库</span>
-              </strong>
-          </td>
-          <td>
-              <span>是下面各种模式的基础库、包含所有模块共享的通用功能</span>
-          </td>
-      </tr>
-      <tr>
-          <td>
-              <code>springdoc-openapi-starter-webmvc-ui</code>
-          </td>
-          <td>
-              <strong>
-                  <span>Spring MVC (Tomcat)</span>
-              </strong>
-          </td>
-          <td>
-              <span>用于传统MVC基于Servlet容器的项目、提供 Swagger UI界面 和 OpenAPI 核心功能</span>
-          </td>
-      </tr>
-      <tr>
-          <td>
-              <code>springdoc-openapi-starter-webflux-ui</code>
-          </td>
-          <td>
-              <strong>
-                  <span>Spring WebFlux (Netty)</span>
-              </strong>
-          </td>
-          <td>
-              <span>为基于Spring WebFlux 的应用（如Gateway）提供 Swagger UI界面 和 OpenAPI 核心功能</span>
-          </td>
-      </tr>
-              <tr>
-          <td>
-              <code>springdoc-openapi-starter-webmvc-api\springdoc-openapi-starter-webflux-api</code>
-          </td>
-          <td>
-              <strong>
-                  <span>MVCApi\FluxApi</span>
-              </strong>
-          </td>
-          <td>
-              <span>分别为 MVC 和 WebFlux 应用提供 OpenAPI 核心功能，但不包含 Swagger UI 界面</span>
-          </td>
-      </tr>
-  </tbody>
-</table></li>
+<li>官方针对不同模式的项目提供了不同的依赖</li>
 </ul>
+<table>
+    <thead>
+        <tr>
+            <th>
+                <span>依赖模块artifactId</span>
+            </th>
+            <th>
+                <span>适用技术栈</span>
+            </th>
+            <th>
+                <span>说明</span>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <code>springdoc-openapi-starter-common</code>
+            </td>
+            <td>
+                <strong>
+                    <span>openapi核心库</span>
+                </strong>
+            </td>
+            <td>
+                <span>是下面各种模式的基础库、包含所有模块共享的通用功能</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>springdoc-openapi-starter-webmvc-ui</code>
+            </td>
+            <td>
+                <strong>
+                    <span>Spring MVC (Tomcat)</span>
+                </strong>
+            </td>
+            <td>
+                <span>用于传统MVC基于Servlet容器的项目、提供 Swagger UI界面 和 OpenAPI 核心功能</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>springdoc-openapi-starter-webflux-ui</code>
+            </td>
+            <td>
+                <strong>
+                    <span>Spring WebFlux (Netty)</span>
+                </strong>
+            </td>
+            <td>
+                <span>为基于Spring WebFlux 的应用（如Gateway）提供 Swagger UI界面 和 OpenAPI 核心功能</span>
+            </td>
+        </tr>
+                <tr>
+            <td>
+                <code>springdoc-openapi-starter-webmvc-api\springdoc-openapi-starter-webflux-api</code>
+            </td>
+            <td>
+                <strong>
+                    <span>MVCApi\FluxApi</span>
+                </strong>
+            </td>
+            <td>
+                <span>分别为 MVC 和 WebFlux 应用提供 OpenAPI 核心功能，但不包含 Swagger UI 界面</span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
 <h1 id="快速使用案例"><a href="#快速使用案例" class="headerlink" title="快速使用案例"></a>快速使用案例</h1><ul>
 <li><p>模块要求</p>
 <ul>
@@ -3258,12 +3261,13 @@ box-shadow: 0 0 15px rgba(0,0,0,0.15);">
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- webMvc-api版本--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springdoc<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springdoc-openapi-starter-webmvc-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;springdoc-openapi.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- webFlux-api版本--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springdoc<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springdoc-openapi-starter-webflux-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;springdoc-openapi.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>聚合服务配置添加配置(必须、否则聚合文档无法加载到对应的服务文档)</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">springdoc:</span></span><br><span class="line">  <span class="attr">cache:</span></span><br><span class="line">    <span class="attr">disabled:</span> <span class="literal">true</span>  <span class="comment"># 开发阶段建议关闭缓存，确保文档实时更新</span></span><br><span class="line">  <span class="attr">swagger-ui:</span></span><br><span class="line">    <span class="attr">urls:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">用户服务</span>  <span class="comment"># 在Swagger UI下拉列表中显示的名称</span></span><br><span class="line">        <span class="attr">url:</span> <span class="string">/user-service/v3/api-docs</span>  <span class="comment"># 通过网关路由访问用户服务的API文档地址</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">订单服务</span></span><br><span class="line">        <span class="attr">url:</span> <span class="string">/order-service/v3/api-docs</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>成功截图</p>
-<img src="../../../myblog/images/聚合文档成功案例截图.png"/></li>
 </ul>
-<p>test</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">springdoc:</span></span><br><span class="line">  <span class="attr">cache:</span></span><br><span class="line">    <span class="attr">disabled:</span> <span class="literal">true</span>  <span class="comment"># 开发阶段建议关闭缓存，确保文档实时更新</span></span><br><span class="line">  <span class="attr">swagger-ui:</span></span><br><span class="line">    <span class="attr">urls:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">用户服务</span>  <span class="comment"># 在Swagger UI下拉列表中显示的名称</span></span><br><span class="line">        <span class="attr">url:</span> <span class="string">/user-service/v3/api-docs</span>  <span class="comment"># 通过网关路由访问用户服务的API文档地址</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">订单服务</span></span><br><span class="line">        <span class="attr">url:</span> <span class="string">/order-service/v3/api-docs</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>参考成功截图<img src="../../../myblog/images/聚合文档成功案例截图.png"/></li>
+</ul>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/myblog/css/markmap.css">
 
