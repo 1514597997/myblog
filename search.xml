@@ -3263,6 +3263,7 @@ box-shadow: 0 0 15px rgba(0,0,0,0.15);">
 <li><p>成功截图</p>
 <img src="../../../myblog/images/聚合文档成功案例截图.png"/></li>
 </ul>
+<p>test</p>
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
 <link rel="stylesheet" href="/myblog/css/markmap.css">
 
