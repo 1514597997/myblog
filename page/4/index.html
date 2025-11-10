@@ -177,6 +177,381 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://1514597997.github.io/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/Maven/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/myblog/images/avatar.jpg">
+      <meta itemprop="name" content="YaoHao">
+      <meta itemprop="description" content="使用hexo+next主题搭建的学习博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/Maven/" class="post-title-link" itemprop="url">Maven</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-11-06 20:36:10" itemprop="dateCreated datePublished" datetime="2025-11-06T20:36:10+08:00">2025-11-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-11-07 16:22:52" itemprop="dateModified" datetime="2025-11-07T16:22:52+08:00">2025-11-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/myblog/categories/%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">后端</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote class="blockquote-center">是 Apache 下的一个纯 Java 开发的开源项目。基于项目对象模型（缩写：POM）概念</blockquote>
+
+<ul>
+<li>Maven利用一个中央信息片断能管理一个项目的构建、报告和文档等步骤。Maven 是一个项目管理工具，可以对 Java 项目进行构建、依赖管理。Maven 也可被用于构建和管理各种项目，例如 C#，Ruby，Scala 和其他语言编写的项目。Maven 曾是 Jakarta 项目的子项目，现为由 Apache 软件基金会主持的独立 Apache 项目。</li>
+</ul>
+<h1 id="Maven-的核心功能包括："><a href="#Maven-的核心功能包括：" class="headerlink" title="Maven 的核心功能包括："></a>Maven 的核心功能包括：</h1><pre><code>- 项目构建（编译、测试、打包、部署）
+- 依赖管理（自动下载和管理第三方库）
+- 标准化项目结构（约定优于配置）
+- 插件扩展（支持自定义构建流程）
+</code></pre>
+<h1 id="pom-xml-详解"><a href="#pom-xml-详解" class="headerlink" title="pom.xml 详解"></a>pom.xml 详解</h1><pre><code>- 这是 Maven 的核心配置文件，定义了项目的基本信息和依赖。
+- 项目生成的 pom.xml 示例：
+</code></pre>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">project</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- POM 模型版本，固定 4.0.0 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 项目坐标（唯一标识） --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.example<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>my-first-app<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 项目打包方式（默认 jar，也可以是 war、pom 等） --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">packaging</span>&gt;</span>jar<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 项目名称和 URL（可选） --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>my-first-app<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://www.example.com<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 依赖管理 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- JUnit 测试依赖 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span>  <span class="comment">&lt;!-- 仅用于测试 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!--  环境配置 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">properties</span>&gt;</span>...<span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">repositories</span>&gt;</span>...<span class="tag">&lt;/<span class="name">repositories</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!--  构建配置 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">build</span>&gt;</span>...<span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>- 以下是maven的核心配置文件
+&#123;%code %&#125;
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+授权给 Apache 软件基金会 (ASF)，遵循一个或多个贡献者许可协议。
+请查看随本作品分发的 NOTICE 文件，以获取关于版权所有权的额外信息。
+ASF 根据 Apache 许可证 2.0 版本（"许可证"）向您授权本文件；
+除非符合许可证的要求，否则您不得使用本文件。
+您可以在以下网址获取许可证的副本：
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+除非适用法律要求或书面同意，依据本许可证分发的软件按"原样"分发，
+无任何明示或暗示的担保或条件。请参阅许可证了解特定语言规定的权限和限制。
+-->
+
+<!--
+ | 这是 Maven 的配置文件。它可以在两个级别指定：
+ |
+ |  1. 用户级别。此 settings.xml 文件为单个用户提供配置，
+ |                 通常位于 $&#123;user.home&#125;/.m2/settings.xml。
+ |
+ |                 注意：此位置可以通过命令行选项覆盖：
+ |
+ |                 -s /path/to/user/settings.xml
+ |
+ |  2. 全局级别。此 settings.xml 文件为机器上的所有 Maven 用户提供配置
+ |                 （假设他们都使用相同的 Maven 安装）。通常位于
+ |                 $&#123;maven.conf&#125;/settings.xml。
+ |
+ |                 注意：此位置可以通过命令行选项覆盖：
+ |
+ |                 -gs /path/to/global/settings.xml
+ |
+ | 本示例文件中的部分旨在帮助您快速开始使用 Maven 安装。
+ | 在适当的地方，提供了默认值（当未指定设置时使用的值）。
+ |
+ |-->
+<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 https://maven.apache.org/xsd/settings-1.2.0.xsd">
+  
+  <!-- localRepository
+   | Maven 用于存储构件的本地仓库路径。
+   |
+   | 默认值：$&#123;user.home&#125;/.m2/repository
+  <localRepository>/path/to/local/repo</localRepository>-->
+  <localRepository>D:\kaifagongju\maven</localRepository>
+  
+  <!-- interactiveMode
+   | 这将决定 Maven 在需要输入时是否提示您。如果设置为 false，
+   | Maven 将使用合理的默认值，可能基于其他一些设置。
+   |
+   | 默认值：true
+  <interactiveMode>true</interactiveMode>
+  -->
+  
+  <!-- offline
+   | 决定 Maven 在执行构建时是否尝试连接网络。
+   | 这将影响构件下载、构件部署等操作。
+   |
+   | 默认值：false
+  
+  <offline>false</offline>
+	-->
+	
+  <!-- pluginGroups
+   | 这是按前缀解析插件时将搜索的额外组标识符列表，即
+   | 当调用像 "mvn prefix:goal" 这样的命令行时。如果列表中尚未包含，
+   | Maven 会自动添加 "org.apache.maven.plugins" 和 "org.codehaus.mojo" 组标识符。
+  -->
+  <pluginGroups>
+    <!-- pluginGroup
+     | 指定用于插件查找的进一步组标识符。
+    <pluginGroup>com.your.plugins</pluginGroup>
+	-->
+  </pluginGroups>
+
+  <!-- 代理
+   | 这是此机器上可用于连接网络的代理列表。
+   | 除非另有指定（通过系统属性或命令行开关），否则将使用
+   | 此列表中标记为活动的第一个代理规范。
+  -->
+  <proxies>
+    <!-- proxy
+     | 用于连接网络的一个代理规范。
+    <proxy>
+      <id>optional</id>
+      <active>true</active>
+      <protocol>http</protocol>
+      <username>proxyuser</username>
+      <password>proxypass</password>
+      <host>proxy.host.net</host>
+      <port>80</port>
+      <nonProxyHosts>local.net|some.host.com</nonProxyHosts>
+    </proxy>
+	-->
+  </proxies>
+
+  <!-- servers
+   | 这是认证配置文件的列表，由系统中使用的 server-id 作为键。
+   | 每当 Maven 必须连接到远程服务器时，都可以使用认证配置文件。
+  -->
+  <servers>
+    <!-- server
+     | 指定连接到特定服务器时使用的认证信息，由系统内的
+     | 唯一名称（由下面的 'id' 属性引用）标识。
+     |
+     | 注意：您应该指定 username/password 或 privateKey/passphrase，因为这些配对是
+     |       一起使用的。
+    <server>
+      <id>deploymentRepo</id>
+      <username>repouser</username>
+      <password>repopwd</password>
+    </server>
+	-->
+    <!-- 另一个示例，使用密钥进行认证 
+    <server>
+      <id>siteServer</id>
+      <privateKey>/path/to/private/key</privateKey>
+      <passphrase>optional; leave empty if not used.</passphrase>
+    </server>
+	-->
+  </servers>
+
+  <!-- mirrors
+   | 这是用于从远程仓库下载构件的镜像列表。
+   |
+   | 工作原理如下：POM 可以声明一个用于解析某些构件的仓库。
+   | 但是，此仓库有时可能会遇到流量大的问题，因此人们已将其
+   | 镜像到多个位置。
+   |
+   | 该仓库定义将具有唯一 ID，因此我们可以为该仓库创建镜像引用，
+   | 用作备用下载站点。镜像站点将是该仓库的首选服务器。
+  -->
+  <mirrors>
+   <!-- 设置阿里云镜像源 -->
+	<mirror>
+		<id>aliyunmaven</id>
+		<mirrorOf>*</mirrorOf>
+		<name>阿里云公共仓库</name>
+		<url>https://maven.aliyun.com/repository/public</url>
+	</mirror>
+    <!-- mirror
+     | 指定要使用的仓库镜像站点，而不是给定的仓库。此镜像服务的
+     | 仓库的 ID 与此镜像的 mirrorOf 元素匹配。ID 用于继承和直接查找目的，
+     | 并且在镜像集中必须是唯一的。
+    
+    <mirror>
+      <id>mirrorId</id>
+      <mirrorOf>repositoryId</mirrorOf>
+      <name>Human Readable Name for this Mirror.</name>
+      <url>http://my.repository.com/repo/path</url>
+    </mirror>
+	-->
+	
+    <!-- 默认的 HTTP 拦截器镜像 
+    <mirror>
+      <id>maven-default-http-blocker</id>
+      <mirrorOf>external:http:*</mirrorOf>
+      <name>用于镜像最初使用 HTTP 的外部仓库的伪仓库。</name>
+      <url>http://0.0.0.0/</url>
+      <blocked>true</blocked>
+    </mirror>
+	-->
+  </mirrors>
+
+  <!-- profiles
+   | 这是可以通过多种方式激活的配置文件列表，并且可以修改构建过程。
+   | settings.xml 中提供的配置文件旨在提供特定于本地机器的路径和仓库位置，
+   | 使构建能够在本地环境中工作。
+   |
+   | 例如，如果您有一个集成测试插件（如 cactus）需要知道 Tomcat 实例的安装位置，
+   | 您可以在此处提供一个变量，以便在构建过程中取消引用该变量来配置 cactus 插件。
+   |
+   | 如上所述，可以通过多种方式激活配置文件。一种方式 - 本文档 (settings.xml) 的
+   | activeProfiles 部分 - 将在后面讨论。另一种方式基本上依赖于属性的检测，
+   | 要么匹配属性的特定值，要么仅测试其存在性。配置文件还可以通过 JDK 版本前缀激活，
+   | 当构建在 '1.4.2_07' 版本的 JDK 上执行时，值 '1.4' 可能会激活配置文件。
+   | 最后，可以从命令行直接指定活动配置文件的列表。
+   |
+   | 注意：对于在 settings.xml 中定义的配置文件，您仅限于指定构件仓库、
+   |       插件仓库和用作 POM 中插件配置变量的自由形式属性。
+  -->
+  <profiles>
+    <!-- profile
+     | 指定一组构建过程的介绍，使用上述一种或多种机制激活。
+     | 为了继承目的，并通过 <activatedProfiles/> 或命令行激活配置文件，
+     | 配置文件必须具有唯一的 ID。
+     |
+     | 鼓励的最佳实践是使用一致的命名约定来标识配置文件，
+     | 例如 'env-dev'、'env-test'、'env-production'、'user-jdcasey'、'user-brett' 等。
+     | 这将使理解引入的配置文件集试图实现什么更加直观，
+     | 特别是当您只有配置文件 ID 列表用于调试时。
+     |
+     | 此配置文件示例使用 JDK 版本触发激活，并提供特定于 JDK 的仓库。
+    
+    <profile>
+      <id>jdk-1.4</id>
+      <activation>
+        <jdk>1.4</jdk>
+      </activation>
+      <repositories>
+        <repository>
+          <id>jdk14</id>
+          <name>Repository for JDK 1.4 builds</name>
+          <url>http://www.myhost.com/maven/jdk14</url>
+          <layout>default</layout>
+          <snapshotPolicy>always</snapshotPolicy>
+        </repository>
+      </repositories>
+    </profile>
+	-->
+    <!-- 设置maven多环境配置 -->
+    <profile>
+      <id>jdk-1.8</id>
+      <activation>
+        <jdk>1.8</jdk>
+      </activation>
+      <properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	  </properties>
+    </profile>
+	
+	<profile>
+      <id>jdk-21</id>
+      <activation>
+        <jdk>21</jdk>
+      </activation>
+      <properties>
+		<maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	  </properties>
+    </profile>
+	<!-- 设置maven多环境配置 -->
+    <!--
+     | 这是另一个配置文件，由属性 'target-env' 的值为 'dev' 激活，
+     | 它提供了 Tomcat 实例的特定路径。要使用此功能，您的插件配置可能假设如下：
+     |
+     | ...
+     | <plugin>
+     |   <groupId>org.myco.myplugins</groupId>
+     |   <artifactId>myplugin</artifactId>
+     |
+     |   <configuration>
+     |     <tomcatLocation>$&#123;tomcatPath&#125;</tomcatLocation>
+     |   </configuration>
+     | </plugin>
+     | ...
+     |
+     | 注意：如果您只想在有人将 'target-env' 设置为任何值时注入此配置，
+     |       您可以只需在 activation-property 内部省略 <value/>。
+    
+    <profile>
+      <id>env-dev</id>
+      <activation>
+        <property>
+          <name>target-env</name>
+          <value>dev</value>
+        </property>
+      </activation>
+      <properties>
+        <tomcatPath>/path/to/tomcat/instance</tomcatPath>
+      </properties>
+    </profile>
+	-->
+  </profiles>
+
+  <!-- activeProfiles
+   | 对所有构建都处于活动状态的配置文件列表。
+  
+  <activeProfiles>
+    <activeProfile>alwaysActiveProfile</activeProfile>
+    <activeProfile>anotherAlwaysActiveProfile</activeProfile>
+  </activeProfiles>
+  -->
+</settings>
+    &#123;%endcode%&#125;
+</code></pre>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/myblog/css/markmap.css">
+
+<script src="/myblog/js/markmap.js"></script>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://1514597997.github.io/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/JDBC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1559,7 +1934,7 @@ box-shadow: 0 0 15px rgba(0,0,0,0.15);">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/myblog/archives">
-          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-count">37</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

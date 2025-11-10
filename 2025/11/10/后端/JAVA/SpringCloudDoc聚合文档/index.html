@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/myblog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/myblog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/myblog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/myblog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/myblog/css/main.css">
+
+
+<link rel="stylesheet" href="/myblog/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"1514597997.github.io","root":"/myblog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="背景介绍 在 SpringCloud 中，因为每个微服务都会使用 SpringDoc、Swagger 自动扫描自己的接口后生成对应的文档，而当多个微服务都有自己的文档后，为需统一展示，所以需要一个统一入口，这个入口就是 SwaggerUi  SpringDoc 说明 在官方中可以指定只要符合 OpenApi 的规范的接口都会被 swaggerUi 展示 因此可以使用官方的 swaggerUi 配置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringCloudDoc聚合文档">
+<meta property="og:url" content="https://1514597997.github.io/myblog/2025/11/10/%E5%90%8E%E7%AB%AF/JAVA/SpringCloudDoc%E8%81%9A%E5%90%88%E6%96%87%E6%A1%A3/index.html">
+<meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="背景介绍 在 SpringCloud 中，因为每个微服务都会使用 SpringDoc、Swagger 自动扫描自己的接口后生成对应的文档，而当多个微服务都有自己的文档后，为需统一展示，所以需要一个统一入口，这个入口就是 SwaggerUi  SpringDoc 说明 在官方中可以指定只要符合 OpenApi 的规范的接口都会被 swaggerUi 展示 因此可以使用官方的 swaggerUi 配置">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://1514597997.github.io/myblog/2025/11/10/images/%E8%81%9A%E5%90%88%E6%96%87%E6%A1%A3%E6%88%90%E5%8A%9F%E6%A1%88%E4%BE%8B%E6%88%AA%E5%9B%BE.png">
+<meta property="article:published_time" content="2025-11-10T08:24:10.840Z">
+<meta property="article:modified_time" content="2025-11-10T09:30:04.353Z">
+<meta property="article:author" content="YaoHao">
+<meta property="article:tag" content="Java,C#,Spring,MVC,Hibernate,Spring,SpringMVC,SpringBoot,SpringCloud,个人学习博客,YaoHao,EFcode,Mybatis,Sql">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://1514597997.github.io/myblog/2025/11/10/images/%E8%81%9A%E5%90%88%E6%96%87%E6%A1%A3%E6%88%90%E5%8A%9F%E6%A1%88%E4%BE%8B%E6%88%AA%E5%9B%BE.png">
+
+<link rel="canonical" href="https://1514597997.github.io/myblog/2025/11/10/%E5%90%8E%E7%AB%AF/JAVA/SpringCloudDoc%E8%81%9A%E5%90%88%E6%96%87%E6%A1%A3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>SpringCloudDoc聚合文档 | 个人博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/myblog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">个人博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">主要学习记录博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/myblog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/myblog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://1514597997.github.io/myblog/2025/11/10/%E5%90%8E%E7%AB%AF/JAVA/SpringCloudDoc%E8%81%9A%E5%90%88%E6%96%87%E6%A1%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/myblog/images/avatar.jpg">
+      <meta itemprop="name" content="YaoHao">
+      <meta itemprop="description" content="使用hexo+next主题搭建的学习博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          SpringCloudDoc聚合文档
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-11-10 16:24:10 / 修改时间：17:30:04" itemprop="dateCreated datePublished" datetime="2025-11-10T16:24:10+08:00">2025-11-10</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/myblog/categories/%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">后端</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h1><ul>
+<li>在 SpringCloud 中，因为每个微服务都会使用 SpringDoc、Swagger 自动扫描自己的接口后生成对应的文档，而当多个微服务都有自己的文档后，为需统一展示，所以需要一个统一入口，这个入口就是 SwaggerUi</li>
+</ul>
+<h1 id="SpringDoc-说明"><a href="#SpringDoc-说明" class="headerlink" title="SpringDoc 说明"></a>SpringDoc 说明</h1><ul>
+<li>在官方中可以指定只要符合 OpenApi 的规范的接口都会被 swaggerUi 展示</li>
+<li>因此可以使用官方的 swaggerUi 配置即可聚合文档统一展示</li>
+<li>官方针对不同模式的项目提供了不同的依赖<table>
+  <thead>
+      <tr>
+          <th>
+              <span>依赖模块artifactId</span>
+          </th>
+          <th>
+              <span>适用技术栈</span>
+          </th>
+          <th>
+              <span>说明</span>
+          </th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>
+              <code>springdoc-openapi-starter-common</code>
+          </td>
+          <td>
+              <strong>
+                  <span>openapi核心库</span>
+              </strong>
+          </td>
+          <td>
+              <span>是下面各种模式的基础库、包含所有模块共享的通用功能</span>
+          </td>
+      </tr>
+      <tr>
+          <td>
+              <code>springdoc-openapi-starter-webmvc-ui</code>
+          </td>
+          <td>
+              <strong>
+                  <span>Spring MVC (Tomcat)</span>
+              </strong>
+          </td>
+          <td>
+              <span>用于传统MVC基于Servlet容器的项目、提供 Swagger UI界面 和 OpenAPI 核心功能</span>
+          </td>
+      </tr>
+      <tr>
+          <td>
+              <code>springdoc-openapi-starter-webflux-ui</code>
+          </td>
+          <td>
+              <strong>
+                  <span>Spring WebFlux (Netty)</span>
+              </strong>
+          </td>
+          <td>
+              <span>为基于Spring WebFlux 的应用（如Gateway）提供 Swagger UI界面 和 OpenAPI 核心功能</span>
+          </td>
+      </tr>
+              <tr>
+          <td>
+              <code>springdoc-openapi-starter-webmvc-api\springdoc-openapi-starter-webflux-api</code>
+          </td>
+          <td>
+              <strong>
+                  <span>MVCApi\FluxApi</span>
+              </strong>
+          </td>
+          <td>
+              <span>分别为 MVC 和 WebFlux 应用提供 OpenAPI 核心功能，但不包含 Swagger UI 界面</span>
+          </td>
+      </tr>
+  </tbody>
+</table></li>
+</ul>
+<h1 id="快速使用案例"><a href="#快速使用案例" class="headerlink" title="快速使用案例"></a>快速使用案例</h1><ul>
+<li><p>模块要求</p>
+<ul>
+<li>使用SpringDoc自动扫描接口的微服务(若干个)</li>
+<li>使用SwaggerUi的微服务(一个),负责聚合文档</li>
+</ul>
+</li>
+<li><p>被聚合的微服务添加依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springdoc<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springdoc-openapi-starter-webmvc-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;springdoc-openapi.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>添加配置、默认可不配置。</p>
+<ul>
+<li>SpringDoc默认会自动生成并暴露OpenAPI 3规范文档，其JSON格式的默认访问路径就是 &#x2F;v3&#x2F;api-docs</li>
+<li>自由当希望自定义访问路径时，可以在application.yml中添加如下配置<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 被聚合的微服务配置</span></span><br><span class="line"><span class="attr">springdoc:</span></span><br><span class="line">  <span class="attr">api-docs:</span></span><br><span class="line">  <span class="comment"># 配置接口文档路径</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">/v3/api-docs</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>聚合服务配置添加依赖,其中二选一</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- webMvc-api版本--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springdoc<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springdoc-openapi-starter-webmvc-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;springdoc-openapi.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- webFlux-api版本--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springdoc<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springdoc-openapi-starter-webflux-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;springdoc-openapi.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>聚合服务配置添加配置(必须、否则聚合文档无法加载到对应的服务文档)</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">springdoc:</span></span><br><span class="line">  <span class="attr">cache:</span></span><br><span class="line">    <span class="attr">disabled:</span> <span class="literal">true</span>  <span class="comment"># 开发阶段建议关闭缓存，确保文档实时更新</span></span><br><span class="line">  <span class="attr">swagger-ui:</span></span><br><span class="line">    <span class="attr">urls:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">用户服务</span>  <span class="comment"># 在Swagger UI下拉列表中显示的名称</span></span><br><span class="line">        <span class="attr">url:</span> <span class="string">/user-service/v3/api-docs</span>  <span class="comment"># 通过网关路由访问用户服务的API文档地址</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">订单服务</span></span><br><span class="line">        <span class="attr">url:</span> <span class="string">/order-service/v3/api-docs</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>成功截图</p>
+<img src="../../../images/聚合文档成功案例截图.png"/></li>
+</ul>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/myblog/css/markmap.css">
+
+<script src="/myblog/js/markmap.js"></script>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/myblog/2025/11/09/%E5%90%8E%E7%AB%AF/JAVA/SpringCloudGateway/" rel="prev" title="SpringCloudGateway">
+      <i class="fa fa-chevron-left"></i> SpringCloudGateway
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">背景介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringDoc-%E8%AF%B4%E6%98%8E"><span class="nav-number">2.</span> <span class="nav-text">SpringDoc 说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%A1%88%E4%BE%8B"><span class="nav-number">3.</span> <span class="nav-text">快速使用案例</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="YaoHao"
+      src="/myblog/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">YaoHao</p>
+  <div class="site-description" itemprop="description">使用hexo+next主题搭建的学习博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/myblog/archives">
+          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/myblog/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YaoHao</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/myblog/lib/anime.min.js"></script>
+  <script src="/myblog/lib/pjax/pjax.min.js"></script>
+  <script src="/myblog/lib/velocity/velocity.min.js"></script>
+  <script src="/myblog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/myblog/js/utils.js"></script>
+
+<script src="/myblog/js/motion.js"></script>
+
+
+<script src="/myblog/js/schemes/muse.js"></script>
+
+
+<script src="/myblog/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/myblog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>

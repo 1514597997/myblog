@@ -177,6 +177,183 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://1514597997.github.io/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/CSharp/EFCore/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/myblog/images/avatar.jpg">
+      <meta itemprop="name" content="YaoHao">
+      <meta itemprop="description" content="使用hexo+next主题搭建的学习博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/CSharp/EFCore/" class="post-title-link" itemprop="url">EFCore</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-11-06 20:36:11" itemprop="dateCreated datePublished" datetime="2025-11-06T20:36:11+08:00">2025-11-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-11-07 14:29:06" itemprop="dateModified" datetime="2025-11-07T14:29:06+08:00">2025-11-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/myblog/categories/%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">后端</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="EFCore（Entity-Framework-Core）"><a href="#EFCore（Entity-Framework-Core）" class="headerlink" title="EFCore（Entity Framework Core）"></a>EFCore（Entity Framework Core）</h1><ul>
+<li>介绍：轻量级、可扩展、开源且跨平台的对象关系映射ORM框架<ul>
+<li>Entity Framework是上一代版本，而EFCore是专为Core版本设计制作<ul>
+<li>dotnet指令安装“<a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/ef/core/cli/powershell">包管理器控制台工具</a>”  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Install-Package</span> Microsoft.EntityFrameworkCore.Tools</span><br></pre></td></tr></table></figure></li>
+<li>更新“包管理器控制台工具”  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Update-Package</span> Microsoft.EntityFrameworkCore.Tools </span><br></pre></td></tr></table></figure></li>
+<li>验证是否安装  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-Help</span> about_EntityFrameworkCore</span><br></pre></td></tr></table></figure></li>
+<li>安装成功响应如下  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">        </span><br><span class="line">                    _/\__</span><br><span class="line">            <span class="literal">---</span>==/    \\</span><br><span class="line">        ___  ___   |.    \|\</span><br><span class="line">        | __|| __|  |  )   \\\</span><br><span class="line">        | _| | _|   \_/ |  //|\\</span><br><span class="line">        |___||_|       /   \\\/\\</span><br><span class="line"></span><br><span class="line">TOPIC</span><br><span class="line">    about_EntityFrameworkCore</span><br><span class="line"></span><br><span class="line">SHORT DESCRIPTION</span><br><span class="line">    Provides information about the Entity Framework Core Package Manager Console Tools.</span><br><span class="line"></span><br><span class="line">&lt;A list of available commands follows, omitted here.&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>需安装对应EFCore的数据库支持，比如mysql，sqlserver</li>
+</ul>
+<h1 id="如何运用"><a href="#如何运用" class="headerlink" title="如何运用"></a>如何运用</h1><ul>
+<li><p>1.创建定义模型类</p>
+</li>
+<li><p>2.创建继承 DbContext类,EF Core的核心类，用于管理实体的生命周期以及与数据库的交互。</p>
+<ul>
+<li>2.1重写OnConfiguring函数，加载数据库配置  <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> Microsoft.EntityFrameworkCore;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">TestWebApplication.yaohao.efcore</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">AppDbContext</span>:<span class="title">DbContext</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">public</span> DbSet&amp;lt;YaoHao&amp;gt; YaoHao &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;<span class="comment">//泛型接口,表示数据库中的一个实体集合（即表）,映射数据库表</span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">AppDbContext</span>(<span class="params">DbContextOptions&lt;AppDbContext&gt; options</span>)</span></span><br><span class="line"><span class="function">        : <span class="title">base</span>(<span class="params">options</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//必须公开具有 DbContextOptions&lt;?&gt; 参数的公共构造函数。才能在web通过依赖注入时启动 </span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">OnConfiguring</span>(<span class="params">DbContextOptionsBuilder optionsBuilder</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//这里根据你的数据库use加载你所需要的数据库配置如: mysql、sqlserver</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">OnModelCreating</span>(<span class="params">ModelBuilder modelBuilder</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//微软推荐这里进行配置实体的映射关系</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>3.迁移工具创建数据库</p>
+<ul>
+<li>程序包管理器控制台乱码处理UTF8指令:  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="symbol">Console</span>]:<span class="link">:OutputEncoding = [System.Text.Encoding]::UTF8</span></span><br></pre></td></tr></table></figure></li>
+<li>3.1 dotnet ef migrations add ‘迁移文件名’ &#x2F;&#x2F;创建一个新的迁移文件，用于描述数据库的初始结构<ul>
+<li>分析模型变化<ul>
+<li>如果是第一次运行迁移命令（即数据库尚未创建或迁移历史为空），EF Core 会根据实体模型生成数据库的初始结构。</li>
+<li>如果数据库已经存在，EF Core 会检测实体模型的变化（如新增表、修改列、删除关系等）。然后去增量更新迁移文件</li>
+</ul>
+</li>
+<li>生成迁移文件<ul>
+<li>EF Core 会生成一个迁移文件，该文件包含两个主要部分<ul>
+<li>Up 方法：描述如何将数据库从当前状态迁移到目标状态（即应用模型变化）。</li>
+<li>Down 方法：描述如何撤销这些变化（回滚迁移）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>迁移文件命名<ul>
+<li>迁移文件的名称由命令中的参数指定 ‘迁移文件名’。通常，迁移文件会存储在项目的 Migrations 文件夹中。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>3.2 dotnet ef database update<ul>
+<li>用于将迁移文件中定义的变更应用到数据库中，更新数据库的结构。</li>
+<li>具体步骤<ul>
+<li>读取迁移历史<ul>
+<li>EF Core 会检查数据库中的 __EFMigrationsHistory 表，了解当前数据库已经应用了哪些迁移。</li>
+</ul>
+</li>
+<li>应用未应用的迁移<ul>
+<li>EF Core 会找到尚未应用到数据库的迁移文件，并按照顺序执行这些迁移文件中的 Up 方法，从而更新数据库结构。</li>
+</ul>
+</li>
+<li>记录迁移历史<ul>
+<li>每次应用迁移后，EF Core 会在 __EFMigrationsHistory 表中记录迁移的名称和时间戳，以便后续跟踪哪些迁移已经应用。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h1><ul>
+<li>efcore默认是有2个级别缓存。1、2级缓存</li>
+<li>1级缓存微软默认开启，2级缓存需手动开启</li>
+</ul>
+<h1 id="运行链路"><a href="#运行链路" class="headerlink" title="运行链路"></a>运行链路</h1><ul>
+<li>1.查询<ul>
+<li>1.检查本地缓存<ul>
+<li>在 DbContext 的 ChangeTracker 中查找已跟踪的实体</li>
+<li>如果实体已被加载且未被标记为 Deleted，直接返回缓存副本</li>
+</ul>
+</li>
+<li>2.生成 SQL <ul>
+<li>若缓存未命中，构建参数化查询</li>
+<li>根据主键值生成高效的 SELECT TOP(1) 语句。</li>
+</ul>
+</li>
+<li>3.执行 SQL<ul>
+<li>通过 ADO.NET 发送查询到数据库</li>
+<li>使用连接池复用数据库连接。</li>
+</ul>
+</li>
+<li>4.实体化结果<ul>
+<li>将数据库返回的数据转换为 Product 对象</li>
+<li>调用实体构造函数并填充属性。</li>
+</ul>
+</li>
+<li>5.跟踪实体状态<ul>
+<li>将实体添加到 ChangeTracker</li>
+<li>状态标记为 Unchanged，后续修改会被跟踪。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
+<link rel="stylesheet" href="/myblog/css/markmap.css">
+
+<script src="/myblog/js/markmap.js"></script>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://1514597997.github.io/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/CSharp/CSharp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1536,381 +1713,6 @@ Hibernate 的基本概念
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://1514597997.github.io/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/Maven/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/myblog/images/avatar.jpg">
-      <meta itemprop="name" content="YaoHao">
-      <meta itemprop="description" content="使用hexo+next主题搭建的学习博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="个人博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/myblog/2025/11/06/%E5%90%8E%E7%AB%AF/JAVA/Maven/" class="post-title-link" itemprop="url">Maven</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-11-06 20:36:10" itemprop="dateCreated datePublished" datetime="2025-11-06T20:36:10+08:00">2025-11-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-11-07 16:22:52" itemprop="dateModified" datetime="2025-11-07T16:22:52+08:00">2025-11-07</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/myblog/categories/%E5%90%8E%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">后端</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote class="blockquote-center">是 Apache 下的一个纯 Java 开发的开源项目。基于项目对象模型（缩写：POM）概念</blockquote>
-
-<ul>
-<li>Maven利用一个中央信息片断能管理一个项目的构建、报告和文档等步骤。Maven 是一个项目管理工具，可以对 Java 项目进行构建、依赖管理。Maven 也可被用于构建和管理各种项目，例如 C#，Ruby，Scala 和其他语言编写的项目。Maven 曾是 Jakarta 项目的子项目，现为由 Apache 软件基金会主持的独立 Apache 项目。</li>
-</ul>
-<h1 id="Maven-的核心功能包括："><a href="#Maven-的核心功能包括：" class="headerlink" title="Maven 的核心功能包括："></a>Maven 的核心功能包括：</h1><pre><code>- 项目构建（编译、测试、打包、部署）
-- 依赖管理（自动下载和管理第三方库）
-- 标准化项目结构（约定优于配置）
-- 插件扩展（支持自定义构建流程）
-</code></pre>
-<h1 id="pom-xml-详解"><a href="#pom-xml-详解" class="headerlink" title="pom.xml 详解"></a>pom.xml 详解</h1><pre><code>- 这是 Maven 的核心配置文件，定义了项目的基本信息和依赖。
-- 项目生成的 pom.xml 示例：
-</code></pre>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">project</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- POM 模型版本，固定 4.0.0 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 项目坐标（唯一标识） --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.example<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>my-first-app<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 项目打包方式（默认 jar，也可以是 war、pom 等） --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">packaging</span>&gt;</span>jar<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 项目名称和 URL（可选） --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>my-first-app<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://www.example.com<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 依赖管理 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- JUnit 测试依赖 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span>  <span class="comment">&lt;!-- 仅用于测试 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!--  环境配置 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">properties</span>&gt;</span>...<span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">repositories</span>&gt;</span>...<span class="tag">&lt;/<span class="name">repositories</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!--  构建配置 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">build</span>&gt;</span>...<span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<pre><code>- 以下是maven的核心配置文件
-&#123;%code %&#125;
-<?xml version="1.0" encoding="UTF-8"?>
-
-<!--
-授权给 Apache 软件基金会 (ASF)，遵循一个或多个贡献者许可协议。
-请查看随本作品分发的 NOTICE 文件，以获取关于版权所有权的额外信息。
-ASF 根据 Apache 许可证 2.0 版本（"许可证"）向您授权本文件；
-除非符合许可证的要求，否则您不得使用本文件。
-您可以在以下网址获取许可证的副本：
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-除非适用法律要求或书面同意，依据本许可证分发的软件按"原样"分发，
-无任何明示或暗示的担保或条件。请参阅许可证了解特定语言规定的权限和限制。
--->
-
-<!--
- | 这是 Maven 的配置文件。它可以在两个级别指定：
- |
- |  1. 用户级别。此 settings.xml 文件为单个用户提供配置，
- |                 通常位于 $&#123;user.home&#125;/.m2/settings.xml。
- |
- |                 注意：此位置可以通过命令行选项覆盖：
- |
- |                 -s /path/to/user/settings.xml
- |
- |  2. 全局级别。此 settings.xml 文件为机器上的所有 Maven 用户提供配置
- |                 （假设他们都使用相同的 Maven 安装）。通常位于
- |                 $&#123;maven.conf&#125;/settings.xml。
- |
- |                 注意：此位置可以通过命令行选项覆盖：
- |
- |                 -gs /path/to/global/settings.xml
- |
- | 本示例文件中的部分旨在帮助您快速开始使用 Maven 安装。
- | 在适当的地方，提供了默认值（当未指定设置时使用的值）。
- |
- |-->
-<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 https://maven.apache.org/xsd/settings-1.2.0.xsd">
-  
-  <!-- localRepository
-   | Maven 用于存储构件的本地仓库路径。
-   |
-   | 默认值：$&#123;user.home&#125;/.m2/repository
-  <localRepository>/path/to/local/repo</localRepository>-->
-  <localRepository>D:\kaifagongju\maven</localRepository>
-  
-  <!-- interactiveMode
-   | 这将决定 Maven 在需要输入时是否提示您。如果设置为 false，
-   | Maven 将使用合理的默认值，可能基于其他一些设置。
-   |
-   | 默认值：true
-  <interactiveMode>true</interactiveMode>
-  -->
-  
-  <!-- offline
-   | 决定 Maven 在执行构建时是否尝试连接网络。
-   | 这将影响构件下载、构件部署等操作。
-   |
-   | 默认值：false
-  
-  <offline>false</offline>
-	-->
-	
-  <!-- pluginGroups
-   | 这是按前缀解析插件时将搜索的额外组标识符列表，即
-   | 当调用像 "mvn prefix:goal" 这样的命令行时。如果列表中尚未包含，
-   | Maven 会自动添加 "org.apache.maven.plugins" 和 "org.codehaus.mojo" 组标识符。
-  -->
-  <pluginGroups>
-    <!-- pluginGroup
-     | 指定用于插件查找的进一步组标识符。
-    <pluginGroup>com.your.plugins</pluginGroup>
-	-->
-  </pluginGroups>
-
-  <!-- 代理
-   | 这是此机器上可用于连接网络的代理列表。
-   | 除非另有指定（通过系统属性或命令行开关），否则将使用
-   | 此列表中标记为活动的第一个代理规范。
-  -->
-  <proxies>
-    <!-- proxy
-     | 用于连接网络的一个代理规范。
-    <proxy>
-      <id>optional</id>
-      <active>true</active>
-      <protocol>http</protocol>
-      <username>proxyuser</username>
-      <password>proxypass</password>
-      <host>proxy.host.net</host>
-      <port>80</port>
-      <nonProxyHosts>local.net|some.host.com</nonProxyHosts>
-    </proxy>
-	-->
-  </proxies>
-
-  <!-- servers
-   | 这是认证配置文件的列表，由系统中使用的 server-id 作为键。
-   | 每当 Maven 必须连接到远程服务器时，都可以使用认证配置文件。
-  -->
-  <servers>
-    <!-- server
-     | 指定连接到特定服务器时使用的认证信息，由系统内的
-     | 唯一名称（由下面的 'id' 属性引用）标识。
-     |
-     | 注意：您应该指定 username/password 或 privateKey/passphrase，因为这些配对是
-     |       一起使用的。
-    <server>
-      <id>deploymentRepo</id>
-      <username>repouser</username>
-      <password>repopwd</password>
-    </server>
-	-->
-    <!-- 另一个示例，使用密钥进行认证 
-    <server>
-      <id>siteServer</id>
-      <privateKey>/path/to/private/key</privateKey>
-      <passphrase>optional; leave empty if not used.</passphrase>
-    </server>
-	-->
-  </servers>
-
-  <!-- mirrors
-   | 这是用于从远程仓库下载构件的镜像列表。
-   |
-   | 工作原理如下：POM 可以声明一个用于解析某些构件的仓库。
-   | 但是，此仓库有时可能会遇到流量大的问题，因此人们已将其
-   | 镜像到多个位置。
-   |
-   | 该仓库定义将具有唯一 ID，因此我们可以为该仓库创建镜像引用，
-   | 用作备用下载站点。镜像站点将是该仓库的首选服务器。
-  -->
-  <mirrors>
-   <!-- 设置阿里云镜像源 -->
-	<mirror>
-		<id>aliyunmaven</id>
-		<mirrorOf>*</mirrorOf>
-		<name>阿里云公共仓库</name>
-		<url>https://maven.aliyun.com/repository/public</url>
-	</mirror>
-    <!-- mirror
-     | 指定要使用的仓库镜像站点，而不是给定的仓库。此镜像服务的
-     | 仓库的 ID 与此镜像的 mirrorOf 元素匹配。ID 用于继承和直接查找目的，
-     | 并且在镜像集中必须是唯一的。
-    
-    <mirror>
-      <id>mirrorId</id>
-      <mirrorOf>repositoryId</mirrorOf>
-      <name>Human Readable Name for this Mirror.</name>
-      <url>http://my.repository.com/repo/path</url>
-    </mirror>
-	-->
-	
-    <!-- 默认的 HTTP 拦截器镜像 
-    <mirror>
-      <id>maven-default-http-blocker</id>
-      <mirrorOf>external:http:*</mirrorOf>
-      <name>用于镜像最初使用 HTTP 的外部仓库的伪仓库。</name>
-      <url>http://0.0.0.0/</url>
-      <blocked>true</blocked>
-    </mirror>
-	-->
-  </mirrors>
-
-  <!-- profiles
-   | 这是可以通过多种方式激活的配置文件列表，并且可以修改构建过程。
-   | settings.xml 中提供的配置文件旨在提供特定于本地机器的路径和仓库位置，
-   | 使构建能够在本地环境中工作。
-   |
-   | 例如，如果您有一个集成测试插件（如 cactus）需要知道 Tomcat 实例的安装位置，
-   | 您可以在此处提供一个变量，以便在构建过程中取消引用该变量来配置 cactus 插件。
-   |
-   | 如上所述，可以通过多种方式激活配置文件。一种方式 - 本文档 (settings.xml) 的
-   | activeProfiles 部分 - 将在后面讨论。另一种方式基本上依赖于属性的检测，
-   | 要么匹配属性的特定值，要么仅测试其存在性。配置文件还可以通过 JDK 版本前缀激活，
-   | 当构建在 '1.4.2_07' 版本的 JDK 上执行时，值 '1.4' 可能会激活配置文件。
-   | 最后，可以从命令行直接指定活动配置文件的列表。
-   |
-   | 注意：对于在 settings.xml 中定义的配置文件，您仅限于指定构件仓库、
-   |       插件仓库和用作 POM 中插件配置变量的自由形式属性。
-  -->
-  <profiles>
-    <!-- profile
-     | 指定一组构建过程的介绍，使用上述一种或多种机制激活。
-     | 为了继承目的，并通过 <activatedProfiles/> 或命令行激活配置文件，
-     | 配置文件必须具有唯一的 ID。
-     |
-     | 鼓励的最佳实践是使用一致的命名约定来标识配置文件，
-     | 例如 'env-dev'、'env-test'、'env-production'、'user-jdcasey'、'user-brett' 等。
-     | 这将使理解引入的配置文件集试图实现什么更加直观，
-     | 特别是当您只有配置文件 ID 列表用于调试时。
-     |
-     | 此配置文件示例使用 JDK 版本触发激活，并提供特定于 JDK 的仓库。
-    
-    <profile>
-      <id>jdk-1.4</id>
-      <activation>
-        <jdk>1.4</jdk>
-      </activation>
-      <repositories>
-        <repository>
-          <id>jdk14</id>
-          <name>Repository for JDK 1.4 builds</name>
-          <url>http://www.myhost.com/maven/jdk14</url>
-          <layout>default</layout>
-          <snapshotPolicy>always</snapshotPolicy>
-        </repository>
-      </repositories>
-    </profile>
-	-->
-    <!-- 设置maven多环境配置 -->
-    <profile>
-      <id>jdk-1.8</id>
-      <activation>
-        <jdk>1.8</jdk>
-      </activation>
-      <properties>
-		<maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	  </properties>
-    </profile>
-	
-	<profile>
-      <id>jdk-21</id>
-      <activation>
-        <jdk>21</jdk>
-      </activation>
-      <properties>
-		<maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	  </properties>
-    </profile>
-	<!-- 设置maven多环境配置 -->
-    <!--
-     | 这是另一个配置文件，由属性 'target-env' 的值为 'dev' 激活，
-     | 它提供了 Tomcat 实例的特定路径。要使用此功能，您的插件配置可能假设如下：
-     |
-     | ...
-     | <plugin>
-     |   <groupId>org.myco.myplugins</groupId>
-     |   <artifactId>myplugin</artifactId>
-     |
-     |   <configuration>
-     |     <tomcatLocation>$&#123;tomcatPath&#125;</tomcatLocation>
-     |   </configuration>
-     | </plugin>
-     | ...
-     |
-     | 注意：如果您只想在有人将 'target-env' 设置为任何值时注入此配置，
-     |       您可以只需在 activation-property 内部省略 <value/>。
-    
-    <profile>
-      <id>env-dev</id>
-      <activation>
-        <property>
-          <name>target-env</name>
-          <value>dev</value>
-        </property>
-      </activation>
-      <properties>
-        <tomcatPath>/path/to/tomcat/instance</tomcatPath>
-      </properties>
-    </profile>
-	-->
-  </profiles>
-
-  <!-- activeProfiles
-   | 对所有构建都处于活动状态的配置文件列表。
-  
-  <activeProfiles>
-    <activeProfile>alwaysActiveProfile</activeProfile>
-    <activeProfile>anotherAlwaysActiveProfile</activeProfile>
-  </activeProfiles>
-  -->
-</settings>
-    &#123;%endcode%&#125;
-</code></pre>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"><script src="https://fastly.jsdelivr.net/npm/d3@7"></script><script src="https://fastly.jsdelivr.net/npm/markmap-view@0.18.10"></script><script src="https://fastly.jsdelivr.net/npm/markmap-toolbar@0.18.10"></script>
-<link rel="stylesheet" href="/myblog/css/markmap.css">
-
-<script src="/myblog/js/markmap.js"></script>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1981,7 +1783,7 @@ ASF 根据 Apache 许可证 2.0 版本（"许可证"）向您授权本文件；
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/myblog/archives">
-          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-count">37</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
